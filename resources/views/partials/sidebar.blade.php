@@ -18,7 +18,7 @@
             <img class="w-full " src="../Img/Logo.svg" alt="">
 
             <!-- Pilihan Home Start -->
-            <a href="../final/">
+            <a href="/">
                 <div class="mx-4 py-2 rounded flex text-white bg-warna2 mt-5 shadow-md hover:bg-warna2h">
                     <svg class="fill-current h-5 pl-4 mt-[2px]" viewBox="0 0 20 23" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
@@ -30,7 +30,7 @@
             <!-- Pilihan Home End -->
 
             <!-- Pilihan Komen Start -->
-            <a href="topic.php">
+            <a href="/topic">
                 <div class=" mx-4 py-2 rounded flex text-white bg-warna3 mt-5 shadow-md hover:bg-warna3h">
                     <svg class="fill-current h-[22px] pl-4 mt-1" viewBox="0 0 28 23" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
@@ -46,7 +46,7 @@
         
 
             <!-- Pilihan Setting Start -->
-            <a href="setting.php">
+            <a href="/setting">
                 <div class=" mx-4 py-2 rounded flex text-white bg-warna3 mt-5 shadow-md hover:bg-warna3h">
                     <svg class="fill-current h-5 pl-[13px] mt-1" viewBox="0 0 23 21" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
@@ -61,7 +61,7 @@
             {{-- @if($_SESSION['id_role'] == 1) --}}
 
             <!-- Pilihan Reporting Start -->
-            <a href="mod/report.php">
+            <a href="/mod/report">
             <div class=" mx-4 py-[0.30rem] rounded flex text-white bg-[#8E1616] mt-5 shadow-md hover:bg-[#812525]">
                 <svg class="fill-current h-8 pl-[10px] " viewBox="0 0 36 36" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
