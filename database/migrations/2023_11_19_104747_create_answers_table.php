@@ -18,7 +18,7 @@ return new class extends Migration
             $table->foreignId('question_id');
             $table->foreignId('user_id');
             $table->string('content');
-            $table->string('image');
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }

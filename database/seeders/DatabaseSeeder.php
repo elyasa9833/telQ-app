@@ -3,6 +3,11 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+use App\Models\User;
+use App\Models\Answer;
+use App\Models\Comment;
+use App\Models\Question;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -14,11 +19,20 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        User::factory()->create([
+            'role' => 'admin',
+            'email' => 'admin@admin',
+            'password' => bcrypt('12345'),
+            'fullname' => 'Admin',
+            'asal_kota' => 'BojongSoang',
+            'deskripsi' => 'null',
+            'photo_profile' => 'User.svg',
+            'phone_number' => '555-0106',
+        ]);
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        User::factory(20)->create();
+        Question::factory(15)->create();
+        Answer::factory(15)->create();
+        Comment::factory(10)->create();
     }
 }

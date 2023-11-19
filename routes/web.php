@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AnswerController;
+use App\Http\Controllers\QuestionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,13 +15,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', [QuestionController::class, 'index']);
 
-Route::get('/topic', function () {
-    return view('topic');
-});
+Route::get('/answer', [AnswerController::class, 'index']);
 
 Route::get('/setting', function () {
     return view('settings');

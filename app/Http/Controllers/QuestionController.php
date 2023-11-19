@@ -14,7 +14,8 @@ class QuestionController extends Controller
      */
     public function index()
     {
-        //
+        $question = Question::all();
+        return view('index', compact('question'));
     }
 
     /**

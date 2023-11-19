@@ -14,7 +14,8 @@ class AnswerController extends Controller
      */
     public function index()
     {
-        //
+        $answer = Answer::all();
+        return view('answer', compact('answer'));
     }
 
     /**
