@@ -15,9 +15,9 @@ use App\Http\Controllers\QuestionController;
 |
 */
 
-Route::get('/', [QuestionController::class, 'index']);
+Route::get('/', [AnswerController::class, 'index']);
 
-Route::get('/answer', [AnswerController::class, 'index']);
+Route::get('/question-list', [QuestionController::class, 'index']);
 
 Route::get('/setting', function () {
     return view('settings');

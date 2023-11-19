@@ -19,13 +19,13 @@
                 <div class="relative bg-white pt-8 rounded-md">
                     <div class="flex ml-4 pb-5">
                         <div class="bg-bgc aspect-square h-10 overflow-hidden rounded-full">
-                            <img class="h-full w-full object-cover" src="../img/{{-- $source_pp --}}" alt="">
+                            <img class="h-full w-full object-cover" src="img/User.svg{{-- $source_pp --}}" alt="">
                         </div>
                         <span class="font-medium ml-2 text-lg text-gray-800">{{-- $nama --}} Nama</span>
                     </div>
 
                     <label for="my-modal-3">
-                        <img class="absolute h-5 top-2 right-2" src="../Img/icon/close.svg" alt="">
+                        <img class="absolute h-5 top-2 right-2" src="img/icon/close.svg" alt="">
                     </label>
 
                     <hr>
@@ -38,11 +38,11 @@
                     <div class="flex justify-end">
             
                         <label for="input-gambar">
-                            <img class="h-8 mr-2 my-2" src="../Img/icon/round-image.svg" alt="">
+                            <img class="h-8 mr-2 my-2" src="img/icon/round-image.svg" alt="">
                         </label>
                         <input id="input-gambar" name="gambar_tanya" accept="image/*" type="file" class="hidden">
             
-                        <button type="submit" name="submit"> <img class="h-6 mr-4 my-2" src="../Img/icon/share.svg" alt=""> </button>
+                        <button type="submit" name="submit"> <img class="h-6 mr-4 my-2" src="img/icon/share.svg" alt=""> </button>
                     </div>
                     </form>
             
@@ -58,7 +58,7 @@
                 <!-- Tag Search -->
                 <!-- Tombol Search -->
                 <button id="dropdown-search" data-dropdown-toggle="dropdownsearch" class="my-auto mx-1" type="button">
-                    <img class="h-10 md:h-11 lg:h-12" src="../Img/Icon/TagSearch.svg" alt="">
+                    <img class="h-10 md:h-11 lg:h-12" src="img/Icon/TagSearch.svg" alt="">
                 </button>
                 <!-- Dropdown Search -->
                 <div id="dropdownsearch" class="z-10 hidden">
@@ -71,7 +71,7 @@
 
                 
                 <!-- ini notif -->
-                <a class="my-auto mx-1" href="#"> <img class="h-10 md:h-11 lg:h-12" src="../Img/Icon/Notif.svg"
+                <a class="my-auto mx-1" href="#"> <img class="h-10 md:h-11 lg:h-12" src="img/Icon/Notif.svg"
                         alt=""> </a>
                 <!-- Foto Profile dengan dropdownnya anjay -->
                 <!-- Profile Start -->
@@ -79,7 +79,7 @@
                     class="text-white font-medium rounded-full text-sm" type="button">
                     <!-- si foto profile -->
                 <div class="bg-bgc aspect-square h-10 overflow-hidden rounded-full">
-                    <img class="h-full w-full object-cover" src="../Img/{{-- $source_pp --}}" alt="">
+                    <img class="h-full w-full object-cover" src="img/User.svg{{-- $source_pp --}}" alt="">
                 </div>
                 </button>
                 <!-- Dropdown menu -->
@@ -87,12 +87,12 @@
                     <ul class="py-2 text-gray-700" aria-labelledby="dropdownDefaultButton">
                         <li>
                         <a href="edit/profile.php?id={{-- $id_user --}}" class="flex px-4 py-2 hover:bg-gray-100"> 
-                                <img src="../Img/icon/Edit.svg" alt=""> <span class="my-auto ml-2"> Edit Profile </span>
+                                <img src="img/icon/Edit.svg" alt=""> <span class="my-auto ml-2"> Edit Profile </span>
                             </a>
                         </li>
 
                         <li data-modal-target="popup-modal" data-modal-toggle="popup-modal" class="" type="button">
-                            <div class="flex px-2 py-2 hover:bg-gray-100 cursor-pointer"> <img src="../Img/icon/Log-out.svg" alt=""> <span class="my-auto ml-2"> Log out</span></div>
+                            <div class="flex px-2 py-2 hover:bg-gray-100 cursor-pointer"> <img src="img/icon/Log-out.svg" alt=""> <span class="my-auto ml-2"> Log out</span></div>
                         </li>
 
                     </ul>
