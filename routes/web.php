@@ -20,3 +20,7 @@ Route::get('/', function () {
 Route::get('/topic', function () {
     return view('topic');
 });
+
+Route::get('/setting', function () {
+    return view('settings');
+});
