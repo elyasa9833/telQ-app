@@ -1,0 +1,491 @@
+/*
+Css Reset Tamplate
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/*
+masukkan css kalian di bawah ini (●'◡'●)
+*/
+body {
+  background-color: #E9E9E9;
+}
+
+.container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 248px auto 50px;
+  grid-template-areas: 'sidebar main profil';
+  gap: 40px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.profil {
+  grid-area: profil;
+  width: 100px;
+  display: grid;
+  justify-self: center;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.akunku {
+  cursor: pointer;
+  width: 50px;
+  height: 48px;
+  background: #455D7C;
+  border-radius: 50%;
+}
+
+.sideBar {
+  grid-area: sidebar;
+}
+
+.logos img {
+  width: 100%;
+  display: block;
+}
+
+.sideBar .kotaks {
+  background-color: white;
+  height: 87.5vh;
+  display: grid;
+  justify-content: center;
+}
+
+.sideBar .kotaks button {
+  width: 230px;
+  height: 42px;
+  background: #36465C;
+  border-radius: 4px;
+  text-align: center;
+  margin-top: 15px;
+
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  color: #FFFFFF;
+
+}
+
+.main {
+  grid-area: main;
+  background-color: white;
+}
+
+.kotaks ul li:nth-child(3) a button {
+  background: #726EFF;
+}
+
+.aikon {
+  display: grid;
+  grid-template-columns: 1px 3px;
+  grid-gap: 75px;
+}
+
+.aikon img {
+  margin-left: 10px;
+}
+
+.main {
+  display: grid;
+  grid-template-rows: 0.3fr 0.3fr 2fr;
+  grid-template-areas:
+    'manage'
+    'find'
+    'isi'
+  ;
+}
+
+.main .title {
+  grid-area: manage;
+
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 48px;
+  box-sizing: border-box;
+  padding: 10px;
+  border: 1px solid #BFBFBF;
+}
+
+.main .find {
+  grid-area: find;
+  border-bottom: 1px solid #BFBFBF;
+  display: flex;
+}
+
+.find p {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 48px;
+
+  margin-left: 12px;
+}
+
+.find .pencarian {
+  margin-left: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.pencarian input {
+  margin-top: 13px;
+  width: 13cm;
+  height: 30%;
+  background: #EEE;
+  border: none;
+}
+.pencarian input:focus{
+  border: none;
+  outline: none;
+}
+.pencarian button {
+  width: 20%;
+  height: 25%;
+  background: #36465C;
+  border-radius: 5px;
+  margin-top: 10px;
+
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 100%;
+  text-align: center;
+  cursor: pointer;
+
+  color: #FFFFFF;
+}
+
+/* .main .lihat {
+  grid-area: isi;
+}
+.isi .row .data_diri {
+  color: blue;
+  cursor: pointer;
+  width: 88px;
+  margin: auto;
+}
+
+.isi .row .data_diri:hover {
+  color: rgb(99, 99, 216);
+}
+
+.isi_data_diri {
+  display: none;
+  padding: 10px;
+  font-size: 14px;
+  grid-column: 1 / span 3;
+}
+
+.clicked {
+  height: auto;
+  background-color: white;
+}
+
+.clicked .isi_data_diri {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-auto-flow: row;
+}
+
+.clicked .isi_data_diri ul li {
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.kategori ul {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  justify-items: center;
+  border-bottom: 1px solid #BFBFBF;
+  padding: 10px 0 10px 0;
+}
+
+.main .isi {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-auto-flow: row;
+  max-height: 29rem;
+  overflow-y: hidden;
+}
+
+.main .isi .row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  border-bottom: 1px solid #BFBFBF;
+  grid-column: 1 / -1;
+
+  text-align: center;
+  align-items: center;
+}
+.main .isi .row .action {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+}
+.main .isi .row:nth-child(2) {
+  grid-row: 3;
+} */
+.lihat table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.lihat th,
+.lihat td {
+  padding: 10px 20px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+.lihat th {
+  background-color: #f2f2f2;
+}
+.lihat .data-diri {
+  color: blue;
+  cursor: pointer;
+}
+.lihat .data-diri:hover {
+  color: rgb(99, 99, 216);
+}
+.lihat .isi_data_diri {
+  display: none;
+  padding: 10px;
+  font-size: 14px;
+}
+.lihat .clicked .isi_data_diri {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-auto-flow: row;
+}
+.lihat .clicked .isi_data_diri ul li {
+  margin-bottom: 10px;
+  text-align: left;
+}
+.lihat .kategori ul {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  justify-items: center;
+  border-bottom: 1px solid #BFBFBF;
+  padding: 10px 0 10px 0;
+}
+.lihat .isi {
+  max-height: 29rem;
+  overflow-y: auto;
+}
+
+.logout {
+  width: 200px;
+  position: absolute;
+  top: 70px;
+  right: 10px;
+  font-size: 20px;
+  display: none;
+  grid-template-columns: 50px 100px;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+
+  background: #F3F2F2;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+}
+
+/* responsiv breakpoints */
+/* @media screen and (max-width:1112px) {
+  .container {
+    width: 100%;
+    display: grid;
+    grid-template-rows: 1fr 3fr;
+    grid-template-columns: 218px auto 100px ;
+    grid-template-areas:
+      'logo kotak profil '
+      'main main main '
+    ;
+  }
+.logos{
+  grid-area: logo;
+}
+  .logos img {
+    display: block;
+  }
+
+  .sideBar {
+    display: grid;
+  }
+
+  .sideBar .kotaks {
+    grid-area: kotak;
+    justify-content: center;
+    height: 80px;
+    background-color: white;
+  }
+
+  .sideBar .kotaks ul {
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+  }
+
+  .sideBar .kotaks button {
+    width: 150px;
+    height: 100%;
+  }
+
+  .aikon {
+    display: grid;
+    grid-template-columns: 1px 3px;
+    grid-gap: 40px;
+    align-items: center;
+  }
+
+  .main {
+    grid-area: main;
+  }
+
+  .profil {
+    display: flex;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-right: -30px;
+
+  }
+  .akunku {
+    grid-area: profil;
+    width: 100px;
+    cursor: pointer;
+    background: #455D7C;
+    border-radius: 50%;
+  }
+} */

@@ -1,0 +1,373 @@
+/*
+Css Reset Tamplate
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/*
+masukkan css kalian di bawah ini (●'◡'●)
+*/
+
+
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: linear-gradient(122.33deg, #726EFF 28.18%, #726EFF 28.19%, rgba(231, 230, 255, 0.171987) 119.95%, rgba(255, 255, 255, 0) 119.96%);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.container {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    height: 688px;
+    margin: 0px auto;
+    /* align-items: center; */
+    padding-top: 100px;
+    box-sizing: border-box;
+}
+
+.foto {
+    position: absolute;
+    width: 150px;
+    height: 152px;
+    border: 5px solid #726EFF;
+    border-radius: 50%;
+    top: -85px;
+    left: 41.5%;
+    overflow: hidden;
+  }
+  
+  .foto img {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .pop-up {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* height: 100%; */
+    overflow: auto;
+    /* background-color: rgba(0, 0, 0, 0.4); */
+  }
+  
+  .pop-up-content {
+    position: relative;
+    background-color: #c3c3c3;
+    margin: 9% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    /* width: 80%; */
+    /* max-width: 500px; */
+  }
+  .pop-up-content div{
+    font-weight: bold;
+    font-family: sans-serif;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    /* border-bottom: 2px solid black; */
+  }
+  .pop-up-content p{
+    font-family: sans-serif;
+    margin: 7px;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 5px;
+    color: white;
+  }
+  .pop-up-content .biru{
+    color: blue;
+  }
+  .pop-up-content .merah{
+    color: red;
+  }
+  
+  .close-button {
+    position: absolute;
+    top: 0;
+    right: 5px;
+
+    color: #707070;
+    font-size: 28px;
+    font-weight: bold;
+    /* margin-right: 20px;
+    margin-top: 10px; */
+  }
+  
+  .close-button:hover,
+  .close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+.isi {
+    background-color: white;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(2px);
+    border-radius: 53px;
+    padding-bottom: 20px;
+    padding-top: 90px;
+    position: relative;
+    
+    margin: auto;
+    text-align: center;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+}
+
+.nama input {
+    width: 60%;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 48px;
+    background-color: rgb(204, 204, 204);
+
+    border: none;
+    outline: none;
+}
+
+.nama input::placeholder {
+    text-align: center;
+}
+
+.status textarea {
+    width: 70%;
+    font-family: 'Inter', sans-serif;
+    margin: 20px;
+    font-size: 20px;
+    line-height: 29px;
+    background-color: rgb(204, 204, 204);
+    resize: none;
+
+    border: none;
+    outline: none;
+}
+
+.ditail {
+    display: flex;
+    justify-content: center;
+    align-items:center ;
+    gap: 30px;
+    margin-top: 55px;
+    margin-bottom: 90px;
+}
+.lokasi{
+    display: flex;
+}
+.ditail .logo {
+    content: url('https://api.iconify.design/material-symbols/location-on-outline-rounded.svg');
+    width: 32px;
+    height: 32px;
+    margin-right: 5px;
+}
+
+.ditail .tempat {
+    font-size: 32px;
+    font-family: sans-serif;
+}
+.topic{
+    font-family: 'Inter', sans-serif;
+    font-size: 22px;
+    line-height: 29px;
+}
+.ditail .banyak {
+    font-size: 30px;
+}
+.topic p{
+    font-weight: bold;
+}
+
+.input{
+    position: absolute;
+    bottom: 17px;
+    right: 30px;
+}
+.input img{
+    margin-right: 10px;
+}
+
+@media (max-width:568px){
+    body{
+        overflow: hidden;
+    }
+    .container{
+        width: auto;
+        padding-top: 20px;
+    }
+    .nama input {
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 18px;
+    }
+    .status textarea {
+        font-family: 'Inter', sans-serif;
+        font-size: 9px;
+        line-height: 15px;
+    }
+    .back{
+        scale: 0.5;
+        top: 10px;
+        left: 10px;
+    }
+
+    .foto {
+        width: 100px;
+        height: 102px;
+        top: -60px;
+        left: 35.5%;    
+    }
+
+    .ditail {
+        gap: 30px;
+        margin-top: 15px;
+        margin-bottom: 50px;
+    }
+
+    .isi{
+        padding-top: 70px;
+        padding-bottom: 20px;
+    }
+}

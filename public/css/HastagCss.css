@@ -1,0 +1,442 @@
+/*
+Css Reset Tamplate
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/*
+masukkan css kalian di bawah ini (●'◡'●)
+*/
+body {
+  background-color: #E9E9E9;
+}
+
+.container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 248px auto 50px;
+  grid-template-areas: 'sidebar main profil';
+  gap: 40px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.profil {
+  grid-area: profil;
+  width: 100px;
+  display: grid;
+  justify-self: center;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.akunku {
+  cursor: pointer;
+  width: 50px;
+  height: 48px;
+  background: #455D7C;
+  border-radius: 50%;
+}
+
+.sideBar {
+  grid-area: sidebar;
+}
+
+.logos img {
+  width: 100%;
+  display: block;
+}
+
+.sideBar .kotaks {
+  background-color: white;
+  height: 87.5vh;
+  display: grid;
+  justify-content: center;
+}
+
+.sideBar .kotaks button {
+  width: 230px;
+  height: 42px; 
+  background: #36465C;
+  border-radius: 4px;
+  text-align: center;
+  margin-top: 15px;
+
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  cursor: pointer;
+  color: #FFFFFF;
+  font-weight: 600;
+
+}
+
+.main {
+  grid-area: main;
+  background-color: white;
+}
+
+.kotaks ul li:first-child a button {
+  background: #726EFF;
+}
+
+.aikon {
+  display: grid;
+  grid-template-columns: 1px 3px;
+  grid-gap: 75px;
+}
+
+.aikon img {
+  margin-left: 10px;
+}
+
+.main {
+  display: grid;
+  grid-template-rows: 0.3fr 0.3fr 2fr;
+  grid-template-areas:
+    'manage'
+    'find'
+    'isi'
+  ;
+}
+.row .action{
+  align-items: center;
+}
+
+.main .title {
+  grid-area: manage;
+
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 48px;
+  box-sizing: border-box;
+  padding: 10px;
+  border: 1px solid #BFBFBF;
+}
+
+.main .find {
+  grid-area: find;
+  border-bottom: 2px solid #BFBFBF;
+  display: flex;
+}
+
+.find p {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 48px;
+
+  margin-left: 12px;
+}
+
+.find .pencarian {
+  margin-left: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.pencarian input {
+  margin-top: 13px;
+  width: 13cm;
+  height: 30%;
+  background: #EEE;
+  border: none;
+}
+.pencarian input:focus{
+  border: none;
+  outline: none;
+}
+.pencarian button {
+  width: 20%;
+  height: 25%;
+  background: #36465C;
+  border-radius: 5px;
+  margin-top: 10px;
+
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 100%;
+  text-align: center;
+  cursor: pointer;
+
+  color: #FFFFFF;
+}
+
+.main .lihat {
+  grid-area: isi;
+}
+
+.kategori ul {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+  border-bottom: 2px solid #BFBFBF;
+  padding: 10px 17px 10px 0;
+
+  font-weight: bold;
+}
+
+.action {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hapus {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+.lihat table {
+  width: 100%;
+  border-collapse: collapse;
+  }
+  
+  .lihat th, .lihat td {
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #BFBFBF;
+  }
+  
+  .lihat th {
+  background-color: #EEE;
+  }
+  
+  .lihat tr:nth-child(even) {
+  background-color: #F5F5F5;
+  }
+  
+  .lihat button {
+  background-color: #36465C;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  }
+  
+  .lihat .hapus {
+  background-color: #FF4F4F;
+  }
+  
+  .lihat button:hover {
+  opacity: 0.8;
+  }
+
+.logout {
+  width: 200px;
+  position: absolute;
+  top: 70px;
+  right: 10px;
+  font-size: 20px;
+  display: none;
+  grid-template-columns: 50px 100px;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+
+  background: #F3F2F2;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+}
+
+/* responsiv breakpoints */
+/* @media screen and (max-width:1112px) {
+  .container {
+    width: 100%;
+    display: grid;
+    grid-template-rows: 1fr 3fr;
+    grid-template-columns: 218px auto 100px ;
+    grid-template-areas:
+      'logo kotak profil '
+      'main main main '
+    ;
+  }
+.logos{
+  grid-area: logo;
+}
+  .logos img {
+    display: block;
+  }
+
+  .sideBar {
+    display: grid;
+  }
+
+  .sideBar .kotaks {
+    grid-area: kotak;
+    justify-content: center;
+    height: 80px;
+    background-color: white;
+  }
+
+  .sideBar .kotaks ul {
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+  }
+
+  .sideBar .kotaks button {
+    width: 150px;
+    height: 100%;
+  }
+
+  .aikon {
+    display: grid;
+    grid-template-columns: 1px 3px;
+    grid-gap: 40px;
+    align-items: center;
+  }
+
+  .main {
+    grid-area: main;
+  }
+
+  .profil {
+    display: flex;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-right: -30px;
+
+  }
+  .akunku {
+    grid-area: profil;
+    width: 100px;
+    cursor: pointer;
+    background: #455D7C;
+    border-radius: 50%;
+  }
+} */

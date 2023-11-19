@@ -1,0 +1,486 @@
+/*
+Css Reset Tamplate
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/*
+masukkan css kalian di bawah ini (●'◡'●)
+*/
+
+
+
+
+
+html, body{
+  /* overflow-x: hidden; */
+}
+
+body {
+  background-color: #AEACFF;
+}
+.container{
+  overflow-y: hidden;
+}
+
+.begron {
+  position: fixed;
+  border-radius: 50%;
+  width: 587px;
+  height: 587px;
+  right: -300px;
+  top: 0;
+  z-index: -20;
+
+  background: #9591f9;
+  filter: blur(2px);
+}
+
+.begron2 {
+  position: fixed;
+  border-radius: 50%;
+  width: 587px;
+  height: 587px;
+  right: 0;
+  top: -300px;
+  z-index: -22;
+
+  background: #9591f9;
+  filter: blur(2px);
+}
+
+.atas {
+  position: absolute;
+  right: 0;
+  top: 10px;
+  font-family: 'Inter', sans-serif;
+font-style: normal;
+font-weight: 700;
+font-size: 36px;
+line-height: 44px;
+}
+
+.atas ul li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.atas ul li a {
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+  color: black;
+}
+
+.atas button {
+  background: #36465C;
+  border-radius: 8px;
+}
+
+.atas ul li button a {
+  color: white;
+}
+
+.logo {
+  position: absolute;
+  /* width: 428px; */
+  left: 43px;
+  top: 70px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 130px;
+  padding: 10px;
+  /* line-height: 194px; */
+
+  background-color: #36346A;
+  color: #F3F0F0;
+
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+}
+.logo span{
+  color: #AEACFF;
+}
+.logo h1{
+  text-align: center;
+}
+.logoa{
+  display: none;
+}
+span {
+  color: #726EFF;
+}
+
+.main {
+  margin-top: 250px;
+  box-sizing: border-box;
+}
+
+.main img {
+  width: 623px;
+  float: right;
+  padding-right: 20px;
+}
+
+.main p {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 44px;
+  /* text-align: justify; */
+  padding: 50px;
+  margin-right: 5px;
+  box-sizing: border-box;
+
+  color: #FFFFFF;
+}
+
+.kenalan {
+  padding: 20px;
+  margin-top: 120px;
+}
+
+.kenalan h2 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 95px;
+  line-height: 115px;
+  color: white;
+
+  /* text-align: center; */
+}
+
+.kenalan p {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 44px;
+  color: white;
+}
+
+.orangnya {
+  padding: 20px;
+  display: flex;
+  box-sizing: border-box;
+  justify-content: center;
+}
+
+.orang1 {
+  background-color: white;
+  width: 245px;
+  height: 300px;
+  margin: 50px;
+
+  border:2px solid #36346A;
+  overflow: hidden;
+}
+.orang1 img{
+  width: 100%;
+  height: 100%;
+}
+.orang2 {
+  background-color: white;
+  width: 245px;
+  height: 300px;
+  margin: 50px;
+  border:2px solid #36346A;
+  overflow: hidden;
+}
+.orang2 img{
+  width: 100%;
+  height: 100%;
+}
+.orang3 {
+  background-color: white;
+  width: 245px;
+  height: 300px;
+  margin: 50px;
+  border:2px solid #36346A;
+  overflow: hidden;
+}
+.orang3 img{
+  width: 100%;
+  height: 100%;
+}
+footer {
+  background-color: #F3F0F0;
+}
+
+footer .logof {
+  padding: 50px;
+  float: left;
+}
+
+.kontakf {
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.kontakf div {
+  display: inline-block;
+  margin: 20px;
+}
+
+.kontakf div li {
+  text-align: center;
+}
+
+.folow h2 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  font-size: 32px;
+  line-height: 39px;
+
+  text-decoration-line: underline;
+}
+
+.folow {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 29px;
+}
+
+footer .copy {
+  margin-top: 1em;
+  border-top: 2px solid #726EFF;
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+footer .copy p {
+  margin: 0.75em 0 0;
+}
+
+footer .copy span {
+  position: relative;
+  display: inline-block;
+  color: #726EFF;
+  animation: hearts 0.6s cubic-bezier(0.18, 0.89, 0.29, 1.05) infinite;
+}
+
+
+
+/* ini adalah clear fix */
+.cf::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media (max-width:800px) {
+  .main img{
+    width: auto;
+  }
+  html, body{
+    /* overflow-x: hidden; */
+  }
+  .begron , .begron2{
+    /* display: none; */
+  }
+  .kenalan{
+    margin-top: 0;
+  }
+}
+@media (max-width:1200px) {
+  .orangnya{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  html, body{
+    /* overflow-x: hidden; */
+  }
+}
+@media (max-width:750px){
+  .logof img{
+    padding-top: 75px;
+    box-sizing: border-box;
+  }
+  html, body{
+    /* overflow-x: hidden; */
+  }
+}
+@media (max-width:700px) {
+  .main img{
+    display: none;
+  }
+  html, body{
+    /* overflow-x: hidden; */
+  }
+}
+
+@media (max-width:568px){
+  footer{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .logof{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+  }
+  .copy{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    width: 100%;
+  }
+  .kontakf{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+  }
+  .logof img{
+    padding-top: 0;
+    margin: 0 auto;
+  }
+  html, body{
+    /* overflow-x: hidden; */
+  }
+  .kenalan h2{
+    font-size: 70px;
+  }
+  .logo{
+    display: none;
+  }
+  .logoa{
+    display: flex;
+    justify-content: center;
+    margin-top: 80px;
+    margin-bottom: -260px;
+  }
+  .logoa img{
+    border-radius: 20px;
+  }
+}
