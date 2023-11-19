@@ -25,4 +25,9 @@ class Answer extends Model
     {
         return $this->hasMany(Comment::class);
     }
+
+    public function report()
+    {
+        return $this->hasMany(Report::class);
+    }
 }
