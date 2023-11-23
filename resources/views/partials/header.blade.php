@@ -13,42 +13,45 @@
         {{-- $source_pp = ($foto_profil != 0) ? "profile/" . $foto_profil:"icon/Profile.svg"; --}}
 
         <!-- Ini pop up "Buatlah sebuah Topik", Start -->
-        <input type="checkbox" id="my-modal-3" class="modal-toggle" />
-        <label for="my-modal-3" class="modal">
-            <div class="w-[70%] relative">
-                <div class="relative bg-white pt-8 rounded-md">
-                    <div class="flex ml-4 pb-5">
-                        <div class="bg-bgc aspect-square h-10 overflow-hidden rounded-full">
-                            <img class="h-full w-full object-cover" src="img/User.svg{{-- $source_pp --}}" alt="">
+        <form action="{{ route('question.store') }}" method="POST">
+            @csrf
+            <input type="checkbox" id="my-modal-3" class="modal-toggle" />
+            <label for="my-modal-3" class="modal">
+                <div class="w-[70%] relative">
+                    <div class="relative bg-white pt-8 rounded-md">
+                        <div class="flex ml-4 pb-5">
+                            <div class="bg-bgc aspect-square h-10 overflow-hidden rounded-full">
+                                <img class="h-full w-full object-cover" src="img/User.svg{{-- $source_pp --}}" alt="">
+                            </div>
+                            <span class="font-medium ml-2 text-lg text-gray-800">{{-- $nama --}} Nama</span>
                         </div>
-                        <span class="font-medium ml-2 text-lg text-gray-800">{{-- $nama --}} Nama</span>
-                    </div>
-
-                    <label for="my-modal-3">
-                        <img class="absolute h-5 top-2 right-2" src="img/icon/close.svg" alt="">
-                    </label>
-
-                    <hr>
-                    <form action="post/post-tanya.php" method="post" enctype="multipart/form-data">
-                    <div class="flex justify-center items-center mt-2">
-                        <textarea class="bg-white mx-auto w-[95%] border-none focus:outline-none resize-none text-gray-800" name="pertanyaan"
-                            id="" rows="10" placeholder="Buatlah sebuah pertanyaan...."></textarea>
-                    </div>
-                    <hr>
-                    <div class="flex justify-end">
-            
-                        <label for="input-gambar">
-                            <img class="h-8 mr-2 my-2" src="img/icon/round-image.svg" alt="">
+    
+                        <label for="my-modal-3">
+                            <img class="absolute h-5 top-2 right-2" src="img/icon/close.svg" alt="">
                         </label>
-                        <input id="input-gambar" name="gambar_tanya" accept="image/*" type="file" class="hidden">
-            
-                        <button type="submit" name="submit"> <img class="h-6 mr-4 my-2" src="img/icon/share.svg" alt=""> </button>
+    
+                        <hr>
+                        <form action="post/post-tanya.php" method="post" enctype="multipart/form-data">
+                        <div class="flex justify-center items-center mt-2">
+                            <textarea class="bg-white mx-auto w-[95%] border-none focus:outline-none resize-none text-gray-800" name="content"
+                                id="" rows="10" placeholder="Buatlah sebuah pertanyaan...."></textarea>
+                        </div>
+                        <hr>
+                        <div class="flex justify-end">
+                
+                            <label for="input-gambar">
+                                <img class="h-8 mr-2 my-2" src="img/icon/round-image.svg" alt="">
+                            </label>
+                            <input id="input-gambar" name="image" accept="image/*" type="file" class="hidden">
+                
+                            <button type="submit" name="submit"> <img class="h-6 mr-4 my-2" src="img/icon/share.svg" alt=""> </button>
+                        </div>
+                        </form>
+                
                     </div>
-                    </form>
-            
                 </div>
-            </div>
-        </label>
+            </label>
+        </form>
         <!-- Ini pop up "Buatlah sebuah Topik", End -->
 
 

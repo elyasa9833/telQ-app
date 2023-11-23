@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
+use App\Models\Answer;
 use App\Models\Question;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class QuestionController extends Controller
 {
@@ -14,8 +17,11 @@ class QuestionController extends Controller
      */
     public function index()
     {
-        $questions = Question::all();
-        return view('questionList', compact('questions'));
+        return view('questionList', [
+            'questions' => Question::all(),
+            // 'answers' => Answer::where('question_id', ''),
+            'thisUser' => User::first()
+        ]);
     }
 
     /**
@@ -36,7 +42,17 @@ class QuestionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // dd($request->all());
+
+        $createQuestion = $request->validate([
+            'content' => 'required',
+            'image' => 'nullable'
+        ]);
+        $createQuestion['user_id'] = 1;
+
+        Question::create($createQuestion);
+
+        return redirect()->back();
     }
 
     /**
@@ -81,6 +97,8 @@ class QuestionController extends Controller
      */
     public function destroy(Question $question)
     {
-        //
+        $question = Question::findOrFail($question->id);
+        $question->delete();
+        return redirect()->back();
     }
 }
