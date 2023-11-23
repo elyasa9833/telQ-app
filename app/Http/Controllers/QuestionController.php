@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
+use App\Models\Answer;
 use App\Models\Question;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -15,8 +17,11 @@ class QuestionController extends Controller
      */
     public function index()
     {
-        $questions = Question::all();
-        return view('questionList', compact('questions'));
+        return view('questionList', [
+            'questions' => Question::all(),
+            // 'answers' => Answer::where('question_id', ''),
+            'thisUser' => User::first()
+        ]);
     }
 
     /**
