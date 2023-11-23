@@ -33,9 +33,10 @@
                     <div id="dropdownDotsHorizontal{{ $num }}" class="z-10 hidden bg-white opacity-90 divide-y divide-gray-100 rounded-lg shadow drop-shadow w-[10.5rem]">
                         <ul class="py-2 text-sm text-gray-900 font-medium" aria-labelledby="dropdownMenuIconHorizontalButton">
 
-                            <li>
-                                <a href="#" class="flex px-4 py-2 hover:bg-gray-100"> <img class="h-5" src="img/icon/titik-3/edit.svg" alt=""> <span class="ml-2"> Edit Jawaban </span> </a>
-                            </li>
+                            <div data-modal-target="popup-edit" data-modal-toggle="popup-edit{{ $num }}" class="flex px-4 py-2 text-sm  hover:bg-gray-100 cursor-pointer" type="button">
+                                <img class="h-5" src="img/icon/titik-3/edit.svg" alt=""> <span class="ml-2 my-auto">Edit Jawaban</span>
+                            </div>
+
                             <div data-modal-target="popup-hapus" data-modal-toggle="popup-hapus{{ $num }}" class="flex px-3 py-2 text-sm text-[#FF1A1A] hover:bg-gray-100 cursor-pointer" type="button">
                                 <img class="h-6" src="img/icon/titik-3/hapus.svg" alt=""> <span class="ml-2 my-auto">Hapus Jawaban</span>
                             </div>
@@ -128,6 +129,21 @@
                         </div>
                     </div>
                     <!-- POP UP HAPUS JAWABAN / PERTANYAAN, END -->
+
+                    <!-- POP UP Edit JAWABAN / PERTANYAAN, START -->
+                    <div id="popup-edit{{ $num }}" tabindex="-1" class="fixed top-0 left-0 right-0 z-50 hidden p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
+                        <div class="relative w-full max-w-md max-h-full">
+                            <div class="relative bg-white rounded-lg shadow">
+                                <div class="p-6 text-center">
+                                    <div class="flex">
+                                        <div class="w-6 h-6 rounded-full bg-slate-500"></div>
+                                        <h3>Nama Profile</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- POP UP EDIT JAWABAN / PERTANYAAN, END -->
                 </div>
 
                 <!-- Isi Pertanyaan, Start -->
