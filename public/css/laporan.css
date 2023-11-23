@@ -144,7 +144,7 @@ body {
 
 .kontener {
     width: 100%;
-    display: grid;
+    /* display: grid; */
     grid-template-columns: 248px auto;
     grid-template-areas: 'sidebar main';
     overflow-x: hidden;

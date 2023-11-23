@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Question;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class QuestionController extends Controller
 {
@@ -36,7 +37,17 @@ class QuestionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // dd($request->all());
+
+        $createQuestion = $request->validate([
+            'content' => 'required',
+            'image' => 'nullable'
+        ]);
+        $createQuestion['user_id'] = 1;
+
+        Question::create($createQuestion);
+
+        return redirect()->back();
     }
 
     /**

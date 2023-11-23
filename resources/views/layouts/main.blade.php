@@ -24,7 +24,7 @@ $tampil = mysqli_query($conn, $query);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="../img/small_logo.png" type="image/png" sizes="16x16">
+    <link rel="icon" href="img/small_logo.png" type="image/png" sizes="16x16">
     <title>Home | TelQ!</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,7 +32,8 @@ $tampil = mysqli_query($conn, $query);
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;600;700;900&display=swap"
         rel="stylesheet">
 
-    <link rel="stylesheet" href="../css/scroll.css">
+    <link rel="stylesheet" href="css/scroll.css">
+    <link rel="stylesheet" href="../css/laporan.css">
     <!-- Daisy UI -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@2.51.6/dist/full.css" rel="stylesheet" type="text/css" />
     <!-- Tailwind -->
