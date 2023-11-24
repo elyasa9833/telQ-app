@@ -101,8 +101,9 @@
 
                                     <!-- TextAREA EDIT -->
                                     {{-- start form edit --}}
-                                    <form action="{{ route('question.store') }}" method="post">
+                                    <form action="{{ url('/question-list/'. $que->id) }}" method="POST">
                                         @csrf
+                                        @method('PUT')
                                         <div class="flex justify-center my-2 mx-1">
                                             <textarea class="resize-none outline-none rounded-md border-bgc text-sm text-gray-800 p-2 placeholder:text-gray-500 h-32 md:h-80" name="content" cols="150" maxlength="1000" placeholder="Ini apa isi sih yang mau di edit . . . . . .">{{ $que->content }}</textarea>
                                             <input type="hidden" name="user_id" value="{{ $que->user_id }}">

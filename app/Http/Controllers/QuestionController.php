@@ -7,6 +7,7 @@ use App\Models\Answer;
 use App\Models\Question;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use PhpParser\Node\Expr\Cast\String_;
 
 class QuestionController extends Controller
 {
@@ -85,9 +86,16 @@ class QuestionController extends Controller
      * @param  \App\Models\Question  $question
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Question $question)
+    public function update(Request $request, $id)
     {
-        //
+        // dd($request->all());
+        $questions = Question::find($id);
+        $questions->content = $request->input('content');
+        $questions->image = $request->input('content') ?? null;
+
+        $questions->update();
+
+        return redirect()->back();
     }
 
     /**
@@ -101,5 +109,10 @@ class QuestionController extends Controller
         $question = Question::findOrFail($question->id);
         $question->delete();
         return redirect()->back();
+    }
+
+    public function __invoke($question)
+    {
+        // Your controller logic here
     }
 }

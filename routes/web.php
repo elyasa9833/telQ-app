@@ -16,16 +16,20 @@ use App\Http\Controllers\QuestionController;
 |
 */
 
+// answer route
 Route::get('/', [AnswerController::class, 'index']);
 
+// question route
+// Route::resource('question', QuestionController::class);
 Route::get('/question-list', [QuestionController::class, 'index']);
+Route::put('/question-list/{id}', [QuestionController::class, 'update']);
 
+// setting route
 Route::get('/setting', function () {
     return view('settings', [
         'active' => 'settings'
     ]);
 });
 
-Route::resource('question', QuestionController::class);
-
+// moderator route
 Route::get('/mod/report', [ReportController::class, 'index']);
