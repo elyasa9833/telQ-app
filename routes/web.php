@@ -20,7 +20,7 @@ use App\Http\Controllers\QuestionController;
 Route::get('/', [AnswerController::class, 'index']);
 
 // question route
-// Route::resource('question', QuestionController::class);
+Route::resource('question', QuestionController::class);
 Route::get('/question-list', [QuestionController::class, 'index']);
 Route::put('/question-list/{id}', [QuestionController::class, 'update']);
 

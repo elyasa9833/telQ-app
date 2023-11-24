@@ -91,7 +91,7 @@ class QuestionController extends Controller
         // dd($request->all());
         $questions = Question::find($id);
         $questions->content = $request->input('content');
-        $questions->image = $request->input('content') ?? null;
+        $questions->image = $request->input('image') ?? null;
 
         $questions->update();
 
