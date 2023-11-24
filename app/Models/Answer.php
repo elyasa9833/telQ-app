@@ -10,6 +10,7 @@ class Answer extends Model
     use HasFactory;
 
     protected $guarded = ['id', 'question_id', 'user_id'];
+    // protected $with = ['question', 'user'];
 
     public function question()
     {

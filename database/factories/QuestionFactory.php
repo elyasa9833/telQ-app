@@ -17,7 +17,7 @@ class QuestionFactory extends Factory
     public function definition()
     {
         return [
-            'user_id' => mt_rand(1, 20),
+            'user_id' => mt_rand(2, 20),
             'content' => $this->faker->paragraph(2)
         ];
     }

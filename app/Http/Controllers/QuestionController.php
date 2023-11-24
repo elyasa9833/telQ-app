@@ -18,9 +18,9 @@ class QuestionController extends Controller
     public function index()
     {
         return view('questionList', [
-            'questions' => Question::all(),
-            // 'answers' => Answer::where('question_id', ''),
-            'thisUser' => User::first()
+            'questions' => Question::latest()->get(),
+            // 'answers' => Question::all()->answer,
+            'thisUser' => User::find(2)
         ]);
     }
 

@@ -123,7 +123,7 @@
                                         <div class="bg-gray-500 aspect-square h-9 overflow-hidden rounded-full">
                                             <img class="h-full w-full object-cover" src="img/User.svg{{-- $pp_user --}}" alt="">
                                         </div>
-                                        <span class="text-xs md:text-sm my-auto ml-2 text-gray-700 font-bold">{{-- $nama --}} Nama</span>
+                                        <span class="text-xs md:text-sm my-auto ml-2 text-gray-700 font-bold">{{ $thisUser->fullname }}</span>
                                     </div>
 
                                     <form action="post/post-jawab.php" method="post" enctype="multipart/form-data">
@@ -153,29 +153,30 @@
                                     <!-- Contoh user upload pake gambar, Start -->
                                     {{-- $jawab_orang = mysqli_query($conn,"SELECT user.fullname, user.foto_profil, jawab.jawaban, jawab.gambar_jawab FROM jawab JOIN user ON jawab.id_user=user.id_user WHERE id_tanya = $num") --}}
 
+                                    {{-- @foreach ($questions as $item) --}}
                                     <div class="mt-4">
                                         <!-- Foto Profile -->
                                         <a class="flex ml-2 mt-2 w-44" href="#">
                                             <div class="bg-gray-500 aspect-square h-9 overflow-hidden rounded-full">
-                                                <img class="h-full w-full object-cover" src="img/{{--$que->photo_profile--}}" alt="">
+                                                <img class="h-full w-full object-cover" src="img/profile/{{-- $item->answer->user->photo_profile --}}" alt="">
                                             </div>
-                                            <span class="text-xs md:text-sm my-auto ml-2 text-gray-700 font-bold">{{-- $jawab_nama --}} nam list</span>
+                                            <span class="text-xs md:text-sm my-auto ml-2 text-gray-700 font-bold">{{-- $item->answer->user->fullname --}} fullname</span>
                                         </a>
 
                                         <!-- isi jawaban orang -->
                                         <div class="mx-5 my-2">
-                                            <span class="text-sm text-gray-700">{{-- $jawab_jawaban --}}</span>
+                                            <span class="text-sm text-gray-700">{{-- $item->answer->content --}}</span>
                                         </div>
 
                                         <!-- Gambar post -->
                                         <div class="mx-5 mt-3">
-                                            @if (isset($answer->question->image))
+                                            {{-- @if (isset($item->answer->image)) --}}
                                             <div class="aspect-[6/3] container rounded-md bg-gray-600 relative border-2 overflow-hidden">
                                                 <!-- Ini background Img nya -->
-                                                <img class="object-none object-center h-full w-full opacity-30 blur-sm absolute" src="img/postingan/{{-- $jawab_gambar ?>" alt="">
+                                                <img class="object-none object-center h-full w-full opacity-30 blur-sm absolute" src="img/postingan/{{-- $item->answer->image --}}?>" alt="">
                                                 <!-- Ini gambar depannya -->
                                                 <button data-modal-target="lihat-full-gambar" data-modal-toggle="lihat-full-gambar" class="h-full w-full m-auto absolute right-0 left-0" type="button">
-                                                    <img class="h-full w-full object-contain" src="img/postingan/{{-- $jawab_gambar --}}" alt="">
+                                                    <img class="h-full w-full object-contain" src="img/postingan/{{-- $item->answer->image --}}" alt="">
                                                 </button>
                                             </div>
                                             
@@ -184,14 +185,15 @@
                                                 <button type="button" data-modal-hide="lihat-full-gambar" class="relative cursor-none w-full max-w-4xl max-h-full">
                                                     <!-- Modal content -->
                                                     <!-- Ini gambarnya -->
-                                                    <img class="h-full w-full m-auto" src="img/postingan/{{-- $jawab_gambar --}}" alt="">
+                                                    <img class="h-full w-full m-auto" src="img/postingan/{{-- $item->answer->image --}}" alt="">
                                                 </button>
                                             </div>
-                                            @endif
+                                            {{-- @endif --}}
                                         </div>
                                         <hr class="mx-4 mt-2">
                                     </div>
                                     <!-- Contoh user upload pake gambar, End -->
+                                    {{-- @endforeach --}}
 
                                 </div>
                                 <!-- Ini jawab Orang lain, End -->
