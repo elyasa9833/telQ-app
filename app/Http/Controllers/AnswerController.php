@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Answer;
 use Illuminate\Http\Request;
 
@@ -14,8 +15,11 @@ class AnswerController extends Controller
      */
     public function index()
     {
-        $answers = Answer::all();
-        return view('home', compact('answers'));
+        return view('home', [
+            'answers' => Answer::all(),
+            'thisUser' => User::find(2),
+            'active' => 'home'
+        ]);
     }
 
     /**

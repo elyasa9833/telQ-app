@@ -21,7 +21,9 @@ Route::get('/', [AnswerController::class, 'index']);
 Route::get('/question-list', [QuestionController::class, 'index']);
 
 Route::get('/setting', function () {
-    return view('settings');
+    return view('settings', [
+        'active' => 'settings'
+    ]);
 });
 
 Route::resource('question', QuestionController::class);

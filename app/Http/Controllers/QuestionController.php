@@ -20,7 +20,8 @@ class QuestionController extends Controller
         return view('questionList', [
             'questions' => Question::latest()->get(),
             // 'answers' => Question::all()->answer,
-            'thisUser' => User::find(2)
+            'thisUser' => User::find(2),
+            'active' => 'question-list'
         ]);
     }
 
@@ -48,7 +49,7 @@ class QuestionController extends Controller
             'content' => 'required',
             'image' => 'nullable'
         ]);
-        $createQuestion['user_id'] = 1;
+        $createQuestion['user_id'] = $request->user_id;
 
         Question::create($createQuestion);
 

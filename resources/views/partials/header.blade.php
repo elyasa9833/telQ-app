@@ -13,8 +13,6 @@
         {{-- $source_pp = ($foto_profil != 0) ? "profile/" . $foto_profil:"icon/Profile.svg"; --}}
 
         <!-- Ini pop up "Buatlah sebuah Topik", Start -->
-        <form action="{{ route('question.store') }}" method="POST">
-            @csrf
             <input type="checkbox" id="my-modal-3" class="modal-toggle" />
             <label for="my-modal-3" class="modal">
                 <div class="w-[70%] relative">
@@ -23,7 +21,7 @@
                             <div class="bg-bgc aspect-square h-10 overflow-hidden rounded-full">
                                 <img class="h-full w-full object-cover" src="img/User.svg{{-- $source_pp --}}" alt="">
                             </div>
-                            <span class="font-medium ml-2 text-lg text-gray-800">{{-- $nama --}} Nama</span>
+                            <span class="font-medium ml-2 text-lg text-gray-800">{{ $thisUser->fullname }}</span>
                         </div>
     
                         <label for="my-modal-3">
@@ -31,7 +29,12 @@
                         </label>
     
                         <hr>
-                        <form action="post/post-tanya.php" method="post" enctype="multipart/form-data">
+
+                        {{-- form question.store --}}
+                        <form action="{{ route('question.store') }}" method="post" enctype="multipart/form-data">
+                        @csrf
+                        {{-- untuk sementara user id = 2 --}}
+                        <input type="hidden" name="user_id" value="2">
                         <div class="flex justify-center items-center mt-2">
                             <textarea class="bg-white mx-auto w-[95%] border-none focus:outline-none resize-none text-gray-800" name="content"
                                 id="" rows="10" placeholder="Buatlah sebuah pertanyaan...."></textarea>
@@ -47,11 +50,11 @@
                             <button type="submit" name="submit"> <img class="h-6 mr-4 my-2" src="img/icon/share.svg" alt=""> </button>
                         </div>
                         </form>
+                        {{-- form question.store End --}}
                 
                     </div>
                 </div>
             </label>
-        </form>
         <!-- Ini pop up "Buatlah sebuah Topik", End -->
 
 

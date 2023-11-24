@@ -156,8 +156,8 @@
 
                                     <!-- TextAREA EDIT -->
                                     <div class="flex justify-center my-2 mx-1">
-                                        <textarea class="resize-none outline-none rounded-md border-bgc text-sm text-gray-800 p-2 placeholder:text-gray-500 h-32 md:h-80" name="jawaban" id="" cols="150" maxlength="1000" placeholder="Ini apa isi sih yang mau di edit . . . . . ."></textarea>
-                                        <input type="hidden" name="id_" value="">
+                                        <textarea class="resize-none outline-none rounded-md border-bgc text-sm text-gray-800 p-2 placeholder:text-gray-500 h-32 md:h-80" name="content" cols="150" maxlength="1000" placeholder="Ini apa isi sih yang mau di edit . . . . . .">{{ $answer->content }}</textarea>
+                                        <input type="hidden" name="user_id" value="{{ $answer->user_id }}">
                                         <!--
                                             RIIIIIII DISINI ID NYA APA?
                                             RIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
