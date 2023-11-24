@@ -155,18 +155,23 @@
                                     </div>
 
                                     <!-- TextAREA EDIT -->
-                                    <div class="flex justify-center my-2 mx-1">
-                                        <textarea class="resize-none outline-none rounded-md border-bgc text-sm text-gray-800 p-2 placeholder:text-gray-500 h-32 md:h-80" name="content" cols="150" maxlength="1000" placeholder="Ini apa isi sih yang mau di edit . . . . . .">{{ $answer->content }}</textarea>
-                                        <input type="hidden" name="user_id" value="{{ $answer->user_id }}">
-                                        <!--
-                                            RIIIIIII DISINI ID NYA APA?
-                                            RIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
-                                         -->
-                                    </div>
+                                    {{-- start form edit --}}
+                                    <form action="{{ route('answer.store') }}" method="post">
+                                        @csrf
+                                        <div class="flex justify-center my-2 mx-1">
+                                            <textarea class="resize-none outline-none rounded-md border-bgc text-sm text-gray-800 p-2 placeholder:text-gray-500 h-32 md:h-80" name="content" cols="150" maxlength="1000" placeholder="Ini apa isi sih yang mau di edit . . . . . .">{{ $answer->content }}</textarea>
+                                            <input type="hidden" name="user_id" value="{{ $answer->user_id }}">
+                                            <!--
+                                                RIIIIIII DISINI ID NYA APA?
+                                                RIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
+                                            -->
+                                        </div>
 
-                                    <div class="flex justify-end mt-5">
-                                        <button type="button" class="text-white bg-warna2h hover:bg-warna2focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2focus:outline-none">Simpan</button>
-                                    </div>
+                                        <div class="flex justify-end mt-5">
+                                            <button type="submit" class="text-white bg-warna2h hover:bg-warna2focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2focus:outline-none">Simpan</button>
+                                        </div>
+                                    </form>
+                                    {{-- end form edit --}}
                                 </div>
                             </div>
                         </div>

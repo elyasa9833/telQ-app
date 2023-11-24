@@ -40,7 +40,15 @@ class AnswerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $answers = $request->validate([
+            'content' => 'required',
+            'image' => 'nullable'
+        ]);
+        $answers['user_id'] = $request->user_id;
+
+        Answer::create($answers);
+
+        return redirect()->back();
     }
 
     /**
