@@ -190,7 +190,7 @@
                         <button type="button" data-modal-hide="lihat-gambar" class="relative cursor-none w-full max-w-4xl max-h-full">
                             <!-- Modal content -->
                             <!-- Ini gambarnya -->
-                            <img class="h-full w-full m-auto" src="img/postingan/{{ $answer->question->image }}" alt="">
+                            <img class="h-full w-full m-auto" src="img/postingan/{{ $answer->question->image ?? '' }}" alt="">
                         </button>
                     </div>
                 </div>

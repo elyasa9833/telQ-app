@@ -34,9 +34,11 @@
                         <div id="dropdownDotsHorizontal{{ $num }}" class="z-10 hidden bg-white opacity-90 divide-y divide-gray-100 rounded-lg shadow drop-shadow w-[12rem]">
                             <ul class="py-2 text-sm text-gray-900 font-medium" aria-labelledby="dropdownMenuIconHorizontalButton">
                             {{-- @if($idUser == $id_user) --}}
-                            <li>
-                                <a href="#" class="flex px-4 py-2 hover:bg-gray-100"> <img class="h-5" src="img/icon/titik-3/edit.svg" alt=""> <span class="ml-2"> Edit Jawaban </span> </a>
-                            </li>
+
+                            <div  data-modal-target="popup-edit" data-modal-toggle="popup-edit{{ $num }}" class="flex px-4 py-2 text-sm hover:bg-gray-100 cursor-pointer" type="button">
+                                <img class="h-5" src="img/icon/titik-3/edit.svg" alt=""> <span class="ml-2 my-auto">Edit Jawaban</span>
+                            </div>
+
                             <div  data-modal-target="popup-hapus" data-modal-toggle="popup-hapus{{ $num }}" class="flex px-3 py-2 text-sm text-[#FF1A1A] hover:bg-gray-100 cursor-pointer" type="button">
                                 <img class="h-6" src="img/icon/titik-3/hapus.svg" alt=""> <span class="ml-2 my-auto">Hapus Jawaban</span>
                             </div>
@@ -72,6 +74,49 @@
                             </div>
                         </div>
                         <!-- POP UP HAPUS JAWABAN / PERTANYAAN, END -->
+
+                        <!-- POP UP Edit JAWABAN / PERTANYAAN, START -->
+                    <div id="popup-edit{{ $num }}" tabindex="-1" class="fixed top-0 left-0 right-0 z-50 hidden p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
+                        <div class="relative max-w-full max-h-full">
+                            <div class="relative bg-white rounded-lg shadow">
+                                <div class="p-6">
+
+                                    <!-- TOMBOL SILANG -->
+                                    <div class="absolute top-3 right-2 rounded-md p-2 hover:bg-gray-100 inline-flex items-center cursor-pointer" onclick="closePopup('{{ $num }}')">
+                                        <svg class="h-4 w-4" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M12.9995 15.6833L3.60788 25.075C3.25649 25.4264 2.80927 25.6021 2.26621 25.6021C1.72316 25.6021 1.27593 25.4264 0.924543 25.075C0.573155 24.7236 0.397461 24.2764 0.397461 23.7333C0.397461 23.1902 0.573155 22.743 0.924543 22.3916L10.3162 13L0.924543 3.6083C0.573155 3.25692 0.397461 2.80969 0.397461 2.26664C0.397461 1.72358 0.573155 1.27636 0.924543 0.924971C1.27593 0.573582 1.72316 0.397888 2.26621 0.397888C2.80927 0.397888 3.25649 0.573582 3.60788 0.924971L12.9995 10.3166L22.3912 0.924971C22.7426 0.573582 23.1898 0.397888 23.7329 0.397888C24.2759 0.397888 24.7232 0.573582 25.0745 0.924971C25.4259 1.27636 25.6016 1.72358 25.6016 2.26664C25.6016 2.80969 25.4259 3.25692 25.0745 3.6083L15.6829 13L25.0745 22.3916C25.4259 22.743 25.6016 23.1902 25.6016 23.7333C25.6016 24.2764 25.4259 24.7236 25.0745 25.075C24.7232 25.4264 24.2759 25.6021 23.7329 25.6021C23.1898 25.6021 22.7426 25.4264 22.3912 25.075L12.9995 15.6833Z" fill="#585858"/>
+                                            </svg>
+                                    </div>
+
+
+                                    <!-- NICK NAME -->
+                                    <div class="w-44 ml-2 pt-3">
+                                        <div class="flex">
+                                        <a href="#" class="bg-bgc aspect-square h-10 overflow-hidden rounded-full">
+                                            <img class="h-full w-full object-cover" src="img/{{ $thisUser->photo_profile }}" alt="profile">
+                                        </a>
+                                        <a href="#" class="text-xs md:text-sm my-auto ml-2 text-gray-900 font-bold">{{ $thisUser->fullname }}</a>
+                                        </div>
+                                    </div>
+
+                                    <!-- TextAREA EDIT -->
+                                    <div class="flex justify-center my-2 mx-1">
+                                        <textarea class="resize-none outline-none rounded-md border-bgc text-sm text-gray-800 p-2 placeholder:text-gray-500 h-32 md:h-80" name="jawaban" id="" cols="150" maxlength="1000" placeholder="Ini apa isi sih yang mau di edit . . . . . ."></textarea>
+                                        <input type="hidden" name="id_" value="">
+                                        <!--
+                                            RIIIIIII DISINI ID NYA APA?
+                                            RIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
+                                         -->
+                                    </div>
+
+                                    <div class="flex justify-end mt-5">
+                                        <button type="button" class="text-white bg-warna2h hover:bg-warna2focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2focus:outline-none">Simpan</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- POP UP EDIT JAWABAN / PERTANYAAN, END -->
                     </div>
                     <!-- menu, End -->
 
