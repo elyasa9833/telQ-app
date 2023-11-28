@@ -18,7 +18,7 @@ class ReportController extends Controller
         
         return view('reporting', [
             'reports' => Report::all(),
-            'thisUser' => User::find(),
+            'thisUser' => User::find(2),
             'active' => 'report'
         ]);
     }

@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AnswerController;
 use App\Http\Controllers\ReportController;
@@ -17,6 +18,7 @@ use App\Http\Controllers\QuestionController;
 */
 
 // answer route
+Route::resource('answer', AnswerController::class);
 Route::get('/', [AnswerController::class, 'index']);
 
 // question route
@@ -27,7 +29,8 @@ Route::put('/question-list/{id}', [QuestionController::class, 'update']);
 // setting route
 Route::get('/setting', function () {
     return view('settings', [
-        'active' => 'settings'
+        'active' => 'settings',
+        'thisUser' => User::find(2)
     ]);
 });
 

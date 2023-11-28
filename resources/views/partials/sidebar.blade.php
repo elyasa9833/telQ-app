@@ -19,7 +19,7 @@
 
             <!-- Pilihan Home Start -->
             <a href="/">
-                <div class="mx-4 py-2 rounded flex text-white bg-warna2 mt-5 shadow-md hover:bg-warna2h">
+                <div class="mx-4 py-2 rounded flex text-white mt-5 shadow-md @if ($active == 'home') bg-warna2  hover:bg-warna2h @else bg-warna3 hover:bg-warna3h @endif">
                     <svg class="fill-current h-5 pl-4 mt-[2px]" viewBox="0 0 20 23" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
                         <path d="M0 22.5V7.5L10 0L20 7.5V22.5H12.5V13.75H7.5V22.5H0Z" />
@@ -31,7 +31,7 @@
 
             <!-- Pilihan Komen Start -->
             <a href="/question-list">
-                <div class=" mx-4 py-2 rounded flex text-white bg-warna3 mt-5 shadow-md hover:bg-warna3h">
+                <div class=" mx-4 py-2 rounded flex text-white mt-5 shadow-md @if ($active == 'question-list') bg-warna2  hover:bg-warna2h @else bg-warna3 hover:bg-warna3h @endif">
                     <svg class="fill-current h-[22px] pl-4 mt-1" viewBox="0 0 28 23" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -47,7 +47,7 @@
 
             <!-- Pilihan Setting Start -->
             <a href="/setting">
-                <div class=" mx-4 py-2 rounded flex text-white bg-warna3 mt-5 shadow-md hover:bg-warna3h">
+                <div class=" mx-4 py-2 rounded flex text-white mt-5 shadow-md @if ($active == 'settings') bg-warna2  hover:bg-warna2h @else bg-warna3 hover:bg-warna3h @endif">
                     <svg class="fill-current h-5 pl-[13px] mt-1" viewBox="0 0 23 21" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -62,7 +62,7 @@
 
             <!-- Pilihan Reporting Start -->
             <a href="/mod/report">
-            <div class=" mx-4 py-[0.30rem] rounded flex text-white bg-[#8E1616] mt-5 shadow-md hover:bg-[#812525]">
+            <div class=" mx-4 py-[0.30rem] rounded flex text-white mt-5 shadow-md  @if ($active == 'report') bg-[#8E1616] hover:bg-[#812525] @else bg-warna3 hover:bg-warna3h @endif">
                 <svg class="fill-current h-8 pl-[10px] " viewBox="0 0 36 36" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
                     <path
