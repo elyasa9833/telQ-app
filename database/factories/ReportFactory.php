@@ -16,8 +16,14 @@ class ReportFactory extends Factory
      */
     public function definition()
     {
+        $type = ['spam', 'ujaran kebencian', 'pelecehan/perundungan', 'aktivitas perundungan'];
+        $index = rand(0, count($type) - 1);
+        $rand_type = $type[$index];
+        
         return [
-            //
+            'answer_id' => mt_rand(1, 10),
+            'user_id' => mt_rand(1, 10),
+            'report_type' => $rand_type
         ];
     }
 }

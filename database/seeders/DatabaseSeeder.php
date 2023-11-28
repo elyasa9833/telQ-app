@@ -8,6 +8,7 @@ use App\Models\User;
 use App\Models\Answer;
 use App\Models\Comment;
 use App\Models\Question;
+use App\Models\Report;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -34,5 +35,6 @@ class DatabaseSeeder extends Seeder
         Question::factory(15)->create();
         Answer::factory(15)->create();
         Comment::factory(10)->create();
+        Report::factory(5)->create();
     }
 }

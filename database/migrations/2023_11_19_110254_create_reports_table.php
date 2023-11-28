@@ -15,9 +15,9 @@ return new class extends Migration
     {
         Schema::create('reports', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('anwer_id');
+            $table->foreignId('answer_id');
             $table->foreignId('user_id');
-            $table->string('report_type');
+            $table->enum('report_type', ['spam', 'ujaran kebencian', 'pelecehan/perundungan', 'aktivitas perundungan']);
             $table->timestamps();
         });
     }

@@ -14,7 +14,7 @@
                 <div class="bg-white relative pb-2 pt-3 mb-1 shadow">
                     <!-- Profile -->
                     <div class="flex ml-3">
-                        <div class="aspect-square h-10 overflow-hidden rounded-full">
+                        <div class="bg-bgc aspect-square h-10 overflow-hidden rounded-full">
                             <a href="#">
                              <img class="h-full w-full object-cover" src="img/{{$que->user->photo_profile}}" alt=""> </a>
                         </div>
@@ -171,8 +171,8 @@
 
                                     <!-- Foto Profile -->
                                     <div class="flex ml-2 mt-2 w-44">
-                                        <div class="bg-gray-500 aspect-square h-9 overflow-hidden rounded-full">
-                                            <img class="h-full w-full object-cover" src="img/User.svg{{-- $pp_user --}}" alt="">
+                                        <div class="bg-bgc aspect-square h-9 overflow-hidden rounded-full">
+                                            <img class="h-full w-full object-cover" src="img/profile/{{ $thisUser->photo_profile }}" alt="">
                                         </div>
                                         <span class="text-xs md:text-sm my-auto ml-2 text-gray-700 font-bold">{{ $thisUser->fullname }}</span>
                                     </div>
