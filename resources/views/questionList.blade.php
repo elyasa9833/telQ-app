@@ -16,9 +16,9 @@
                     <div class="flex ml-3">
                         <div class="bg-bgc aspect-square h-10 overflow-hidden rounded-full">
                             <a href="#">
-                             <img class="h-full w-full object-cover" src="img/{{$que->user->photo_profile}}" alt=""> </a>
+                                <img class="h-full w-full object-cover" src="img/{{$que->user->photo_profile}}" alt=""> </a>
                         </div>
-                        <a href="#" class="font-semibold text-sm my-auto ml-1 text-gray-800">{{ $que->user->fullname }}</a>
+                        <a href="{{ url('/user/' .$que->user->username) }}" class="font-semibold text-sm my-auto ml-1 text-gray-800">{{ $que->user->fullname }}</a>
                     </div>
 
                     <!-- menu, Start-->
@@ -143,7 +143,7 @@
                             <button type="button" data-modal-hide="lihat-gambar" class="relative cursor-none w-full max-w-4xl max-h-full">
                                 <!-- Modal content -->
                                 <!-- Ini gambarnya -->
-                                <img class="h-full w-full m-auto" src="img/postingan/{{-- $gambar_tanya --}}" alt="">
+                                <img class="h-full w-full m-auto" src="img/postingan/{{ $que->image }}" alt="">
                             </button>
                         </div>
 

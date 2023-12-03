@@ -22,6 +22,7 @@ class UserFactory extends Factory
             'email' => $this->faker->email(),
             'email_verified_at' => now(),
             'password' => bcrypt('12345'),
+            'username' => $this->faker->userName(),
             'fullname' => $this->faker->name(),
             'asal_kota' => $this->faker->city(),
             'deskripsi' => $this->faker->paragraph(),

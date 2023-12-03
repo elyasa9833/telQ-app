@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AnswerController;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\QuestionController;
+use App\Http\Controllers\UserController;
+use Illuminate\Routing\Route as RoutingRoute;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,3 +38,8 @@ Route::get('/setting', function () {
 
 // moderator route
 Route::get('/mod/report', [ReportController::class, 'index']);
+
+// user route
+Route::get('/user/{user:username}', [UserController::class, 'show']);
+Route::get('/user/edit/{user:username}', [UserController::class, 'edit']);
+Route::put('/user/update/{user}', [UserController::class, 'update']);

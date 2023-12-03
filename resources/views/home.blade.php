@@ -17,7 +17,7 @@
                     <a href="#" class="bg-bgc aspect-square h-10 overflow-hidden rounded-full">
                         <img class="h-full w-full object-cover" src="img/{{ $answer->user->photo_profile }}" alt="profile">
                     </a>
-                    <a href="#" class="text-xs md:text-sm my-auto ml-2 text-gray-900 font-bold">{{ $answer->user->fullname }}</a>
+                    <a href="{{ url('/user/' .$answer->user->username) }}" class="text-xs md:text-sm my-auto ml-2 text-gray-900 font-bold">{{ $answer->user->fullname }}</a>
 
                     </div>
                 </div>
