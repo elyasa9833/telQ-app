@@ -48,3 +48,4 @@ Route::put('/user/update/{user}', [UserController::class, 'update']);
 // register & login route
 Route::get('/login', [AuthController::class, 'login']);
 Route::get('/register', [AuthController::class, 'register']);
+Route::post('/register', [AuthController::class, 'store']);

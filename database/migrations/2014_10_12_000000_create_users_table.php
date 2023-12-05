@@ -24,7 +24,7 @@ return new class extends Migration
             $table->string('asal_kota');
             $table->text('deskripsi');
             $table->string('photo_profile');
-            $table->string('phone_number');
+            $table->string('phone_number')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
