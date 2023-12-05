@@ -21,19 +21,6 @@
       
 
       <div class="ditail">
-        <div class="topic">
-        
-        {{-- $result = mysqli_query($conn, "SELECT COUNT(DISTINCT id_tanya) AS jumlah_orang FROM tanya WHERE id_user = $id_user;");
-        if (mysqli_num_rows($result) > 0) {
-            // Mengambil hasil query
-            $row = mysqli_fetch_assoc($result);
-            $topic = $row["jumlah_orang"];
-        }  --}}
-
-          <div class="banyak">0</div>
-          <p>Topic</p>
-        </div>
-
         <div class="lokasi">
           <div class="logo"></div>
           <div class="tempat">{{ $user->asal_kota }}</div>

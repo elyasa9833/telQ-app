@@ -19,11 +19,6 @@
             <div class="status">{{ $user->deskripsi }}</div>
             
             <div class="ditail">
-                <div class="topic">
-                    <div class="banyak">0</div>
-                    <p>Topic</p>
-                </div>
-
                 <div class="lokasi">
                     <div class="logo"></div>
                     <div class="tempat">{{ $user->asal_kota }}</div>
