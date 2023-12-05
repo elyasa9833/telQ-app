@@ -3,6 +3,7 @@
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AnswerController;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\UserController;
@@ -43,3 +44,7 @@ Route::get('/mod/report', [ReportController::class, 'index']);
 Route::get('/user/{user:username}', [UserController::class, 'show']);
 Route::get('/user/edit/{user:username}', [UserController::class, 'edit']);
 Route::put('/user/update/{user}', [UserController::class, 'update']);
+
+// register & login route
+Route::get('/login', [AuthController::class, 'login']);
+Route::get('/register', [AuthController::class, 'register']);
