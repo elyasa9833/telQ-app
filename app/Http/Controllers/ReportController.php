@@ -41,7 +41,15 @@ class ReportController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'answer_id' => 'required|max:255',
+            'user_id' => 'required|max:255',
+            'report_type' => 'required|max:255',
+        ]);
+
+        Report::create($validatedData);
+
+        return redirect()->back();
     }
 
     /**

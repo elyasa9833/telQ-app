@@ -70,31 +70,33 @@
                                     </button>
                                 </div>
                                 <!-- Modal body -->
-                                <form action="post/post-report.php" method="post">
+                                <form action="/mod/report" method="post">
+                                @csrf
                                 <input type="text" name="answer_id" hidden value="{{ $answer->id }}">
+                                <input type="text" name="user_id" hidden value="{{ $thisUser->id }}">
                                 <div>
                                     <ul class="bg-white text-gray-700 font-medium border border-gray-200 rounded-lg">
                                         <li class="py-2 border-b border-gray-200">
                                             <div class="flex items-center pl-3">
-                                                <input type="radio" id="spam{{ $num }}" name="list-lapor" value="1">
+                                                <input type="radio" id="spam{{ $num }}" name="report_type" value="spam">
                                                 <label class="w-full pl-2" for="spam{{ $num }}">Spam</label>
                                             </div>
                                         </li>
                                         <li class="py-2 border-b border-gray-200">
                                             <div class="flex items-center pl-3">
-                                                <input type="radio" id="ujaran_kebencian{{ $num }}" name="list-lapor" value="2">
+                                                <input type="radio" id="ujaran_kebencian{{ $num }}" name="report_type" value="ujaran kebencian">
                                                 <label class="w-full pl-2" for="ujaran_kebencian{{ $num }}">Ujaran Kebencian</label>
                                             </div>
                                         </li>
                                         <li class="py-2 border-b border-gray-200">
                                             <div class="flex items-center pl-3">
-                                                <input type="radio" id="pelecehan{{ $num }}" name="list-lapor" value="3">
+                                                <input type="radio" id="pelecehan{{ $num }}" name="report_type" value="pelecehan/perundungan">
                                                 <label class="w-full pl-2" for="pelecehan{{ $num }}">Pelecehan atau perundungan</label>
                                             </div>
                                         </li>
                                         <li class="py-2 border-b border-gray-200">
                                             <div class="flex items-center pl-3">
-                                                <input type="radio" id="aktivitas-perundungan{{ $num }}" name="list-lapor" value="4">
+                                                <input type="radio" id="aktivitas-perundungan{{ $num }}" name="report_type" value="aktivitas perundungan">
                                                 <label class="w-full pl-2" for="aktivitas-perundungan{{ $num }}">Aktivitas perundungan</label>
                                             </div>
                                         </li>
@@ -103,7 +105,7 @@
                                 <!-- Modal footer -->
                                 <div class="flex items-center p-6 space-x-2 border-t border-gray-200 rounded-b justify-end">
                                     <button data-modal-hide="modal_lapor_jawaban" type="button" class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10">Cancel</button>
-                                    <button data-modal-hide="modal_lapor_jawaban" type="submit" class="text-white bg-red-600 hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center" name="report">Report</button>
+                                    <button data-modal-hide="modal_lapor_jawaban" type="submit" class="text-white bg-red-600 hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Report</button>
                                 </div>
                                 </form>
                             </div>

@@ -39,6 +39,7 @@ Route::get('/setting', function () {
 
 // moderator route
 Route::get('/mod/report', [ReportController::class, 'index']);
+Route::post('/mod/report', [ReportController::class, 'store']);
 
 // user route
 Route::get('/user/{user:username}', [UserController::class, 'show']);
