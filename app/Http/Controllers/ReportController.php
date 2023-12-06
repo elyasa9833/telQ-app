@@ -18,7 +18,6 @@ class ReportController extends Controller
         
         return view('reporting', [
             'reports' => Report::latest()->get(),
-            'thisUser' => User::find(2),
             'active' => 'report'
         ]);
     }

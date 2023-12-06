@@ -64,9 +64,7 @@
                                         <form action="{{ route('question.destroy', $que->id) }}" method="POST">
                                             @csrf
                                             @method('DELETE')
-                                        <button type="submit" data-modal-hide="popup-hapus" {{-- onclick="location.href='edit/deltanya.php?id={{ $num }}'" --}} type="button" class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2">
-                                            Iya
-                                        </button>
+                                        <button type="submit" data-modal-hide="popup-hapus" type="button" class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2">Iya</button>
                                         <button type="button" data-modal-hide="popup-hapus" type="button" class="text-white bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 focus:z-10">Tidak</button>
                                         </form>
                                     </div>
@@ -85,7 +83,7 @@
                                     <div class="absolute top-3 right-2 rounded-md p-2 hover:bg-gray-100 inline-flex items-center cursor-pointer" onclick="closePopup('{{ $num }}')">
                                         <svg class="h-4 w-4" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M12.9995 15.6833L3.60788 25.075C3.25649 25.4264 2.80927 25.6021 2.26621 25.6021C1.72316 25.6021 1.27593 25.4264 0.924543 25.075C0.573155 24.7236 0.397461 24.2764 0.397461 23.7333C0.397461 23.1902 0.573155 22.743 0.924543 22.3916L10.3162 13L0.924543 3.6083C0.573155 3.25692 0.397461 2.80969 0.397461 2.26664C0.397461 1.72358 0.573155 1.27636 0.924543 0.924971C1.27593 0.573582 1.72316 0.397888 2.26621 0.397888C2.80927 0.397888 3.25649 0.573582 3.60788 0.924971L12.9995 10.3166L22.3912 0.924971C22.7426 0.573582 23.1898 0.397888 23.7329 0.397888C24.2759 0.397888 24.7232 0.573582 25.0745 0.924971C25.4259 1.27636 25.6016 1.72358 25.6016 2.26664C25.6016 2.80969 25.4259 3.25692 25.0745 3.6083L15.6829 13L25.0745 22.3916C25.4259 22.743 25.6016 23.1902 25.6016 23.7333C25.6016 24.2764 25.4259 24.7236 25.0745 25.075C24.7232 25.4264 24.2759 25.6021 23.7329 25.6021C23.1898 25.6021 22.7426 25.4264 22.3912 25.075L12.9995 15.6833Z" fill="#585858"/>
-                                            </svg>
+                                        </svg>
                                     </div>
 
 
@@ -93,9 +91,9 @@
                                     <div class="w-44 ml-2 pt-3">
                                         <div class="flex">
                                         <a href="#" class="bg-bgc aspect-square h-10 overflow-hidden rounded-full">
-                                            <img class="h-full w-full object-cover" src="img/{{ $thisUser->photo_profile }}" alt="profile">
+                                            <img class="h-full w-full object-cover" src="img/{{ auth()->user()->photo_profile }}" alt="profile">
                                         </a>
-                                        <a href="#" class="text-xs md:text-sm my-auto ml-2 text-gray-900 font-bold">{{ $thisUser->fullname }}</a>
+                                        <a href="#" class="text-xs md:text-sm my-auto ml-2 text-gray-900 font-bold">{{ auth()->user()->fullname }}</a>
                                         </div>
                                     </div>
 
@@ -132,8 +130,7 @@
                         <span class="font-bold text-gray-900">{{-- $pertanyaan --}}
                             <!-- Misal Ada Gambar -->
                             @if (isset($que->image)) <br>
-                            <button data-modal-target="lihat-gambar" data-modal-toggle="lihat-gambar{{ $num }}" 
-                                class="text-blue-800 text-xs" type="button">(Lihat Gambar)
+                            <button data-modal-target="lihat-gambar" data-modal-toggle="lihat-gambar{{ $num }}" class="text-blue-800 text-xs" type="button">(Lihat Gambar)
                             </button> 
                             @endif
                         </span>
@@ -172,9 +169,9 @@
                                     <!-- Foto Profile -->
                                     <div class="flex ml-2 mt-2 w-44">
                                         <div class="bg-bgc aspect-square h-9 overflow-hidden rounded-full">
-                                            <img class="h-full w-full object-cover" src="img/profile/{{ $thisUser->photo_profile }}" alt="">
+                                            <img class="h-full w-full object-cover" src="img/profile/{{ auth()->user()->photo_profile }}" alt="">
                                         </div>
-                                        <span class="text-xs md:text-sm my-auto ml-2 text-gray-700 font-bold">{{ $thisUser->fullname }}</span>
+                                        <span class="text-xs md:text-sm my-auto ml-2 text-gray-700 font-bold">{{ auth()->user()->fullname }}</span>
                                     </div>
 
                                     <form action="post/post-jawab.php" method="post" enctype="multipart/form-data">

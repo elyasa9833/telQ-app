@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
@@ -20,7 +21,6 @@ class AuthController extends Controller
 
     public function store(Request $request)
     {
-        // return $request->all();
         $validatedData = $request->validate([
             'username' => 'required|min:4|max:255|unique:users',
             'fullname' => 'required|max:255',
@@ -35,5 +35,30 @@ class AuthController extends Controller
         User::create($validatedData);
 
         return redirect('/login')->with('success', 'Create account success, Please login!');
+    }
+
+    public function authenticate(Request $request)
+    {
+        $credentials = $request->validate([
+            'email' => 'required|email:dns',
+            'password' => 'required'
+        ]);
+
+        if(Auth::attempt($credentials)){
+            $request->session()->regenerate();
+
+            return redirect()->intended('/');
+        }
+
+        return back()->with('loginErr', 'Login failed, please check your email and password!');
+    }
+
+    public function logout(Request $request)
+    {
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        return redirect('/login');
     }
 }

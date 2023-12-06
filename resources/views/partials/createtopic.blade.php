@@ -18,7 +18,7 @@
                     <div class="bg-bgc aspect-square h-10 overflow-hidden rounded-full">
                         <img class="h-full w-full object-cover" src="img/User.svg{{-- $source_pp --}}" alt="">
                     </div>
-                    <span class="font-medium ml-2 text-lg text-gray-800">{{ $thisUser->fullname }}</span>
+                    <span class="font-medium ml-2 text-lg text-gray-800">{{ auth()->user()->fullname }}</span>
                 </div>
 
                 <label for="my-modal-3">
@@ -31,7 +31,7 @@
                 <form action="{{ route('question.store') }}" method="post" enctype="multipart/form-data">
                 @csrf
                 {{-- untuk sementara user id = 2 --}}
-                <input type="hidden" name="user_id" value="2">
+                <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
                 <div class="flex justify-center items-center mt-2">
                     <textarea class="bg-white mx-auto w-[95%] border-none focus:outline-none resize-none text-gray-800" name="content"
                         id="" rows="10" placeholder="Buatlah sebuah pertanyaan...."></textarea>

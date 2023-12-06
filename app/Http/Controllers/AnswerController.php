@@ -17,7 +17,6 @@ class AnswerController extends Controller
     {
         return view('home', [
             'answers' => Answer::all(),
-            'thisUser' => User::find(2),
             'active' => 'home'
         ]);
     }
