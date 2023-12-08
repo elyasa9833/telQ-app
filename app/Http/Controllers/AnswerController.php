@@ -16,8 +16,7 @@ class AnswerController extends Controller
     public function index()
     {
         return view('home', [
-            'answers' => Answer::all(),
-            'active' => 'home'
+            'answers' => Answer::all()
         ]);
     }
 

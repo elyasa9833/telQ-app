@@ -30,9 +30,7 @@ Route::middleware('auth')->group(function () {
 
     // setting route
     Route::get('/setting', function () {
-        return view('settings', [
-            'active' => 'settings'
-        ]);
+        return view('settings');
     });
 
     // moderator route
