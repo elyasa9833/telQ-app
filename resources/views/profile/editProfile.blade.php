@@ -9,7 +9,7 @@
       <a href="/"><img src="../../Img/Icon/back.svg" alt="kembali"></a>
     </div>
 
-    <form method="post" action="{{ url('/user/update/' .$user->id) }}">
+    <form method="post" action="{{ url('/user/'. $user->id) }}">
       @csrf
       @method('PUT')
       <div class="nama">

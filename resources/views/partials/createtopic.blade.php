@@ -28,7 +28,7 @@
                 <hr>
 
                 {{-- form question.store --}}
-                <form action="{{ route('question.store') }}" method="post" enctype="multipart/form-data">
+                <form action="{{ url('/question-list/') }}" method="post" enctype="multipart/form-data">
                 @csrf
                 {{-- untuk sementara user id = 2 --}}
                 <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">

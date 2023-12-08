@@ -22,13 +22,12 @@ use Illuminate\Routing\Route as RoutingRoute;
 
 Route::middleware('auth')->group(function () {
     // answer route
-    Route::resource('answer', AnswerController::class);
+    Route::resource('/answer', AnswerController::class);
     Route::get('/', [AnswerController::class, 'index']);
+    Route::put('/answer/{answer}', [AnswerController::class, 'update']);
 
     // question route
-    Route::resource('question', QuestionController::class);
-    Route::get('/question-list', [QuestionController::class, 'index']);
-    Route::put('/question-list/{id}', [QuestionController::class, 'update']);
+    Route::resource('/question-list', QuestionController::class);
 
     // setting route
     Route::get('/setting', function () {
@@ -43,8 +42,8 @@ Route::middleware('auth')->group(function () {
 
     // user route
     Route::get('/user/{user:username}', [UserController::class, 'show']);
-    Route::get('/user/edit/{user:username}', [UserController::class, 'edit']);
-    Route::put('/user/update/{user}', [UserController::class, 'update']);
+    Route::get('/user/{user:username}/edit', [UserController::class, 'edit']);
+    Route::put('/user/{user}', [UserController::class, 'update']);
 });
 
 // register, login & logout route
