@@ -1,4 +1,4 @@
-    <!-- Ini versi HP Start -->
+    {{-- <!-- Ini versi HP Start -->
     <div class="md:hidden">
         <nav class="w-full md:w-0 z-20 ">
             <div class="">
@@ -9,7 +9,7 @@
             </div>
         </nav>
     </div>
-    <!-- Ini versi HP End -->
+    <!-- Ini versi HP End --> --}}
 
     <!-- Ini sidebar pc & tab Start -->
     <div class="hidden md:block col-span-1 md:row-span-2">
@@ -43,7 +43,7 @@
             </a>
             <!-- Pilihan Komen End -->
 
-        
+
 
             <!-- Pilihan Setting Start -->
             <a href="/setting">

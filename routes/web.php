@@ -61,3 +61,10 @@ Route::get('/logout', function(){
 Route::get('/hero', function(){
     return view('hero');
 });
+
+// test route
+Route::get('/test', function(){
+    return view('test', [
+        'active' => 'test'
+    ]);
+});

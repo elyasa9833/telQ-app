@@ -1,5 +1,5 @@
 <!-- Buatlah sebuah Topik, Start -->
-<label for="my-modal-3" class="w-[65%] lg:ml-16 lg:mr-6">
+<label for="my-modal-3" class="w-[65%] h-full ml-1 lg:ml-16 lg:mr-6">
     <div class="">
         <div class="px-1 mx-2 my-2 rounded-lg bg-white flex">
             <div class="cursor-pointer w-[100%] h-8 bg-bgc shadow-inner rounded pt-[0.20rem]"> <span class="ml-1 opacity-75 text-xs text-tgc ">Buatlah Sebuah Topik....</span> </div>
@@ -38,17 +38,17 @@
                 </div>
                 <hr>
                 <div class="flex justify-end">
-        
+
                     <label for="input-gambar">
                         <img class="h-8 mr-2 my-2" src="img/icon/round-image.svg" alt="">
                     </label>
                     <input id="input-gambar" name="image" accept="image/*" type="file" class="hidden">
-        
+
                     <button type="submit" name="submit"> <img class="h-6 mr-4 my-2" src="img/icon/share.svg" alt=""> </button>
                 </div>
                 </form>
                 {{-- form question.store End --}}
-        
+
             </div>
         </div>
     </label>

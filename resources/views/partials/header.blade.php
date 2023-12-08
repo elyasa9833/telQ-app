@@ -1,13 +1,17 @@
 <!-- Header Main section start -->
 <div class="">
-    <div class="bg-white flex py-2 md:py-2">
-        
+    <div class="bg-white flex h-12 justify-items-stretch"> {{-- Disini Buat Nandain ada yg kuubah [py-2 md:py-2] (TTD:-Adrian) --}}
+
+        {{-- Icon hp Start --}}
+        <a href="/" class="my-auto ml-2"><img class="h-10" src="../Img/Logo (3).svg" alt=""></a>
+        {{-- Icon hp End --}}
+
         {{-- createtopic --}}
-        @if ($active == 'home') @include('partials.createtopic') @else <div class="w-[65%] lg:ml-16 lg:mr-6"></div> @endif
+        @if ($active == 'home') @include('partials.createtopic') @else <div class=""></div> @endif
 
         <!-- Gambar tiga biji diatas kanan, Start -->
-        <div class="w-[35%]">
-            <div class="flex mr-2 justify-end">
+        <div class="place-self-end my-auto">
+            <div class="flex mr-2">
                 <!-- Tag Search -->
                 <!-- Tombol Search -->
                 <button id="dropdown-search" data-dropdown-toggle="dropdownsearch" class="my-auto mx-1" type="button">
@@ -20,9 +24,9 @@
                     <div class="tanyaList text-black bg-white rounded-b-lg shadow ml-8 w-56"></div>
                     <button type="submit" name="cari"></button>
                     </form>
-                </div>                           
+                </div>
 
-                
+
                 <!-- ini notif -->
                 <a class="my-auto mx-1" href="#"> <img class="h-10 md:h-11 lg:h-12" src="{{($active == 'report') ? "../":""}}img/Icon/Notif.svg" alt=""> </a>
                 <!-- Foto Profile dengan dropdownnya anjay -->
@@ -37,7 +41,7 @@
                 <div id="dropdown" class="z-10 hidden bg-white rounded-lg shadow w-44">
                     <ul class="py-2 text-gray-700" aria-labelledby="dropdownDefaultButton">
                         <li>
-                        <a href="/user/edit/{{ auth()->user()->username }}" class="flex px-4 py-2 hover:bg-gray-100"> 
+                        <a href="/user/edit/{{ auth()->user()->username }}" class="flex px-4 py-2 hover:bg-gray-100">
                                 <img src="{{($active == 'report') ? "../":""}}img/icon/Edit.svg" alt=""> <span class="my-auto ml-2"> Edit Profile </span>
                             </a>
                         </li>
@@ -75,7 +79,7 @@
             </div>
         </div>
         <!-- Gambar tiga biji diatas kanan, End -->
-        
+
     </div>
 </div>
 <!-- Header Main section End -->

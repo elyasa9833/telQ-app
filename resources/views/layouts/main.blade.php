@@ -75,9 +75,10 @@ $tampil = mysqli_query($conn, $query);
 
     <!-- Main section start -->
     <div class="md:col-span-3 lg:col-span-5">
-        
+
         @include('partials.header')
         @yield('container')
+
 
     </div>
     <!-- Main section end -->
