@@ -41,13 +41,8 @@
                 <div id="dropdown" class="z-10 hidden bg-white rounded-lg shadow w-44">
                     <ul class="py-2 text-gray-700" aria-labelledby="dropdownDefaultButton">
                         <li>
-<<<<<<< HEAD
-                        <a href="/user/edit/{{ auth()->user()->username }}" class="flex px-4 py-2 hover:bg-gray-100">
-                                <img src="{{($active == 'report') ? "../":""}}img/icon/Edit.svg" alt=""> <span class="my-auto ml-2"> Edit Profile </span>
-=======
                         <a href="/user/{{ auth()->user()->username }}/edit" class="flex px-4 py-2 hover:bg-gray-100">
                                 <img src="{{ Request::is('mod/report') ? "../":"" }}img/icon/Edit.svg" alt=""> <span class="my-auto ml-2"> Edit Profile </span>
->>>>>>> 4a88951d1433725748d98c3c77bf9195264d9536
                             </a>
                         </li>
 
