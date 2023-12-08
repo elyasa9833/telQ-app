@@ -24,7 +24,6 @@ Route::middleware('auth')->group(function () {
     // answer route
     Route::resource('/answer', AnswerController::class);
     Route::get('/', [AnswerController::class, 'index']);
-    Route::put('/answer/{answer}', [AnswerController::class, 'update']);
 
     // question route
     Route::resource('/question-list', QuestionController::class);
