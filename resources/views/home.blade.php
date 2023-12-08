@@ -121,9 +121,12 @@
                             <div class="p-6 text-center">
                                 <svg aria-hidden="true" class="mx-auto mb-4 text-gray-800 w-14 h-14" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                                 <h3 class="mb-5 text-lg font-medium text-gray-800">Apakah kamu yakin ingin Menghapus?</h3>
-                                <button data-modal-hide="popup-hapus" {{--onclick="location.href='#'"--}} type="button" class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2">
-                                    Iya
-                                </button>
+                                <form action="{{ url('/answer/'. $answer->id) }}" method="post" class="inline-block">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button data-modal-hide="popup-hapus" type="submit" class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2">Iya</button>
+                                </form>
+
                                 <button data-modal-hide="popup-hapus" type="button" class="text-white bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 focus:z-10">Tidak</button>
                             </div>
                         </div>
@@ -157,11 +160,11 @@
 
                                 <!-- TextAREA EDIT -->
                                 {{-- start form edit --}}
-                                <form action="{{ route('answer.store') }}" method="post">
+                                <form action="{{ url('/answer/'. $answer->id) }}" method="post">
                                     @csrf
+                                    @method('PUT')
                                     <div class="flex justify-center my-2 mx-1">
                                         <textarea class="resize-none outline-none rounded-md border-bgc text-sm text-gray-800 p-2 placeholder:text-gray-500 h-32 md:h-80" name="content" cols="150" maxlength="1000" placeholder="Ini apa isi sih yang mau di edit . . . . . .">{{ $answer->content }}</textarea>
-                                        <input type="hidden" name="user_id" value="{{ $answer->user_id }}">
                                         <!--
                                             RIIIIIII DISINI ID NYA APA?
                                             RIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII

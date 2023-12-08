@@ -21,7 +21,6 @@ class QuestionController extends Controller
         return view('questionList', [
             'questions' => Question::latest()->get(),
             // 'answers' => Question::all()->answer,
-            'active' => 'question-list'
         ]);
     }
 
@@ -43,13 +42,11 @@ class QuestionController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request->all());
-
         $createQuestion = $request->validate([
-            'user_id' => 'required',
             'content' => 'required',
             'image' => 'nullable'
         ]);
+        $createQuestion['user_id'] = auth()->user()->id;
 
         Question::create($createQuestion);
 
@@ -87,12 +84,11 @@ class QuestionController extends Controller
      */
     public function update(Request $request, $id)
     {
-        // dd($request->all());
-        $questions = Question::find($id);
-        $questions->content = $request->input('content');
-        $questions->image = $request->input('image') ?? null;
-
-        $questions->update();
+        $updateQuestion = $request->validate([
+            'content' => 'required',
+            'image' => 'nullable'
+        ]);
+        Question::where('id', $id)->update($updateQuestion);
 
         return redirect()->back();
     }
@@ -103,15 +99,9 @@ class QuestionController extends Controller
      * @param  \App\Models\Question  $question
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Question $question)
+    public function destroy($id)
     {
-        $question = Question::findOrFail($question->id);
-        $question->delete();
+        Question::destroy($id);
         return redirect()->back();
-    }
-
-    public function __invoke($question)
-    {
-        // Your controller logic here
     }
 }

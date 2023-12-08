@@ -36,15 +36,15 @@
                             {{-- @if($idUser == $id_user) --}}
 
                             <div  data-modal-target="popup-edit" data-modal-toggle="popup-edit{{ $num }}" class="flex px-4 py-2 text-sm hover:bg-gray-100 cursor-pointer" type="button">
-                                <img class="h-5" src="img/icon/titik-3/edit.svg" alt=""> <span class="ml-2 my-auto">Edit Jawaban</span>
+                                <img class="h-5" src="img/icon/titik-3/edit.svg" alt=""> <span class="ml-2 my-auto">Edit Pertanyaan</span>
                             </div>
 
                             <div  data-modal-target="popup-hapus" data-modal-toggle="popup-hapus{{ $num }}" class="flex px-3 py-2 text-sm text-[#FF1A1A] hover:bg-gray-100 cursor-pointer" type="button">
-                                <img class="h-6" src="img/icon/titik-3/hapus.svg" alt=""> <span class="ml-2 my-auto">Hapus Jawaban</span>
+                                <img class="h-6" src="img/icon/titik-3/hapus.svg" alt=""> <span class="ml-2 my-auto">Hapus Pertanyaan</span>
                             </div>
                             {{-- @else --}}
                             <li>
-                                <a href="#" class="flex px-3 py-2 hover:bg-gray-100"> <img class="h-6" src="img/icon/titik-3/lapor.svg" alt=""> <span class="ml-2"> Lapor Jawaban </span> </a>
+                                <a href="#" class="flex px-3 py-2 hover:bg-gray-100"> <img class="h-6" src="img/icon/titik-3/lapor.svg" alt=""> <span class="ml-2"> Lapor Pertanyaan </span> </a>
                             </li>
                             {{-- @endif --}}
                             </ul>
@@ -61,12 +61,12 @@
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                         </svg>
                                         <h3 class="mb-5 text-lg font-medium text-gray-800">Apakah kamu yakin ingin Menghapus?</h3>
-                                        <form action="{{ route('question.destroy', $que->id) }}" method="POST">
+                                        <form action="{{ url('/question-list/'. $que->id) }}" method="POST" class="inline-block">
                                             @csrf
-                                            @method('DELETE')
-                                        <button type="submit" data-modal-hide="popup-hapus" type="button" class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2">Iya</button>
-                                        <button type="button" data-modal-hide="popup-hapus" type="button" class="text-white bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 focus:z-10">Tidak</button>
+                                            @method('delete')
+                                            <button type="submit" data-modal-hide="popup-hapus" type="button" class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2">Iya</button>
                                         </form>
+                                    <button type="button" data-modal-hide="popup-hapus" type="button" class="text-white bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 focus:z-10">Tidak</button>
                                     </div>
                                 </div>
                             </div>
@@ -104,7 +104,6 @@
                                         @method('PUT')
                                         <div class="flex justify-center my-2 mx-1">
                                             <textarea class="resize-none outline-none rounded-md border-bgc text-sm text-gray-800 p-2 placeholder:text-gray-500 h-32 md:h-80" name="content" cols="150" maxlength="1000" placeholder="Ini apa isi sih yang mau di edit . . . . . .">{{ $que->content }}</textarea>
-                                            <input type="hidden" name="user_id" value="{{ $que->user_id }}">
                                             <!--
                                                 RIIIIIII DISINI ID NYA APA?
                                                 RIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII

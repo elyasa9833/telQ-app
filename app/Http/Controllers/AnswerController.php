@@ -16,8 +16,7 @@ class AnswerController extends Controller
     public function index()
     {
         return view('home', [
-            'answers' => Answer::all(),
-            'active' => 'home'
+            'answers' => Answer::all()
         ]);
     }
 
@@ -43,7 +42,7 @@ class AnswerController extends Controller
             'content' => 'required',
             'image' => 'nullable'
         ]);
-        $answers['user_id'] = $request->user_id;
+        $answers['user_id'] = auth()->user()->id;
 
         Answer::create($answers);
 
@@ -79,9 +78,15 @@ class AnswerController extends Controller
      * @param  \App\Models\Answer  $answer
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Answer $answer)
+    public function update(Request $request, $id)
     {
-        //
+        $updateAnswer = $request->validate([
+            'content' => 'required',
+            'image' => 'nullable'
+        ]);
+        Answer::where('id', $id)->update($updateAnswer);
+
+        return redirect()->back();
     }
 
     /**
@@ -90,8 +95,9 @@ class AnswerController extends Controller
      * @param  \App\Models\Answer  $answer
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Answer $answer)
+    public function destroy($id)
     {
-        //
+        Answer::destroy($id);
+        return redirect()->back();
     }
 }

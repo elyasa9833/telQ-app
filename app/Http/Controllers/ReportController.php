@@ -17,8 +17,7 @@ class ReportController extends Controller
     {
         
         return view('reporting', [
-            'reports' => Report::latest()->get(),
-            'active' => 'report'
+            'reports' => Report::latest()->get()
         ]);
     }
 

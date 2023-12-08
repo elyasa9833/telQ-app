@@ -19,7 +19,7 @@ class CommentFactory extends Factory
         return [
             'answer_id' => mt_rand(1, 14),
             'user_id' => mt_rand(2, 19),
-            'content' => $this->faker->paragraph()
+            'content' => $this->faker->paragraph(2)
         ];
     }
 }

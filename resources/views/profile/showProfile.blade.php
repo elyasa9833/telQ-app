@@ -8,7 +8,7 @@
 
             {{-- if($user == $id_user) --}}
             <div class="edit">
-                <a href="/user/edit/{{ $user->username }}"><img src="../../Img/Icon/pensil.svg" alt=""></a>
+                <a href="/user/{{ $user->username }}/edit"><img src="../../Img/Icon/pensil.svg" alt=""></a>
             </div>
 
             <div class="back">

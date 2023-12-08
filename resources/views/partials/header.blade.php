@@ -7,7 +7,7 @@
         {{-- Icon hp End --}}
 
         {{-- createtopic --}}
-        @if ($active == 'home') @include('partials.createtopic') @else <div class=""></div> @endif
+        {!! Request::is('/') ? view('partials.createtopic') : '<div class="w-[65%] lg:ml-16 lg:mr-6"></div>' !!}
 
         <!-- Gambar tiga biji diatas kanan, Start -->
         <div class="place-self-end my-auto">
@@ -15,7 +15,7 @@
                 <!-- Tag Search -->
                 <!-- Tombol Search -->
                 <button id="dropdown-search" data-dropdown-toggle="dropdownsearch" class="my-auto mx-1" type="button">
-                    <img class="h-10 md:h-11 lg:h-12" src="{{($active == 'report') ? "../":""}}img/Icon/TagSearch.svg" alt="">
+                    <img class="h-10 md:h-11 lg:h-12" src="{{ Request::is('mod/report') ? "../":"" }}img/Icon/TagSearch.svg" alt="">
                 </button>
                 <!-- Dropdown Search -->
                 <div id="dropdownsearch" class="z-10 hidden">
@@ -28,26 +28,31 @@
 
 
                 <!-- ini notif -->
-                <a class="my-auto mx-1" href="#"> <img class="h-10 md:h-11 lg:h-12" src="{{($active == 'report') ? "../":""}}img/Icon/Notif.svg" alt=""> </a>
+                <a class="my-auto mx-1" href="#"> <img class="h-10 md:h-11 lg:h-12" src="{{ Request::is('mod/report') ? "../":"" }}img/Icon/Notif.svg" alt=""> </a>
                 <!-- Foto Profile dengan dropdownnya anjay -->
                 <!-- Profile Start -->
                 <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown" class="text-white font-medium rounded-full text-sm" type="button">
                     <!-- si foto profile -->
                 <div class="bg-bgc aspect-square h-10 overflow-hidden rounded-full">
-                    <img class="h-full w-full object-cover" src="{{($active == 'report') ? "../":""}}img/profile/{{ auth()->user()->photo_profile }}" alt="">
+                    <img class="h-full w-full object-cover" src="{{ Request::is('mod/report') ? "../":"" }}img/profile/{{ auth()->user()->photo_profile }}" alt="">
                 </div>
                 </button>
                 <!-- Dropdown menu -->
                 <div id="dropdown" class="z-10 hidden bg-white rounded-lg shadow w-44">
                     <ul class="py-2 text-gray-700" aria-labelledby="dropdownDefaultButton">
                         <li>
+<<<<<<< HEAD
                         <a href="/user/edit/{{ auth()->user()->username }}" class="flex px-4 py-2 hover:bg-gray-100">
                                 <img src="{{($active == 'report') ? "../":""}}img/icon/Edit.svg" alt=""> <span class="my-auto ml-2"> Edit Profile </span>
+=======
+                        <a href="/user/{{ auth()->user()->username }}/edit" class="flex px-4 py-2 hover:bg-gray-100">
+                                <img src="{{ Request::is('mod/report') ? "../":"" }}img/icon/Edit.svg" alt=""> <span class="my-auto ml-2"> Edit Profile </span>
+>>>>>>> 4a88951d1433725748d98c3c77bf9195264d9536
                             </a>
                         </li>
 
                         <li data-modal-target="popup-modal" data-modal-toggle="popup-modal" class="" type="button">
-                            <div class="flex px-2 py-2 hover:bg-gray-100 cursor-pointer"> <img src="{{($active == 'report') ? "../":""}}img/icon/Log-out.svg" alt=""> <span class="my-auto ml-2"> Log out</span></div>
+                            <div class="flex px-2 py-2 hover:bg-gray-100 cursor-pointer"> <img src="{{ Request::is('mod/report') ? "../":"" }}img/icon/Log-out.svg" alt=""> <span class="my-auto ml-2"> Log out</span></div>
                         </li>
 
                     </ul>
