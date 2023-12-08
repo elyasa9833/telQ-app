@@ -1,17 +1,17 @@
 <!-- Header Main section start -->
 <div class="">
-    <div class="bg-white flex h-12 justify-items-stretch"> {{-- Disini Buat Nandain ada yg kuubah [py-2 md:py-2] (TTD:-Adrian) --}}
+    <div class="bg-white flex justify-between w-full h-12"> {{-- Disini Buat Nandain ada yg kuubah [py-2 md:py-2] (TTD:-Adrian) --}}
 
         {{-- Icon hp Start --}}
-        <a href="/" class="my-auto ml-2"><img class="h-10" src="../Img/Logo (3).svg" alt=""></a>
+        <a href="/" class="my-auto ml-2 md:hidden"><img class="h-10" src="../Img/Logo (3).svg" alt=""></a>
         {{-- Icon hp End --}}
 
         {{-- createtopic --}}
-        {!! Request::is('/') ? view('partials.createtopic') : '<div class="w-[65%] lg:ml-16 lg:mr-6"></div>' !!}
+        {!! Request::is('/') ? view('partials.createtopic') : '<div class=""></div>' !!}
 
         <!-- Gambar tiga biji diatas kanan, Start -->
-        <div class="place-self-end my-auto">
-            <div class="flex mr-2">
+        <div class="flex my-auto">
+            <div class="flex mr-2 md:mr-7">
                 <!-- Tag Search -->
                 <!-- Tombol Search -->
                 <button id="dropdown-search" data-dropdown-toggle="dropdownsearch" class="my-auto mx-1" type="button">

@@ -2,14 +2,14 @@
 @section('container')
 
         <!-- Content Start -->
-        <div class="h-[95vh] md:h-[100vh] pb-20 md:pb-5 overflow-y-auto overflow-x-hidden mx-4 rounded pt-2 shadow">
+        <div class="h-[90vh] md:h-[95vh] pb-20 md:pb-5 overflow-y-auto overflow-x-hidden mx-4 rounded pt-2 shadow">
             <div class="w-full bg-white pt-4 pb-2 flex border-b rounded-t">
                 <img class="ml-3 h-5" src="img/Icon/Quest.svg" alt="">
                 <span class="ml-1 text-warna3 font-bold text-sm">Pertanyaan untuk anda</span>
             </div>
 
             @foreach ($questions as $num => $que)
-                
+
             <!-- Pertanyaan pake gambar start -->
                 <div class="bg-white relative pb-2 pt-3 mb-3 shadow">
                     <!-- Profile -->
@@ -130,7 +130,7 @@
                             <!-- Misal Ada Gambar -->
                             @if (isset($que->image)) <br>
                             <button data-modal-target="lihat-gambar" data-modal-toggle="lihat-gambar{{ $num }}" class="text-blue-800 text-xs" type="button">(Lihat Gambar)
-                            </button> 
+                            </button>
                             @endif
                         </span>
 
@@ -184,7 +184,7 @@
                                     <div class="flex justify-end">
                                         <label for="input-gambar">
                                             <img class="h-8 mr-2 my-2 cursor-pointer" src="img/icon/round-image.svg" alt="">
-                                        </label>    
+                                        </label>
                                         <input id="input-gambar" name="gambar_jawab" type="file" accept="image/*" class="hidden">
 
                                         <button type="submit" name="submit"> <img class="h-6 mr-4 my-3" src="img/icon/share.svg" alt=""> </button>
@@ -226,7 +226,7 @@
                                                     <img class="h-full w-full object-contain" src="img/postingan/{{-- $item->answer->image --}}" alt="">
                                                 </button>
                                             </div>
-                                            
+
                                             <!-- Main modal -->
                                             <div id="lihat-full-gambar" tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
                                                 <button type="button" data-modal-hide="lihat-full-gambar" class="relative cursor-none w-full max-w-4xl max-h-full">

@@ -1,9 +1,9 @@
 @extends('layouts.main')
 
 @section('container')
-    
 
-<div class="h-[95vh] md:h-[100vh] pb-20 md:pb-5 overflow-auto mx-4 rounded pt-2 shadow">
+
+<div class="h-[90vh] md:h-[95vh] pb-20 md:pb-5 overflow-auto mx-4 rounded pt-2 shadow">
     <div class="bg-white h-full relative">
 
         <!-- Edit Profile Start -->
@@ -73,5 +73,5 @@
 </div>
 <!-- Content End -->
 
-    
+
 @endsection
