@@ -11,7 +11,7 @@
             @foreach ($questions as $num => $que)
                 
             <!-- Pertanyaan pake gambar start -->
-                <div class="bg-white relative pb-2 pt-3 mb-1 shadow">
+                <div class="bg-white relative pb-2 pt-3 mb-3 shadow">
                     <!-- Profile -->
                     <div class="flex ml-3">
                         <div class="bg-bgc aspect-square h-10 overflow-hidden rounded-full">

@@ -33,6 +33,7 @@ $tampil = mysqli_query($conn, $query);
         rel="stylesheet">
 
     <link rel="stylesheet" href="css/scroll.css">
+    <link rel="stylesheet" href="../css/scroll.css">
     <link rel="stylesheet" href="../css/laporan.css">
     <!-- Daisy UI -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@2.51.6/dist/full.css" rel="stylesheet" type="text/css" />

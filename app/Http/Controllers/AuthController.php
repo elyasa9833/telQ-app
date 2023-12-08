@@ -25,7 +25,7 @@ class AuthController extends Controller
             'username' => 'required|min:4|max:255|unique:users',
             'fullname' => 'required|max:255',
             'asal_kota' => 'required|max:255',
-            'email' => 'required|email:dns|unique:users',
+            'email' => 'required|email|unique:users',
             'password' => 'required|min:6|max:255',
             'deskripsi' => 'required|max:255',
             'photo_profile' => 'required|max:255',
@@ -40,7 +40,7 @@ class AuthController extends Controller
     public function authenticate(Request $request)
     {
         $credentials = $request->validate([
-            'email' => 'required|email:dns',
+            'email' => 'required|email',
             'password' => 'required'
         ]);
 
@@ -59,6 +59,6 @@ class AuthController extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
-        return redirect('/login');
+        return redirect('/hero');
     }
 }

@@ -56,3 +56,8 @@ Route::post('/logout', [AuthController::class, 'logout']);
 Route::get('/logout', function(){
     return redirect()->back();
 });
+
+// hero route
+Route::get('/hero', function(){
+    return view('hero');
+});
