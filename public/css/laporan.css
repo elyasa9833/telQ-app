@@ -160,7 +160,7 @@ body {
     grid-area: main;
     background-color: #E85F5F;
     width: 97%;
-    height: 96vh;  
+    height: 91vh;
     margin: 10px auto;
     overflow-y: auto;
     padding-bottom: 100px;
@@ -231,7 +231,7 @@ body {
 @media (max-width: 640px){
 
     .main{
-        height: calc(100vh);
+        height: calc(93vh);
     }
     .sideb{
         display: none;

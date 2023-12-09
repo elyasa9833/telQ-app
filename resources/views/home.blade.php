@@ -2,7 +2,7 @@
 
 @section('container')
 <!-- Ini apasih namanya, pokoknya dalemnya ada topik ama postingan. Start -->
-<div class="overflow-auto h-[90vh] md:h-[95vh]">
+<div class="overflow-auto h-[88vh] md:h-[93vh]">
 
     @foreach ($answers as $num => $answer)
     <div class="mb-5">

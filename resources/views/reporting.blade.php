@@ -1,8 +1,8 @@
 @extends('layouts.main')
 @section('container')
 
-<div class="kontener text-black">
-    <div class="main">
+<div class="kontener text-black ">
+    <div class="main rounded-md">
         <div class="title">
             <img src="../img/Icon/danger.svg" alt="">
             <h1>Laporan Komentar</h1>
