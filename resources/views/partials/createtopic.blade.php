@@ -1,7 +1,7 @@
 <!-- Buatlah sebuah Topik, Start -->
-<label for="my-modal-3" class="w-1/2 md:w-3/4 h-full ml-1 lg:ml-16">
+<label for="my-modal-3" class="w-1/2 md:w-3/4 my-auto h-full ml-1 lg:ml-16">
     <div class="">
-        <div class="px-1 mx-2 my-2 rounded-lg bg-white flex">
+        <div class="px-1 mx-2 my-auto rounded-lg bg-white flex">
             <div class="cursor-pointer w-[100%] h-8 bg-bgc shadow-inner rounded pt-[0.20rem]"> <span class="ml-1 opacity-75 text-xs text-tgc ">Buatlah Sebuah Topik....</span> </div>
         </div>
     </div>

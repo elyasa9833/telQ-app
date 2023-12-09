@@ -2,13 +2,13 @@
 
 @section('container')
 <!-- Ini apasih namanya, pokoknya dalemnya ada topik ama postingan. Start -->
-<div class="overflow-auto h-[88vh] md:h-[93vh]">
+<div class="overflow-auto h-[89vh] md:h-[93vh] mx-4">
 
     @foreach ($answers as $num => $answer)
-    <div class="mb-5">
+    <div class="mb-3">
 
         <!-- Start Posting -->
-        <div class="bg-white mt-1 md:mt-2 mx-5 relative rounded sm:w-4/6 sm:mx-auto pb-6">
+        <div class="bg-white mt-1 md:mt-2 relative rounded md:w-5/6 sm:mx-auto pb-6">
 
             <!-- Nama profile -->
             <div class="w-44 ml-2 pt-3">

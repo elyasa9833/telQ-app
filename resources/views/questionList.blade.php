@@ -2,8 +2,8 @@
 @section('container')
 
         <!-- Content Start -->
-        <div class="h-[88vh] md:h-[93vh] pb-20 md:pb-5 overflow-y-auto overflow-x-hidden mx-4 rounded pt-2 shadow">
-            <div class="w-full bg-white pt-4 pb-2 flex border-b rounded-t">
+        <div class="h-[89vh] md:h-[93vh] pb-20 md:pb-5 overflow-y-auto overflow-x-hidden mx-4 rounded pt-2 shadow">
+            <div class="w-full md:w-5/6 md:mx-auto bg-white pt-4 pb-2 flex border-b rounded-t">
                 <img class="ml-3 h-5" src="img/Icon/Quest.svg" alt="">
                 <span class="ml-1 text-warna3 font-bold text-sm">Pertanyaan untuk anda</span>
             </div>
@@ -11,7 +11,7 @@
             @foreach ($questions as $num => $que)
 
             <!-- Pertanyaan pake gambar start -->
-                <div class="bg-white relative pb-2 pt-3 mb-3 shadow">
+                <div class="bg-white relative pb-2 pt-3 mb-3 shadow md:w-5/6 md:mx-auto">
                     <!-- Profile -->
                     <div class="flex ml-3">
                         <div class="bg-bgc aspect-square h-10 overflow-hidden rounded-full">
