@@ -17,6 +17,7 @@
         <div class="h-[100vh] bg-white">
             <img class="w-full " src="../Img/Logo.svg" alt="">
 
+            @if(auth()->user()->role != 'admin')
             <!-- Pilihan Home Start -->
             <a href="/">
                 <div class="mx-4 py-2 rounded flex text-white mt-5 shadow-md {{ Request::is('/') ? 'bg-warna2 hover:bg-warna2h':'bg-warna3 hover:bg-warna3h' }}">
@@ -43,7 +44,20 @@
             </a>
             <!-- Pilihan Komen End -->
 
+            @elseif(auth()->user()->role == 'admin')
+            <!-- Pilihan view user start -->
+            </a>
+            <a href="/dashboard/view-user">
+            <div class=" mx-4 py-[0.30rem] rounded flex text-white mt-5 shadow-md  {{ Request::is('dashboard/view-user') ? 'bg-warna2 hover:bg-warna2h':'bg-warna3 hover:bg-warna3h' }}">
+                <svg class="fill-current h-[22px] pl-4 mt-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 18">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 3a3 3 0 1 1-1.614 5.53M15 12a4 4 0 0 1 4 4v1h-3.348M10 4.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0ZM5 11h3a4 4 0 0 1 4 4v2H1v-2a4 4 0 0 1 4-4Z"/>
+                </svg>
 
+                <span class="text-lg text-center ml-4 font-semibold">View User</span>
+            </div>
+            </a>
+            <!-- Pilihan view user end -->
+            @endif
 
             <!-- Pilihan Setting Start -->
             <a href="/setting">
@@ -58,8 +72,8 @@
                 </div>
             </a>
             <!-- Pilihan Setting End -->
-            {{-- @if($_SESSION['id_role'] == 1) --}}
-
+            
+            @if(auth()->user()->role == 'moderator')
             <!-- Pilihan Reporting Start -->
             <a href="/mod/report">
             <div class=" mx-4 py-[0.30rem] rounded flex text-white mt-5 shadow-md  {{ Request::is('mod/report') ? 'bg-warna2 hover:bg-warna2h':'bg-warna3 hover:bg-warna3h' }}">
@@ -77,8 +91,8 @@
                 <span class="text-lg text-center ml-4 font-semibold">Reporting</span>
             </div>
             </a>
-            {{-- @endif --}}
-            <!-- Pilihan Reporting End -->
+            <!-- Pilihan Reporting End -->            
+            @endif
 
         </div>
         <!-- Side bar Left End-->

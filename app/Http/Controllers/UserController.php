@@ -84,6 +84,14 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        User::destroy($id);
+        return redirect()->back();
+    }
+
+    public function view_user()
+    {
+        return view('admin.viewUser', [
+            'users' => User::where('role', '!=', 'admin')->latest()->get()
+        ]);
     }
 }

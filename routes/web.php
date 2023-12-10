@@ -34,10 +34,14 @@ Route::middleware('auth')->group(function () {
     // moderator route
     Route::resource('/mod/report', ReportController::class);
 
+    // admin route
+    Route::get('/dashboard/view-user', [UserController::class, 'view_user']);
+
     // user route
     Route::get('/user/{user:username}', [UserController::class, 'show']);
     Route::get('/user/{user:username}/edit', [UserController::class, 'edit']);
     Route::put('/user/{user}', [UserController::class, 'update']);
+    Route::delete('/user/{user}', [UserController::class, 'destroy']);
 });
 
 // register, login & logout route
