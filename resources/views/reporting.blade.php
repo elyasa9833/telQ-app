@@ -24,7 +24,7 @@
                     <div id="menu" class="absolute right-0 top-0 mt-1 mr-3">
                         <!-- Titik tiga [menu], Start -->
                         <button id="dropdownMenuIconHorizontalButton"
-                            data-dropdown-toggle="dropdownDotsHorizontal"
+                            data-dropdown-toggle="dropdownDotsHorizontal{{ $num }}"
                             class="inline-flex items-center p-2 text-sm font-medium text-center text-gray-700 bg-white rounded-lg hover:bg-gray-100 focus"
                             type="button">
                             <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
@@ -36,14 +36,14 @@
                         </button>
 
                         <!-- Dropdown menu, Start-->
-                        <div id="dropdownDotsHorizontal"
+                        <div id="dropdownDotsHorizontal{{ $num }}"
                             class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow drop-shadow w-[13rem] overflow-hidden">
                             <p class="flex px-4 py-2"> <img class="h-5" src="../img/icon/danger2.svg"
                                     alt="">
                                 <span class="ml-2 font-medium"> Tindakan Lanjutan </span>
                             </p>
                             <hr>
-                            <div data-modal-target="popup-hapus" data-modal-toggle="popup-hapus"
+                            <div data-modal-target="popup-hapus" data-modal-toggle="popup-hapus{{ $num }}"
                                 class="flex px-3 py-2 text-sm text-[#FF1A1A] hover:bg-gray-100 cursor-pointer"
                                 type="button"> <span class="ml-2 my-auto">Hapus Postingan</span>
                             </div>
@@ -52,7 +52,7 @@
                         <!-- Titik tiga [menu], End -->
 
                         <!-- POP UP HAPUS JAWABAN / PERTANYAAN, START -->
-                        <div id="popup-hapus" tabindex="-1"
+                        <div id="popup-hapus{{ $num }}" tabindex="-1"
                             class="fixed top-0 left-0 right-0 z-50 hidden p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
                             <div class="relative w-full max-w-md max-h-full">
                                 <div class="relative bg-white rounded-lg shadow">
@@ -64,15 +64,13 @@
                                                 stroke-width="2"
                                                 d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                         </svg>
-                                        <h3 class="mb-5 text-lg font-medium text-gray-800">Apakah kamu yakin
-                                            ingin
-                                            Menghapus?</h3>
-                                        <button data-modal-hide="popup-hapus" type="button"
-                                            class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2">
-                                            Iya
-                                        </button>
-                                        <button data-modal-hide="popup-hapus" type="button"
-                                            class="text-white bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 focus:z-10">Tidak</button>
+                                        <h3 class="mb-5 text-lg font-medium text-gray-800">Apakah kamu yakin ingin Menghapus?</h3>
+                                        <form action="{{ url('/mod/report/'. $rep->id) }}" method="post" class="inline-block">
+                                            @csrf
+                                            @method('delete')
+                                            <button data-modal-hide="popup-hapus" type="submit" class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2">Iya</button>
+                                        </form>
+                                        <button data-modal-hide="popup-hapus" type="button" class="text-white bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 focus:z-10">Tidak</button>
                                     </div>
                                 </div>
                             </div>

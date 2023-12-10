@@ -1,13 +1,11 @@
 <?php
 
-use App\Models\User;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AnswerController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\UserController;
-use Illuminate\Routing\Route as RoutingRoute;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,8 +32,7 @@ Route::middleware('auth')->group(function () {
     });
 
     // moderator route
-    Route::get('/mod/report', [ReportController::class, 'index']);
-    Route::post('/mod/report', [ReportController::class, 'store']);
+    Route::resource('/mod/report', ReportController::class);
 
     // user route
     Route::get('/user/{user:username}', [UserController::class, 'show']);

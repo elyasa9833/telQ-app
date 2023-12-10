@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
+use App\Models\Answer;
 use App\Models\Report;
 use Illuminate\Http\Request;
 
@@ -91,7 +91,15 @@ class ReportController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy(Report $report)
-    {
-        //
+    {        
+        $reports = Report::where('answer_id', $report->answer_id)->get();
+
+        // hapus semua report yang terkait
+        foreach ($reports as $report) {
+            $report->delete();
+        }
+        
+        Answer::destroy($report->answer_id);
+        return redirect()->back();
     }
 }
