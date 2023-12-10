@@ -53,14 +53,14 @@
             <!-- Si light & dark mode start -->
 
             <!--  -->
-            {{-- @if($id_role == 1) --}}
+            @if(auth()->user()->role == 'moderator')
             <div>
                 <button class="bg-warna3 hover:bg-warna3h flex px-2 py-1 drop-shadow-md ml-7 mt-5 rounded">
                     <img src="../Img/icon/moderator.svg" alt="">
                     <span class="ml-3 text-white my-auto font-semibold">Anda masuk Sebagai Moderator</span>
                 </button>
             </div>
-            {{-- @endif --}}
+            @endif
 
         </div>
         <!-- Tombol simpan -->

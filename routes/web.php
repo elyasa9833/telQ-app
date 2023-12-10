@@ -32,10 +32,10 @@ Route::middleware('auth')->group(function () {
     });
 
     // moderator route
-    Route::resource('/mod/report', ReportController::class);
+    Route::resource('/mod/report', ReportController::class)->middleware('moderator');
 
     // admin route
-    Route::get('/dashboard/view-user', [UserController::class, 'view_user']);
+    Route::get('/dashboard/view-user', [UserController::class, 'view_user'])->middleware('admin');
 
     // user route
     Route::get('/user/{user:username}', [UserController::class, 'show']);
