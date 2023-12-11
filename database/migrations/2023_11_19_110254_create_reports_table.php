@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('reports', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('answer_id');
-            $table->foreignId('user_id');
+            $table->foreignId('answer_id')->constrained()->onDelete('cascade');
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->enum('report_type', ['spam', 'ujaran kebencian', 'pelecehan/perundungan', 'aktivitas perundungan']);
             $table->timestamps();
         });
