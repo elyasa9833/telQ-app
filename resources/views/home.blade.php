@@ -22,7 +22,7 @@
             </div>
 
             <!-- menu -->
-            <div id="menu" class="absolute right-0 top-0 mt-3 mr-3">
+            <div id="menu" class="absolute right-0 top-0 mt-3 mr-3">                    
                 <!-- Titik tiga [menu], Start -->
                 <button id="dropdownMenuIconHorizontalButton" data-dropdown-toggle="dropdownDotsHorizontal{{ $num }}" class="inline-flex items-center p-2 text-sm font-medium text-center text-gray-700 bg-white rounded-lg hover:bg-gray-100 focus" type="button">
                     <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z"></path></svg>
@@ -32,6 +32,7 @@
                 <div id="dropdownDotsHorizontal{{ $num }}" class="z-10 hidden bg-white opacity-90 divide-y divide-gray-100 rounded-lg shadow drop-shadow w-[10.5rem]">
                     <ul class="py-2 text-sm text-gray-900 font-medium" aria-labelledby="dropdownMenuIconHorizontalButton">
 
+                        @if ($answer->user_id == auth()->user()->id)
                         <div data-modal-target="popup-edit" data-modal-toggle="popup-edit{{ $num }}" class="flex px-4 py-2 text-sm  hover:bg-gray-100 cursor-pointer" type="button">
                             <img class="h-5" src="img/icon/titik-3/edit.svg" alt=""> <span class="ml-2 my-auto">Edit Jawaban</span>
                         </div>
@@ -40,13 +41,13 @@
                             <img class="h-6" src="img/icon/titik-3/hapus.svg" alt=""> <span class="ml-2 my-auto">Hapus Jawaban</span>
                         </div>
 
-                        <li class=" hover:bg-gray-100">
+                        @else
                         <!-- Tombol Lapor, Start -->
-                        <button data-modal-target="modal_lapor_jawaban" data-modal-toggle="modal_lapor_jawaban{{ $num }}" class="flex px-3 py-2" type="button">
+                        <div data-modal-target="modal_lapor_jawaban" data-modal-toggle="modal_lapor_jawaban{{ $num }}" class="flex px-3 py-2 hover:bg-gray-100 cursor-pointer" type="button">
                             <img class="h-6" src="img/icon/titik-3/lapor.svg" alt=""> <span class="ml-2"> Lapor Jawaban </span>
-                        </button>
+                        </div>
                         <!-- Tombol Lapor, End -->
-                        </li>
+                        @endif
 
                     </ul>
                 </div>

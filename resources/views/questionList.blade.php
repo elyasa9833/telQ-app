@@ -33,20 +33,23 @@
                         <!-- Dropdown menu, Start-->
                         <div id="dropdownDotsHorizontal{{ $num }}" class="z-10 hidden bg-white opacity-90 divide-y divide-gray-100 rounded-lg shadow drop-shadow w-[12rem]">
                             <ul class="py-2 text-sm text-gray-900 font-medium" aria-labelledby="dropdownMenuIconHorizontalButton">
-                            {{-- @if($idUser == $id_user) --}}
+                                
+                                @if($que->user_id == auth()->user()->id)
+                                <div  data-modal-target="popup-edit" data-modal-toggle="popup-edit{{ $num }}" class="flex px-4 py-2 text-sm hover:bg-gray-100 cursor-pointer" type="button">
+                                    <img class="h-5" src="img/icon/titik-3/edit.svg" alt=""> <span class="ml-2 my-auto">Edit Pertanyaan</span>
+                                </div>
 
-                            <div  data-modal-target="popup-edit" data-modal-toggle="popup-edit{{ $num }}" class="flex px-4 py-2 text-sm hover:bg-gray-100 cursor-pointer" type="button">
-                                <img class="h-5" src="img/icon/titik-3/edit.svg" alt=""> <span class="ml-2 my-auto">Edit Pertanyaan</span>
-                            </div>
+                                <div  data-modal-target="popup-hapus" data-modal-toggle="popup-hapus{{ $num }}" class="flex px-3 py-2 text-sm text-[#FF1A1A] hover:bg-gray-100 cursor-pointer" type="button">
+                                    <img class="h-6" src="img/icon/titik-3/hapus.svg" alt=""> <span class="ml-2 my-auto">Hapus Pertanyaan</span>
+                                </div>
 
-                            <div  data-modal-target="popup-hapus" data-modal-toggle="popup-hapus{{ $num }}" class="flex px-3 py-2 text-sm text-[#FF1A1A] hover:bg-gray-100 cursor-pointer" type="button">
-                                <img class="h-6" src="img/icon/titik-3/hapus.svg" alt=""> <span class="ml-2 my-auto">Hapus Pertanyaan</span>
-                            </div>
-                            {{-- @else --}}
-                            <li>
-                                <a href="#" class="flex px-3 py-2 hover:bg-gray-100"> <img class="h-6" src="img/icon/titik-3/lapor.svg" alt=""> <span class="ml-2"> Lapor Pertanyaan </span> </a>
-                            </li>
-                            {{-- @endif --}}
+                                @else
+                                <!-- Tombol Lapor, Start -->
+                                <div data-modal-target="modal_lapor_jawaban" data-modal-toggle="modal_lapor_jawaban{{ $num }}" class="flex px-3 py-2 hover:bg-gray-100 cursor-pointer" type="button">
+                                    <img class="h-6" src="img/icon/titik-3/lapor.svg" alt=""> <span class="ml-2">Lapor Pertanyaan</span>
+                                </div>
+                                <!-- Tombol Lapor, End -->
+                                @endif
                             </ul>
                         </div>
                         <!-- Dropdown menu, End-->
