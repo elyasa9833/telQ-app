@@ -186,7 +186,7 @@
 
             <!-- Isi Pertanyaan, Start -->
             <div id="isiTopik" class="mx-9 mt-3">
-                <span class="font-bold text-gray-900">{{ $answer->content }}
+                <span class="font-bold text-gray-900">{{ $answer->question->content }} 
                     <!-- Misal Ada Gambar -->
                     @if (isset($answer->question->image)) <br>
                     <button data-modal-target="lihat-gambar" data-modal-toggle="lihat-gambar{{ $num }}" class="text-blue-800 text-xs" type="button"> (Lihat Gambar)
@@ -206,8 +206,8 @@
 
             <!-- Deskripsi Topik -->
             <div id="deskripsi" class="mx-9 mt-2">
-                <span class="text-xs font-semibold text-gray-700 ">{{--$jawaban--}}
-                    <!-- <a id="lanjutDeskripsi" class="text-blue-800" href="#"> (Lebih lanjut)</a> -->
+                <span class="text-xs font-semibold text-gray-700 ">{{ $answer->content }}
+                    {{-- <a id="lanjutDeskripsi" class="text-blue-800" href="#"> (Lebih lanjut)</a> --}}
                 </span>
             </div>
 

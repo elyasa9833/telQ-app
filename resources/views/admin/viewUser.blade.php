@@ -14,6 +14,7 @@
         <table class="w-full text-sm text-left rtl:text-right text-gray-500 ">
             <thead class="text-xs text-gray-700 uppercase bg-gray-50 font-semibold">
                 <tr>
+                    <th scope="col" class="px-6 py-3">#</th>
                     <th scope="col" class="px-6 py-3">Fullname</th>
                     <th scope="col" class="px-6 py-3">username</th>
                     <th scope="col" class="px-6 py-3">Email</th>
@@ -26,6 +27,7 @@
                 {{-- loop start --}}
                 @foreach ($users as $user)
                 <tr class="odd:bg-white even:bg-gray-50 border-b">
+                    <td class="px-6 py-4">{{ $loop->iteration }}</td>
                     <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">{{ $user->fullname }}</th>
                     <td class="px-6 py-4">{{ '@'. $user->username }}</td>
                     <td class="px-6 py-4">{{ $user->email }}</td>

@@ -16,7 +16,7 @@ class AnswerController extends Controller
     public function index()
     {
         return view('home', [
-            'answers' => Answer::all()
+            'answers' => Answer::latest()->get()
         ]);
     }
 
@@ -39,6 +39,7 @@ class AnswerController extends Controller
     public function store(Request $request)
     {
         $answers = $request->validate([
+            'question_id' => 'required',
             'content' => 'required',
             'image' => 'nullable'
         ]);

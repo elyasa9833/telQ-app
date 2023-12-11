@@ -176,22 +176,23 @@
                                         <span class="text-xs md:text-sm my-auto ml-2 text-gray-700 font-bold">{{ auth()->user()->fullname }}</span>
                                     </div>
 
-                                    <form action="post/post-jawab.php" method="post" enctype="multipart/form-data">
-                                    <!-- TextArea -->
-                                    <div class="flex justify-center my-2 mx-1">
-                                        <textarea class="resize-none outline-none rounded-md border-bgc text-sm text-gray-800 p-2 placeholder:text-gray-500 h-32 md:h-60" name="jawaban" id="" cols="67" maxlength="1000" placeholder="Buatlah sebuah jawaban . . . . ."></textarea>
-                                        <input type="hidden" name="id_tanya" value="{{ $num }}">
-                                    </div>
+                                    <form action="{{ url('/answer') }}" method="post" enctype="multipart/form-data">
+                                        @csrf
+                                        <!-- TextArea -->
+                                        <div class="flex justify-center my-2 mx-1">
+                                            <textarea class="resize-none outline-none rounded-md border-bgc text-sm text-gray-800 p-2 placeholder:text-gray-500 h-32 md:h-60" name="content" id="" cols="67" maxlength="1000" placeholder="Buatlah sebuah jawaban..."></textarea>
+                                            <input type="hidden" name="question_id" value="{{ $que->id }}">
+                                        </div>
 
-                                    <!-- Tambah Gambar & Share  -->
-                                    <div class="flex justify-end">
-                                        <label for="input-gambar">
-                                            <img class="h-8 mr-2 my-2 cursor-pointer" src="img/icon/round-image.svg" alt="">
-                                        </label>
-                                        <input id="input-gambar" name="gambar_jawab" type="file" accept="image/*" class="hidden">
+                                        <!-- Tambah Gambar & Share  -->
+                                        <div class="flex justify-end">
+                                            <label for="input-gambar">
+                                                <img class="h-8 mr-2 my-2 cursor-pointer" src="img/icon/round-image.svg" alt="">
+                                            </label>
+                                            <input id="input-gambar" name="gambar_jawab" type="file" accept="image/*" class="hidden">
 
-                                        <button type="submit" name="submit"> <img class="h-6 mr-4 my-3" src="img/icon/share.svg" alt=""> </button>
-                                    </div>
+                                            <button type="submit" name="submit"> <img class="h-6 mr-4 my-3" src="img/icon/share.svg" alt=""> </button>
+                                        </div>
                                     </form>
 
                                 </div>
