@@ -47,7 +47,7 @@ class AuthController extends Controller
         if(Auth::attempt($credentials)){
             $request->session()->regenerate();
 
-            return redirect()->intended('/');
+            return redirect()->intended( auth()->user()->role != 'admin' ? '/' : '/dashboard/view-user');
         }
 
         return back()->with('loginErr', 'Login failed, please check your email and password!');

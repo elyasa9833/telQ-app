@@ -2,7 +2,7 @@
 <div class="bg-white flex justify-between w-full h-max py-1 lg:py-2"> {{-- Disini Buat Nandain ada yg kuubah [py-2 md:py-2] (TTD:-Adrian) --}}
 
     {{-- Icon hp Start --}}
-    <a href="/" class="my-auto ml-2 md:hidden"><img class="h-10" src="../Img/Logo (3).svg" alt=""></a>
+    <a href="{{ auth()->user()->role != 'admin' ? '/' : '/dashboard/view-user' }}" class="my-auto ml-2 md:hidden"><img class="h-10" src="../Img/Logo (3).svg" alt=""></a>
     {{-- Icon hp End --}}
 
     {{-- createtopic --}}
