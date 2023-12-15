@@ -74,7 +74,7 @@ $tampil = mysqli_query($conn, $query);
     @include('partials.sidebar')
 
     <!-- Main section start -->
-    <div class="md:col-span-3 lg:col-span-5">
+    <div class="md:col-span-3 lg:col-span-5 h-full">
 
         @include('partials.header')
         @yield('container')

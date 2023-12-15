@@ -3,9 +3,12 @@
 
         <!-- Content Start -->
         <div class="h-[89vh] md:h-[93vh] pb-20 md:pb-5 overflow-y-auto overflow-x-hidden mx-4 rounded pt-2 shadow">
-            <div class="w-full md:w-5/6 md:mx-auto bg-white pt-4 pb-2 flex border-b rounded-t">
-                <img class="ml-3 h-5" src="img/Icon/Quest.svg" alt="">
-                <span class="ml-1 text-warna3 font-bold text-sm">Pertanyaan untuk anda</span>
+            <div class="w-full md:w-5/6 md:mx-auto bg-white pt-4 pb-2 border-b rounded-t">
+                <div class="flex mb-4">
+                    <img class="ml-3 h-5 md:h-7" src="img/Icon/Quest.svg" alt="">
+                    <span class="ml-3 text-warna3 font-bold text-sm md:text-xl">Pertanyaan untuk anda</span>
+                </div>
+                <hr>
             </div>
 
             @foreach ($questions as $num => $que)
@@ -33,7 +36,7 @@
                         <!-- Dropdown menu, Start-->
                         <div id="dropdownDotsHorizontal{{ $num }}" class="z-10 hidden bg-white opacity-90 divide-y divide-gray-100 rounded-lg shadow drop-shadow w-[12rem]">
                             <ul class="py-2 text-sm text-gray-900 font-medium" aria-labelledby="dropdownMenuIconHorizontalButton">
-                                
+
                                 @if($que->user_id == auth()->user()->id)
                                 <div  data-modal-target="popup-edit" data-modal-toggle="popup-edit{{ $num }}" class="flex px-4 py-2 text-sm hover:bg-gray-100 cursor-pointer" type="button">
                                     <img class="h-5" src="img/icon/titik-3/edit.svg" alt=""> <span class="ml-2 my-auto">Edit Pertanyaan</span>

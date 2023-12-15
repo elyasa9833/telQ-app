@@ -14,7 +14,7 @@
     <!-- Ini sidebar pc & tab Start -->
     <div class="hidden md:block col-span-1 md:row-span-2">
         <!-- Side bar Left start-->
-        <div class="h-[100vh] bg-white">
+        <div class="h-full bg-white">
             <img class="w-full " src="../Img/Logo.svg" alt="">
 
             @if(auth()->user()->role != 'admin')
@@ -72,7 +72,7 @@
                 </div>
             </a>
             <!-- Pilihan Setting End -->
-            
+
             @if(auth()->user()->role == 'moderator')
             <!-- Pilihan Reporting Start -->
             <a href="/mod/report">
@@ -91,7 +91,7 @@
                 <span class="text-lg text-center ml-4 font-semibold">Reporting</span>
             </div>
             </a>
-            <!-- Pilihan Reporting End -->            
+            <!-- Pilihan Reporting End -->
             @endif
 
         </div>
