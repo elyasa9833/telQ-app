@@ -13,11 +13,11 @@
             <div class="komen">
                 <div class="atas">
                     <!-- si foto profile -->
-                        <div class="flex ml-2 mt-2 w-44" href="#">
-                            <div class="bg-bgc aspect-square h-9 overflow-hidden rounded-full">
+                        <div class="flex ml-2 mt-2">
+                            <a href="{{ url('/user/' .$rep->user->username) }}" class="bg-bgc aspect-square h-9 overflow-hidden rounded-full">
                                 <img class="h-full w-full object-cover" src="../img/profile/{{ $rep->answer->user->photo_profile }}" alt="">
-                            </div>
-                            <span class="text-xs md:text-sm my-auto ml-2 text-gray-900 font-bold">{{ $rep->answer->user->fullname }}</span>
+                            </a>
+                            <a href="{{ url('/user/' .$rep->user->username) }}" class="text-xs md:text-sm my-auto ml-2 text-gray-900 font-bold">{{ $rep->answer->user->fullname }}</a>
                         </div>
 
                     <!-- menu -->
@@ -79,7 +79,7 @@
                     </div>
                 </div>
 
-                <div class="bawah">
+                <div class="bawah ml-6 mt-3">
                     <h3>{{ $rep->answer->content }}</h3>
                     <a href="" id="more-detail" class="text-blue-600">More Detail</a>
                     <p class="absolute right-1 bottom-0 text-sm text-gray-500">{{ $rep->created_at }}</p>

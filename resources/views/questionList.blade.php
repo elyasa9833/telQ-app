@@ -91,7 +91,7 @@
 
 
                                     <!-- NICK NAME -->
-                                    <div class="w-44 ml-2 pt-3">
+                                    <div class="ml-2 pt-3">
                                         <div class="flex">
                                         <a href="#" class="bg-bgc aspect-square h-10 overflow-hidden rounded-full">
                                             <img class="h-full w-full object-cover" src="img/{{ auth()->user()->photo_profile }}" alt="profile">
