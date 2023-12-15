@@ -18,7 +18,7 @@ class QuestionController extends Controller
     {
         return view('questionList', [
             'questions' => Question::latest()->get(),
-            // 'answers' => Question::all()->answer,
+            'answers' => Answer::latest()->get(),
         ]);
     }
 

@@ -94,7 +94,7 @@
 
 
                                     <!-- NICK NAME -->
-                                    <div class="w-44 ml-2 pt-3">
+                                    <div class="ml-2 pt-3">
                                         <div class="flex">
                                         <a href="#" class="bg-bgc aspect-square h-10 overflow-hidden rounded-full">
                                             <img class="h-full w-full object-cover" src="img/{{ auth()->user()->photo_profile }}" alt="profile">
@@ -172,11 +172,16 @@
                                 <div class="col-span-1 bg-white my-auto md:mx-2 rounded-t-md md:rounded-md container">
 
                                     <!-- Foto Profile -->
-                                    <div class="flex ml-2 mt-2 w-44">
+                                    <div class="flex mx-2 mt-2">
                                         <div class="bg-bgc aspect-square h-9 overflow-hidden rounded-full">
-                                            <img class="h-full w-full object-cover" src="img/profile/{{ auth()->user()->photo_profile }}" alt="">
+                                            <img class="h-full w-full object-cover" src="img/profile/{{ $que->user->photo_profile }}" alt="">
                                         </div>
-                                        <span class="text-xs md:text-sm my-auto ml-2 text-gray-700 font-bold">{{ auth()->user()->fullname }}</span>
+                                        <span class="text-xs md:text-sm my-auto ml-2 text-gray-700 font-bold">{{ $que->user->fullname }}</span>
+
+                                    </div>
+                                    <div class="flex mx-2 mt-2">
+
+                                        <span class="text-xs font-semibold text-gray-700 h-auto">{{ $que->content }}</span>
                                     </div>
 
                                     <form action="{{ url('/answer') }}" method="post" enctype="multipart/form-data">
@@ -207,47 +212,49 @@
                                     <!-- Contoh user upload pake gambar, Start -->
                                     {{-- $jawab_orang = mysqli_query($conn,"SELECT user.fullname, user.foto_profil, jawab.jawaban, jawab.gambar_jawab FROM jawab JOIN user ON jawab.id_user=user.id_user WHERE id_tanya = $num") --}}
 
-                                    {{-- @foreach ($questions as $item) --}}
+                                    @php $answerLoop = $answers->where('question_id', $que->id) @endphp
+                                    @foreach ($answerLoop as $numitem => $item)
                                     <div class="mt-4">
                                         <!-- Foto Profile -->
-                                        <a class="flex ml-2 mt-2 w-44" href="#">
-                                            <div class="bg-gray-500 aspect-square h-9 overflow-hidden rounded-full">
-                                                <img class="h-full w-full object-cover" src="img/profile/{{-- $item->answer->user->photo_profile --}}" alt="">
+                                        <a class="flex mx-2 mt-2" href="#">
+                                            <div class="bg-bgc aspect-square h-9 overflow-hidden rounded-full">
+                                                <img class="h-full w-full object-cover" src="img/profile/{{ $item->user->photo_profile }}" alt="">
                                             </div>
-                                            <span class="text-xs md:text-sm my-auto ml-2 text-gray-700 font-bold">{{-- $item->answer->user->fullname --}} fullname</span>
+                                            <span class="text-xs md:text-sm my-auto ml-2 text-gray-700 font-bold">{{ $item->question_id }} {{ $item->user->fullname }}</span>
                                         </a>
 
                                         <!-- isi jawaban orang -->
                                         <div class="mx-5 my-2">
-                                            <span class="text-sm text-gray-700">{{-- $item->answer->content --}}</span>
+                                            <span class="text-sm text-gray-700">{{$item->content}}</span>
                                         </div>
 
                                         <!-- Gambar post -->
                                         <div class="mx-5 mt-3">
-                                            {{-- @if (isset($item->answer->image)) --}}
+                                            @if (isset($item->image))
                                             <div class="aspect-[6/3] container rounded-md bg-gray-600 relative border-2 overflow-hidden">
                                                 <!-- Ini background Img nya -->
-                                                <img class="object-none object-center h-full w-full opacity-30 blur-sm absolute" src="img/postingan/{{-- $item->answer->image --}}?>" alt="">
+                                                <img class="object-none object-center h-full w-full opacity-30 blur-sm absolute" src="img/postingan/{{ $item->image }}" alt="">
                                                 <!-- Ini gambar depannya -->
-                                                <button data-modal-target="lihat-full-gambar" data-modal-toggle="lihat-full-gambar" class="h-full w-full m-auto absolute right-0 left-0" type="button">
-                                                    <img class="h-full w-full object-contain" src="img/postingan/{{-- $item->answer->image --}}" alt="">
+                                                <button data-modal-target="lihat-full-gambar" data-modal-toggle="lihat-full-gambar{{ $que->id. $numitem }}" class="h-full w-full m-auto absolute right-0 left-0" type="button">
+                                                    <img class="h-full w-full object-contain" src="img/postingan/{{ $item->image }}" alt="">
                                                 </button>
                                             </div>
+                                            @endif
 
                                             <!-- Main modal -->
-                                            <div id="lihat-full-gambar" tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
+                                            <div id="lihat-full-gambar{{ $que->id. $numitem }}" tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
                                                 <button type="button" data-modal-hide="lihat-full-gambar" class="relative cursor-none w-full max-w-4xl max-h-full">
                                                     <!-- Modal content -->
                                                     <!-- Ini gambarnya -->
-                                                    <img class="h-full w-full m-auto" src="img/postingan/{{-- $item->answer->image --}}" alt="">
+                                                    <img class="h-full w-full m-auto" src="img/postingan/{{ $item->image }}" alt="">
                                                 </button>
                                             </div>
-                                            {{-- @endif --}}
+                                            
                                         </div>
                                         <hr class="mx-4 mt-2">
                                     </div>
                                     <!-- Contoh user upload pake gambar, End -->
-                                    {{-- @endforeach --}}
+                                    @endforeach
 
                                 </div>
                                 <!-- Ini jawab Orang lain, End -->

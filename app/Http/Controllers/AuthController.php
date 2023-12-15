@@ -31,6 +31,7 @@ class AuthController extends Controller
             'photo_profile' => 'required|max:255',
         ]);
 
+        $validatedData['role'] = 'user';
         $validatedData['password'] = Hash::make($validatedData['password']);
         User::create($validatedData);
 

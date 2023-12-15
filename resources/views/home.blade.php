@@ -11,9 +11,9 @@
         <div class="bg-white mt-1 md:mt-2 relative rounded md:w-5/6 sm:mx-auto pb-6">
 
             <!-- Nama profile -->
-            <div class="w-44 ml-2 pt-3">
+            <div class="ml-2 pt-3">
                 <div class="flex">
-                <a href="#" class="bg-bgc aspect-square h-10 overflow-hidden rounded-full">
+                <a href="{{ url('/user/' .$answer->user->username) }}" class="bg-bgc aspect-square h-10 overflow-hidden rounded-full">
                     <img class="h-full w-full object-cover" src="img/{{ $answer->user->photo_profile }}" alt="profile">
                 </a>
                 <a href="{{ url('/user/' .$answer->user->username) }}" class="text-xs md:text-sm my-auto ml-2 text-gray-900 font-bold">{{ $answer->user->fullname }}</a>
@@ -150,7 +150,7 @@
 
 
                                 <!-- NICK NAME -->
-                                <div class="w-44 ml-2 pt-3">
+                                <div class="ml-2 pt-3">
                                     <div class="flex">
                                     <a href="#" class="bg-bgc aspect-square h-10 overflow-hidden rounded-full">
                                         <img class="h-full w-full object-cover" src="img/{{ $answer->user->photo_profile }}" alt="profile">
