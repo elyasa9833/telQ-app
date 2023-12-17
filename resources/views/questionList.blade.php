@@ -231,7 +231,7 @@
                                         <!-- Gambar post -->
                                         <div class="mx-5 mt-3">
                                             @if (isset($item->image))
-                                            <div class="aspect-[1/1] h-20 w-20 container rounded-md bg-gray-600 relative border-2 overflow-hidden">
+                                            <div class="h-20 w-32 outline outline-1 outline-gray-300 container bg-gray-600 relative border-2 overflow-hidden">
                                                 <!-- Ini background Img nya -->
                                                 <img class="object-none object-center h-full w-full opacity-30 blur-sm absolute" src="img/postingan/{{ $item->image }}" alt="">
                                                 <!-- Ini gambar depannya -->
@@ -243,10 +243,10 @@
 
                                             <!-- Main modal -->
                                             <div id="lihat-full-gambar{{ $que->id. $numitem }}" tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
-                                                <button type="button" data-modal-hide="lihat-full-gambar" class="relative cursor-none w-full max-w-4xl max-h-full">
+                                                <button type="button" data-modal-hide="lihat-full-gambar" class="relative cursor-none w-full max-w-[90rem] max-h-full">
                                                     <!-- Modal content -->
                                                     <!-- Ini gambarnya -->
-                                                    <img class="h-full w-full m-auto" src="img/postingan/{{ $item->image }}" alt="">
+                                                    <img class="h-full w-full m-auto outline  outline-gray-300" src="img/postingan/{{ $item->image }}" alt="">
                                                 </button>
                                             </div>
 
