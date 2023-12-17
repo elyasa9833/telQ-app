@@ -167,28 +167,28 @@
                         <div class="relative w-[89%] md:w-[80%] h-[40rem]">
                             <!-- Modal content -->
                             <!-- Bentar ini jadi pop up nya jawab, Start -->
-                            <div style="background-color: rgba(230, 230, 230, 0.712);" class="border-slate-700 border-2 grid grid-cols-1 md:grid-cols-2 gap-[0.10rem] md:gap-4 rounded-lg overflow-hidden">
+                            <div style="background-color: rgba(230, 230, 230, 0.712);" class="border-slate-700 border-2 grid grid-cols-1 md:grid-cols-5 gap-[0.10rem] md:gap-4 rounded-lg overflow-hidden">
                                 <!-- Ini jawaban kita, Start -->
-                                <div class="col-span-1 bg-white my-auto md:mx-2 rounded-t-md md:rounded-md container">
+                                <div class="col-span-3 bg-white h-fit my-auto md:mx-2 rounded-t-md md:rounded-md container">
 
                                     <!-- Foto Profile -->
-                                    <div class="flex mx-2 mt-2">
+                                    <div class="flex ml-5 mt-2">
                                         <div class="bg-bgc aspect-square h-9 overflow-hidden rounded-full">
                                             <img class="h-full w-full object-cover" src="img/profile/{{ $que->user->photo_profile }}" alt="">
                                         </div>
                                         <span class="text-xs md:text-sm my-auto ml-2 text-gray-700 font-bold">{{ $que->user->fullname }}</span>
 
                                     </div>
-                                    <div class="flex mx-2 mt-2">
+                                    <div class="flex ml-5 mt-2">
 
-                                        <span class="text-xs font-semibold text-gray-700 h-auto">{{ $que->content }}</span>
+                                        <span class="text-base ml-4 my-1 font-semibold text-gray-700 h-auto">{{ $que->content }}</span>
                                     </div>
 
                                     <form action="{{ url('/answer') }}" method="post" enctype="multipart/form-data">
                                         @csrf
                                         <!-- TextArea -->
                                         <div class="flex justify-center my-2 mx-1">
-                                            <textarea class="resize-none outline-none rounded-md border-bgc text-sm text-gray-800 p-2 placeholder:text-gray-500 h-32 md:h-60" name="content" id="" cols="67" maxlength="1000" placeholder="Buatlah sebuah jawaban..."></textarea>
+                                            <textarea class="resize-none outline-none rounded-md border-bgc text-sm text-gray-800 p-2 placeholder:text-gray-500 h-32 md:h-80" name="content" id="" cols="90" maxlength="1000" placeholder="Buatlah sebuah jawaban..."></textarea>
                                             <input type="hidden" name="question_id" value="{{ $que->id }}">
                                         </div>
 
@@ -207,7 +207,7 @@
                                 <!-- Ini jawaban kita, End -->
 
                                 <!-- Ini jawab Orang lain, Start -->
-                                <div class="col-span-1 bg-white border-l overflow-auto h-[40rem]">
+                                <div class="col-span-2 bg-white border-l overflow-auto h-[40rem]">
 
                                     <!-- Contoh user upload pake gambar, Start -->
                                     {{-- $jawab_orang = mysqli_query($conn,"SELECT user.fullname, user.foto_profil, jawab.jawaban, jawab.gambar_jawab FROM jawab JOIN user ON jawab.id_user=user.id_user WHERE id_tanya = $num") --}}
@@ -231,7 +231,7 @@
                                         <!-- Gambar post -->
                                         <div class="mx-5 mt-3">
                                             @if (isset($item->image))
-                                            <div class="aspect-[6/3] container rounded-md bg-gray-600 relative border-2 overflow-hidden">
+                                            <div class="aspect-[1/1] h-20 w-20 container rounded-md bg-gray-600 relative border-2 overflow-hidden">
                                                 <!-- Ini background Img nya -->
                                                 <img class="object-none object-center h-full w-full opacity-30 blur-sm absolute" src="img/postingan/{{ $item->image }}" alt="">
                                                 <!-- Ini gambar depannya -->
@@ -249,7 +249,7 @@
                                                     <img class="h-full w-full m-auto" src="img/postingan/{{ $item->image }}" alt="">
                                                 </button>
                                             </div>
-                                            
+
                                         </div>
                                         <hr class="mx-4 mt-2">
                                     </div>
