@@ -24,7 +24,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/', [AnswerController::class, 'index']);
 
     // question route
-    Route::resource('/question-list', QuestionController::class);
+    Route::resource('/questions', QuestionController::class);
 
     // setting route
     Route::get('/setting', function () {

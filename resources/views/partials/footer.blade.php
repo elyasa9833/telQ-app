@@ -10,7 +10,7 @@
         </a>
         
         <!-- Country roaaaadddd -->
-        <a class="mt-1 {{ Request::is('question-list') ? 'text-warna2 hover:text-warna2h' : 'text-warna3 hover:text-warna3h' }}" href="/question-list">
+        <a class="mt-1 {{ Request::is('questions') ? 'text-warna2 hover:text-warna2h' : 'text-warna3 hover:text-warna3h' }}" href="/questions">
             <svg class="fill-current" width="28" height="23" viewBox="0 0 28 23" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M13.5 22.5V19.3125L21.45 11.3625L24.6375 14.55L16.6875 22.5H13.5ZM0 15V12H10.5V15H0ZM25.6875 13.5L22.5 10.3125L23.5875 9.225C23.8625 8.95 24.2125 8.8125 24.6375 8.8125C25.0625 8.8125 25.4125 8.95 25.6875 9.225L26.775 10.3125C27.05 10.5875 27.1875 10.9375 27.1875 11.3625C27.1875 11.7875 27.05 12.1375 26.775 12.4125L25.6875 13.5ZM0 9V6H16.5V9H0ZM0 3V0H16.5V3H0Z"/>
             </svg>    

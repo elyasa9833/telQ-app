@@ -31,15 +31,15 @@
             <!-- Pilihan Home End -->
 
             <!-- Pilihan Komen Start -->
-            <a href="/question-list">
-                <div class=" mx-4 py-2 rounded flex text-white mt-5 shadow-md {{ Request::is('question-list') ? 'bg-warna2 hover:bg-warna2h':'bg-warna3 hover:bg-warna3h' }}">
+            <a href="/questions">
+                <div class=" mx-4 py-2 rounded flex text-white mt-5 shadow-md {{ Request::is('questions') ? 'bg-warna2 hover:bg-warna2h':'bg-warna3 hover:bg-warna3h' }}">
                     <svg class="fill-current h-[22px] pl-4 mt-1" viewBox="0 0 28 23" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
                         <path
                             d="M13.5 22.5V19.3125L21.45 11.3625L24.6375 14.55L16.6875 22.5H13.5ZM0 15V12H10.5V15H0ZM25.6875 13.5L22.5 10.3125L23.5875 9.225C23.8625 8.95 24.2125 8.8125 24.6375 8.8125C25.0625 8.8125 25.4125 8.95 25.6875 9.225L26.775 10.3125C27.05 10.5875 27.1875 10.9375 27.1875 11.3625C27.1875 11.7875 27.05 12.1375 26.775 12.4125L25.6875 13.5ZM0 9V6H16.5V9H0ZM0 3V0H16.5V3H0Z" />
                     </svg>
 
-                    <span class="text-lg text-center ml-3 font-semibold">Question List</span>
+                    <span class="text-lg text-center ml-3 font-semibold">Questions</span>
                 </div>
             </a>
             <!-- Pilihan Komen End -->

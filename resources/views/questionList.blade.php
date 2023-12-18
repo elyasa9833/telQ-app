@@ -67,7 +67,7 @@
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                         </svg>
                                         <h3 class="mb-5 text-lg font-medium text-gray-800">Apakah kamu yakin ingin Menghapus?</h3>
-                                        <form action="{{ url('/question-list/'. $que->id) }}" method="POST" class="inline-block">
+                                        <form action="{{ url('/questions/'. $que->id) }}" method="POST" class="inline-block">
                                             @csrf
                                             @method('delete')
                                             <button type="submit" data-modal-hide="popup-hapus" type="button" class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2">Iya</button>
@@ -105,7 +105,7 @@
 
                                     <!-- TextAREA EDIT -->
                                     {{-- start form edit --}}
-                                    <form action="{{ url('/question-list/'. $que->id) }}" method="POST">
+                                    <form action="{{ url('/questions/'. $que->id) }}" method="POST">
                                         @csrf
                                         @method('PUT')
                                         <div class="flex justify-center my-2 mx-1">
