@@ -41,9 +41,14 @@ class QuestionController extends Controller
     public function store(Request $request)
     {
         $createQuestion = $request->validate([
-            'content' => 'required',
-            'image' => 'nullable'
+            'content' => 'required|max:255',
+            'image' => 'image|file|max:3072|nullable'
         ]);
+
+        if($request->file('image')) {
+            $createQuestion['image'] = $request->file('image')->store('post-images');
+        }
+
         $createQuestion['user_id'] = auth()->user()->id;
 
         Question::create($createQuestion);

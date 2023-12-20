@@ -40,9 +40,14 @@ class AnswerController extends Controller
     {
         $answers = $request->validate([
             'question_id' => 'required',
-            'content' => 'required',
-            'image' => 'nullable'
+            'content' => 'required|max:255',
+            'image' => 'image|file|max:3072|nullable'
         ]);
+
+        if($request->file('image')) {
+            $answers['image'] = $request->file('image')->store('post-images');
+        }
+
         $answers['user_id'] = auth()->user()->id;
 
         Answer::create($answers);

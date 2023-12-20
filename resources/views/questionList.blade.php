@@ -3,6 +3,13 @@
 
         <!-- Content Start -->
         <div class="h-[89vh] md:h-[93vh] pb-20 md:pb-5 overflow-y-auto overflow-x-hidden mx-4 rounded pt-2 shadow">
+            
+            @error('image')
+                <div class="bg-red-50 text-red-500 relative pb-2 pt-3 mb-3 shadow md:w-5/6 md:mx-auto p-3">
+                    Alert: {{ $message }}
+                </div>
+            @enderror
+            
             <div class="w-full md:w-5/6 md:mx-auto bg-white pt-4 pb-2 border-b rounded-t">
                 <div class="flex mb-4">
                     <img class="ml-3 h-5 md:h-7" src="img/Icon/Quest.svg" alt="">
@@ -132,10 +139,10 @@
 
                     <!-- isi pertanyaan  -->
                     <div class="mx-5 mt-2 grid">
-                        <span class="font-bold text-gray-900">{{-- $pertanyaan --}}
+                        <span class="font-semibold text-gray-900">{{ $que->content }}
                             <!-- Misal Ada Gambar -->
                             @if (isset($que->image)) <br>
-                            <button data-modal-target="lihat-gambar" data-modal-toggle="lihat-gambar{{ $num }}" class="text-blue-800 text-xs" type="button">(Lihat Gambar)
+                            <button data-modal-target="lihat-gambar" data-modal-toggle="lihat-gambar{{ $num }}" class="text-blue-800 text-xs" type="button">(Lihat gambar)
                             </button>
                             @endif
                         </span>
@@ -145,11 +152,9 @@
                             <button type="button" data-modal-hide="lihat-gambar" class="relative cursor-none w-full max-w-4xl max-h-full">
                                 <!-- Modal content -->
                                 <!-- Ini gambarnya -->
-                                <img class="h-full w-full m-auto" src="img/postingan/{{ $que->image }}" alt="">
+                                <img class="h-full w-full m-auto" src="{{ asset('storage/'. $que->image) }}" alt="">
                             </button>
                         </div>
-
-                        <span class="font-semibold text-sm mt-1 text-gray-700">{{ $que->content }}</span>
 
                     </div>
                     <!-- Tombol Jawaban, Start -->
@@ -172,7 +177,7 @@
                                 <div class="col-span-3 bg-white h-fit my-auto md:mx-2 rounded-t-md md:rounded-md container">
 
                                     <!-- Foto Profile -->
-                                    <div class="flex ml-5 mt-2">
+                                    <div class="flex ml-5 mt-2 cursor-default">
                                         <div class="bg-bgc aspect-square h-9 overflow-hidden rounded-full">
                                             <img class="h-full w-full object-cover" src="img/profile/{{ $que->user->photo_profile }}" alt="">
                                         </div>
@@ -188,7 +193,7 @@
                                         @csrf
                                         <!-- TextArea -->
                                         <div class="flex justify-center my-2 mx-1">
-                                            <textarea class="resize-none outline-none rounded-md border-bgc text-sm text-gray-800 p-2 placeholder:text-gray-500 h-32 md:h-80" name="content" id="" cols="90" maxlength="1000" placeholder="Buatlah sebuah jawaban..."></textarea>
+                                            <textarea class="resize-none outline-none rounded-md border-bgc text-sm text-gray-800 p-2 placeholder:text-gray-500 h-32 md:h-80" name="content" id="" cols="90" maxlength="1000" placeholder="Buatlah sebuah jawaban..." required>{{ old('content') }}</textarea>
                                             <input type="hidden" name="question_id" value="{{ $que->id }}">
                                         </div>
 
@@ -197,9 +202,9 @@
                                             <label for="input-gambar">
                                                 <img class="h-8 mr-2 my-2 cursor-pointer" src="img/icon/round-image.svg" alt="">
                                             </label>
-                                            <input id="input-gambar" name="gambar_jawab" type="file" accept="image/*" class="hidden">
+                                            <input id="input-gambar" name="image" type="file" accept="image/*" class="hidden">
 
-                                            <button type="submit" name="submit"> <img class="h-6 mr-4 my-3" src="img/icon/share.svg" alt=""> </button>
+                                            <button type="submit"> <img class="h-6 mr-4 my-3" src="img/icon/share.svg" alt=""> </button>
                                         </div>
                                     </form>
 
@@ -220,7 +225,7 @@
                                             <div class="bg-bgc aspect-square h-9 overflow-hidden rounded-full">
                                                 <img class="h-full w-full object-cover" src="img/profile/{{ $item->user->photo_profile }}" alt="">
                                             </div>
-                                            <span class="text-xs md:text-sm my-auto ml-2 text-gray-700 font-bold">{{ $item->question_id }} {{ $item->user->fullname }}</span>
+                                            <span class="text-xs md:text-sm my-auto ml-2 text-gray-700 font-bold">{{ $item->user->fullname }}</span>
                                         </a>
 
                                         <!-- isi jawaban orang -->
@@ -233,10 +238,10 @@
                                             @if (isset($item->image))
                                             <div class="h-20 w-32 outline outline-1 outline-gray-300 container bg-gray-600 relative border-2 overflow-hidden">
                                                 <!-- Ini background Img nya -->
-                                                <img class="object-none object-center h-full w-full opacity-30 blur-sm absolute" src="img/postingan/{{ $item->image }}" alt="">
+                                                <img class="object-none object-center h-full w-full opacity-30 blur-sm absolute" src="{{ asset('storage/'. $item->image) }}" alt="">
                                                 <!-- Ini gambar depannya -->
                                                 <button data-modal-target="lihat-full-gambar" data-modal-toggle="lihat-full-gambar{{ $que->id. $numitem }}" class="h-full w-full m-auto absolute right-0 left-0" type="button">
-                                                    <img class="h-full w-full object-contain" src="img/postingan/{{ $item->image }}" alt="">
+                                                    <img class="h-full w-full object-contain" src="{{ asset('storage/'. $item->image) }}" alt="">
                                                 </button>
                                             </div>
                                             @endif
@@ -246,7 +251,7 @@
                                                 <button type="button" data-modal-hide="lihat-full-gambar" class="relative cursor-none w-full max-w-[90rem] max-h-full">
                                                     <!-- Modal content -->
                                                     <!-- Ini gambarnya -->
-                                                    <img class="h-full w-full m-auto outline  outline-gray-300" src="img/postingan/{{ $item->image }}" alt="">
+                                                    <img class="h-full w-full m-auto outline  outline-gray-300" src="{{ asset('storage/'. $item->image) }}" alt="">
                                                 </button>
                                             </div>
 

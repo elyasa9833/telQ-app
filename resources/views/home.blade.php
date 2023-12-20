@@ -4,6 +4,11 @@
 <!-- Ini apasih namanya, pokoknya dalemnya ada topik ama postingan. Start -->
 <div class="overflow-auto h-[89vh] md:h-[93vh] mx-4">
 
+    @error('image')
+        <div class="bg-red-50 text-red-500 mt-1 md:mt-2 relative rounded md:w-5/6 sm:mx-auto p-3 mb-3">
+            Alert: {{ $message }}
+        </div>
+    @enderror
     @foreach ($answers as $num => $answer)
     <div class="mb-3">
 
@@ -185,11 +190,11 @@
             </div>
 
             <!-- Isi Pertanyaan, Start -->
-            <div id="isiTopik" class="mx-9 mt-3">
-                <span class="font-bold text-gray-900">{{ $answer->question->content }} 
+            <div id="isiTopik" class="mx-9 mt-3 bg-gray-100 p-2">
+                <span class="text-gray-900"><h4 class="font-semibold cursor-default">{{ $answer->question->user->fullname }}</h4> "{{ $answer->question->content }}" <br>
                     <!-- Misal Ada Gambar -->
-                    @if (isset($answer->question->image)) <br>
-                    <button data-modal-target="lihat-gambar" data-modal-toggle="lihat-gambar{{ $num }}" class="text-blue-800 text-xs" type="button"> (Lihat Gambar)
+                    @if (isset($answer->question->image))
+                    <button data-modal-target="lihat-gambar" data-modal-toggle="lihat-gambar{{ $num }}" class=" font-semibold text-blue-800 text-xs" type="button"> (Lihat gambar)
                     </button>
                     @endif
                 </span>
@@ -198,15 +203,15 @@
                     <button type="button" data-modal-hide="lihat-gambar" class="relative cursor-none w-full max-w-4xl max-h-full">
                         <!-- Modal content -->
                         <!-- Ini gambarnya -->
-                        <img class="h-full w-full m-auto" src="img/postingan/{{ $answer->question->image ?? '' }}" alt="">
+                        <img class="h-full w-full m-auto" src="{{ asset('storage/'. $answer->question->image) }}" alt="">
                     </button>
-                </div>
-            </div>
+                </div> 
+            </div> 
             <!-- Isi Pertanyaan, End -->
 
             <!-- Deskripsi Topik -->
             <div id="deskripsi" class="mx-9 mt-2">
-                <span class="text-xs font-semibold text-gray-700 ">{{ $answer->content }}
+                <span class="font-semibold text-gray-700 ">{{ $answer->content }}
                     {{-- <a id="lanjutDeskripsi" class="text-blue-800" href="#"> (Lebih lanjut)</a> --}}
                 </span>
             </div>
@@ -217,10 +222,10 @@
             <div class="mx-7 mt-3">
                 <div class="aspect-[4/3] rounded-md bg-gray-600 relative border-2 overflow-hidden">
                     <!-- Ini background Img nya -->
-                    <img class="h-full w-full opacity-30 blur-sm absolute" src="img/postingan/{{ $answer->image }}" alt="">
+                    <img class="h-full w-full opacity-30 blur-sm absolute" src="{{ asset('storage/'. $answer->image) }}" alt="">
                     <!-- Ini gambar depannya -->
                     <button data-modal-target="lihat-full-gambar" data-modal-toggle="lihat-full-gambar{{ $num }}" class="h-full w-full m-auto absolute right-0 left-0" type="button">
-                        <img class="h-full w-full object-contain" src="img/postingan/{{ $answer->image }}" alt="">
+                        <img class="h-full w-full object-contain" src="{{ asset('storage/'. $answer->image) }}" alt="">
                     </button>
                 </div>
                 <!-- Main modal -->
@@ -228,7 +233,7 @@
                     <button type="button" data-modal-hide="lihat-full-gambar" class="relative cursor-none w-full max-w-4xl max-h-full">
                         <!-- Modal content -->
                         <!-- Ini gambarnya -->
-                        <img class="h-full w-full m-auto" src="img/postingan/{{ $answer->image }}" alt="">
+                        <img class="h-full w-full m-auto" src="{{ asset('storage/'. $answer->image) }}" alt="">
                     </button>
                 </div>
             </div>

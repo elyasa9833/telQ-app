@@ -33,14 +33,13 @@
                 {{-- untuk sementara user id = 2 --}}
                 <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
                 <div class="flex justify-center items-center mt-2">
-                    <textarea class="bg-white mx-auto w-[95%] border-none focus:outline-none resize-none text-gray-800" name="content"
-                        id="" rows="10" placeholder="Buatlah sebuah pertanyaan...."></textarea>
+                    <textarea class="bg-white mx-auto w-[95%] border-none focus:outline-none resize-none text-gray-800" name="content" id="" rows="10" placeholder="Buatlah sebuah pertanyaan...." required>{{ old('content') }}</textarea>
                 </div>
                 <hr>
                 <div class="flex justify-end">
 
                     <label for="input-gambar">
-                        <img class="h-8 mr-2 my-2" src="img/icon/round-image.svg" alt="">
+                        <img class="h-8 mr-2 my-2 cursor-pointer" src="img/icon/round-image.svg" alt="">
                     </label>
                     <input id="input-gambar" name="image" accept="image/*" type="file" class="hidden">
 
