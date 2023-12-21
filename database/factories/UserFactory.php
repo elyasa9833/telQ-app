@@ -26,7 +26,6 @@ class UserFactory extends Factory
             'fullname' => $this->faker->name(),
             'asal_kota' => $this->faker->city(),
             'deskripsi' => $this->faker->paragraph(),
-            'photo_profile' => 'User.svg',
             'phone_number' => $this->faker->phoneNumber()
         ];
     }

@@ -22,11 +22,13 @@
 
             <!-- Pertanyaan pake gambar start -->
                 <div class="bg-white relative pb-2 pt-3 mb-3 shadow md:w-5/6 md:mx-auto">
+                    
+                    @php $UserImgPath = ($que->user->photo_profile) ? asset('storage/'. $que->user->photo_profile) : "img/profile/User.svg" @endphp
                     <!-- Profile -->
                     <div class="flex ml-3">
                         <div class="bg-bgc aspect-square h-10 overflow-hidden rounded-full">
                             <a href="#">
-                                <img class="h-full w-full object-cover" src="img/{{$que->user->photo_profile}}" alt=""> </a>
+                                <img class="h-full w-full object-cover" src="{{ $UserImgPath }}" alt=""> </a>
                         </div>
                         <a href="{{ url('/user/' .$que->user->username) }}" class="font-semibold text-sm my-auto ml-1 text-gray-800">{{ $que->user->fullname }}</a>
                     </div>
@@ -179,7 +181,7 @@
                                     <!-- Foto Profile -->
                                     <div class="flex ml-5 mt-2 cursor-default">
                                         <div class="bg-bgc aspect-square h-9 overflow-hidden rounded-full">
-                                            <img class="h-full w-full object-cover" src="img/profile/{{ $que->user->photo_profile }}" alt="">
+                                            <img class="h-full w-full object-cover" src="{{ $UserImgPath }}" alt="">
                                         </div>
                                         <span class="text-xs md:text-sm my-auto ml-2 text-gray-700 font-bold">{{ $que->user->fullname }}</span>
 
@@ -220,10 +222,13 @@
                                     @php $answerLoop = $answers->where('question_id', $que->id) @endphp
                                     @foreach ($answerLoop as $numitem => $item)
                                     <div class="mt-4">
+
+                                        @php $UserImgPath = ($item->user->photo_profile) ? asset('storage/'. $item->user->photo_profile) : "img/profile/User.svg" @endphp
+
                                         <!-- Foto Profile -->
                                         <a class="flex mx-2 mt-2" href="#">
                                             <div class="bg-bgc aspect-square h-9 overflow-hidden rounded-full">
-                                                <img class="h-full w-full object-cover" src="img/profile/{{ $item->user->photo_profile }}" alt="">
+                                                <img class="h-full w-full object-cover" src="{{ $UserImgPath }}" alt="">
                                             </div>
                                             <span class="text-xs md:text-sm my-auto ml-2 text-gray-700 font-bold">{{ $item->user->fullname }}</span>
                                         </a>

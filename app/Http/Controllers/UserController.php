@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Question;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -48,6 +49,8 @@ class UserController extends Controller
     {
         return view('profile.showProfile', [
             'user' => $user,
+            'imgPath' => ($user->photo_profile) ? "asset('/storage'. $user->photo_profile)":"../img/profile/User.svg",
+            'topic_count' => Question::where('user_id', $user->id)->distinct('id')->count()
         ]);
     }
 
@@ -59,8 +62,14 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
+        if($user->id != auth()->user()->id) {
+            return abort(404);
+        };
+
         return view('profile.editProfile', [
             'user' => $user,
+            'imgPath' => ($user->photo_profile) ? "asset('/storage'. $user->photo_profile)":"../img/profile/User.svg",
+            'topic_count' => Question::where('user_id', $user->id)->distinct('id')->count()
         ]);
     }
 
@@ -73,7 +82,20 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $updateProfile = $request->validate([
+            'fullname' => 'required|max:255',
+            'deskripsi' => 'required|max:255',
+            'phone_number' => 'required|max:255',
+            'photo_profile' => 'image|file|max:3072|nullable'
+        ]);
+
+        if($request->file('photo_profile')) {
+            $updateProfile['photo_profile'] = $request->file('photo_profile')->store('profile-images');
+        }
+
+        User::where('id', $id)->update($updateProfile);
+
+        return redirect()->back();
     }
 
     /**

@@ -28,7 +28,7 @@ class AuthController extends Controller
             'email' => 'required|email|unique:users',
             'password' => 'required|min:6|max:255',
             'deskripsi' => 'required|max:255',
-            'photo_profile' => 'required|max:255',
+            'photo_profile' => 'nullable',
         ]);
 
         $validatedData['role'] = 'user';

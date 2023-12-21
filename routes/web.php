@@ -39,7 +39,7 @@ Route::middleware('auth')->group(function () {
 
     // user route
     Route::get('/user/{user:username}', [UserController::class, 'show']);
-    Route::get('/user/{user:username}/edit', [UserController::class, 'edit']);
+    Route::get('/editUser/{user:username}', [UserController::class, 'edit']);
     Route::put('/user/{user}', [UserController::class, 'update']);
     Route::delete('/user/{user}', [UserController::class, 'destroy']);
 });

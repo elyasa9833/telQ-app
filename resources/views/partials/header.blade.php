@@ -11,12 +11,16 @@
     <!-- Gambar tiga biji diatas kanan, Start -->
     <div class="flex my-auto">
         
-        @php $imgPath = Request::is('mod/report') || Request::is('dashboard/view-user') ? "../":"" @endphp
+        @php 
+            $storagePath = Request::is('mod/report') || Request::is('dashboard/view-user') || Request::is('user/*') || Request::is('editUser/*') ? "../":""; 
+            $imgPath = (auth()->user()->photo_profile) ? asset('storage/'. auth()->user()->photo_profile) : $storagePath ."img/profile/User.svg";
+        @endphp
+        
         <div class="flex mr-2 md:mr-7">
             <!-- Tag Search -->
             <!-- Tombol Search -->
             <button id="dropdown-search" data-dropdown-toggle="dropdownsearch" class="my-auto mx-1" type="button">
-                <img class="h-10 md:h-11 lg:h-12" src="{{ $imgPath }}img/Icon/TagSearch.svg" alt="">
+                <img class="h-10 md:h-11 lg:h-12" src="{{ $storagePath }}img/Icon/TagSearch.svg" alt="">
             </button>
             <!-- Dropdown Search -->
             <div id="dropdownsearch" class="z-10 hidden">
@@ -29,26 +33,26 @@
 
 
             <!-- ini notif -->
-            <a class="my-auto mx-1" href="#"> <img class="h-10 md:h-11 lg:h-12" src="{{ $imgPath }}img/Icon/Notif.svg" alt=""> </a>
+            <a class="my-auto mx-1" href="#"> <img class="h-10 md:h-11 lg:h-12" src="{{ $storagePath }}img/Icon/Notif.svg" alt=""> </a>
             <!-- Foto Profile dengan dropdownnya anjay -->
             <!-- Profile Start -->
             <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown" class="text-white font-medium rounded-full text-sm" type="button">
                 <!-- si foto profile -->
             <div class="bg-bgc aspect-square h-10 overflow-hidden rounded-full">
-                <img class="h-full w-full object-cover" src="{{ $imgPath }}img/profile/{{ auth()->user()->photo_profile }}" alt="">
+                <img class="h-full w-full object-cover" src="{{ $imgPath }}" alt="">
             </div>
             </button>
             <!-- Dropdown menu -->
             <div id="dropdown" class="z-10 hidden bg-white rounded-lg shadow w-44">
                 <ul class="py-2 text-gray-700" aria-labelledby="dropdownDefaultButton">
                     <li>
-                    <a href="/user/{{ auth()->user()->username }}/edit" class="flex px-4 py-2 hover:bg-gray-100">
-                            <img src="{{ $imgPath }}img/icon/Edit.svg" alt=""> <span class="my-auto ml-2"> Edit Profile </span>
+                    <a href="/editUser/{{ auth()->user()->username }}" class="flex px-4 py-2 hover:bg-gray-100">
+                            <img src="{{ $storagePath }}img/icon/Edit.svg" alt=""> <span class="my-auto ml-2"> Edit Profile </span>
                         </a>
                     </li>
 
                     <li data-modal-target="popup-modal" data-modal-toggle="popup-modal" class="" type="button">
-                        <div class="flex px-2 py-2 hover:bg-gray-100 cursor-pointer"> <img src="{{ $imgPath }}img/icon/Log-out.svg" alt=""> <span class="my-auto ml-2"> Log out</span></div>
+                        <div class="flex px-2 py-2 hover:bg-gray-100 cursor-pointer"> <img src="{{ $storagePath }}img/icon/Log-out.svg" alt=""> <span class="my-auto ml-2"> Log out</span></div>
                     </li>
 
                 </ul>
@@ -66,7 +70,7 @@
 
                             <form action="/logout" method="post" class="inline-flex">
                                 @csrf
-                                <button data-modal-hide="popup-modal" type="submit" class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2">Ya</button>
+                                <button data-modal-hide="popup-modal" type="submit" class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2">Ya</button>
                             </form>
 
                             <button data-modal-hide="popup-modal" type="button" class="text-white bg-warna3 hover:bg-warna3h rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-white focus:z-10">Tidak</button>
