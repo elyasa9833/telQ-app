@@ -18,6 +18,7 @@ class QuestionController extends Controller
     public function index()
     {
         return view('questionList', [
+            'title' => 'Questions',
             'questions' => Question::latest()->get(),
             'answers' => Answer::latest()->get(),
         ]);

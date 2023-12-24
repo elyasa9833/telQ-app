@@ -1,22 +1,3 @@
-{{--
-session_start();
-include 'config.php';
-$id_user = $_SESSION['id_user'];
-$nama = $_SESSION['nama'];
-$foto_profil = $_SESSION['foto_profil'];
-
-if ($id_user == '') header('location: auth/login.html');
-
-$query = "SELECT jawab.id_jawab, tanya.pertanyaan, tanya.gambar_tanya, user.id_user, user.fullname, user.foto_profil, jawab.jawaban, jawab.gambar_jawab FROM jawab JOIN tanya ON jawab.id_tanya = tanya.id_tanya JOIN user ON jawab.id_user = user.id_user";
-if (isset($_POST['cari'])) {
-	$caritanya = $_POST['caritanya'];
-	if ($caritanya != '')
-		$query .= " WHERE tanya.pertanyaan='$caritanya'";
-}
-$query .= " ORDER BY jawab.id_jawab DESC";
-$tampil = mysqli_query($conn, $query);
---}}
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,7 +6,8 @@ $tampil = mysqli_query($conn, $query);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="img/small_logo.png" type="image/png" sizes="16x16">
-    <title>Home | TelQ!</title>
+    <link rel="icon" href="../img/small_logo.png" type="image/png" sizes="16x16">
+    <title>{{ $title }} | TelQ!</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

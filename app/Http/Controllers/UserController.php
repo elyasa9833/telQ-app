@@ -49,6 +49,7 @@ class UserController extends Controller
     public function show(User $user)
     {
         return view('profile.showProfile', [
+            'title' => 'Show Profile',
             'user' => $user,
             'imgPath' => ($user->photo_profile) ? asset('storage/'. $user->photo_profile) :"../img/profile/User.svg",
             'topic_count' => Question::where('user_id', $user->id)->distinct('id')->count()
@@ -68,6 +69,7 @@ class UserController extends Controller
         };
 
         return view('profile.editProfile', [
+            'title' => 'Edit Profile',
             'user' => $user,
             'imgPath' => ($user->photo_profile) ? asset('storage/'. $user->photo_profile) :"../img/profile/User.svg",
             'topic_count' => Question::where('user_id', $user->id)->distinct('id')->count()
@@ -117,6 +119,7 @@ class UserController extends Controller
     public function view_user()
     {
         return view('admin.viewUser', [
+            'title' => 'View User',
             'users' => User::where('role', '!=', 'admin')->latest()->get()
         ]);
     }

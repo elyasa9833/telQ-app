@@ -28,7 +28,9 @@ Route::middleware('auth')->group(function () {
 
     // setting route
     Route::get('/setting', function () {
-        return view('settings');
+        return view('settings', [
+            'title' => 'Settings'
+        ]);
     });
 
     // moderator route
@@ -62,6 +64,6 @@ Route::get('/hero', function(){
 // test route
 Route::get('/test', function(){
     return view('test', [
-        'active' => 'test'
+        'title' => 'test'
     ]);
 });

@@ -17,6 +17,7 @@ class AnswerController extends Controller
     public function index()
     {
         return view('home', [
+            'title' => 'Home',
             'answers' => Answer::latest()->get()
         ]);
     }
