@@ -20,16 +20,16 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        User::factory()->create([
-            'role' => 'admin',
-            'email' => 'admin@admin',
-            'password' => bcrypt('12345'),
-            'fullname' => 'Admin',
-            'asal_kota' => 'BojongSoang',
-            'deskripsi' => 'null',
-            'photo_profile' => 'User.svg',
-            'phone_number' => '555-0106',
-        ]);
+        // User::factory()->create([
+        //     'role' => 'admin',
+        //     'email' => 'admin@admin',
+        //     'password' => bcrypt('12345'),
+        //     'fullname' => 'Admin',
+        //     'asal_kota' => 'BojongSoang',
+        //     'deskripsi' => 'null',
+        //     'photo_profile' => 'User.svg',
+        //     'phone_number' => '555-0106',
+        // ]);
 
         User::factory(20)->create();
         Question::factory(15)->create();

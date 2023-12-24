@@ -118,4 +118,11 @@ class AnswerController extends Controller
         Answer::destroy($answer->id);
         return redirect()->back();
     }
+
+    public function getAnswer()
+    {
+        $answers = Answer::with('user:id,fullname,asal_kota', 'question:id,user_id')->select('user_id', 'question_id', 'content', 'image')->get();
+
+        return response()->json($answers, 200);
+    }
 }

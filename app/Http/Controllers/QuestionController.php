@@ -112,4 +112,11 @@ class QuestionController extends Controller
         Question::destroy($question->id);
         return redirect()->back();
     }
+
+    public function getQuestion()
+    {
+        $questions = Question::with('user:id,fullname,asal_kota')->select('user_id', 'content', 'image')->get();
+
+        return response()->json($questions, 200);
+    }
 }

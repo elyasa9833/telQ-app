@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\QuestionController;
+use App\Http\Controllers\AnswerController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -16,4 +20,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
+});
+
+Route::post('/login', [AuthController::class, 'loginApi']);
+
+Route::middleware('auth:sanctum')->group(function() {
+    Route::get('/getAllUsers', [UserController::class, 'getUser']);
+    Route::get('/getAllQuestions', [QuestionController::class, 'getQuestion']);
+    Route::get('/getAllAnswers', [AnswerController::class, 'getAnswer']);
+    
 });

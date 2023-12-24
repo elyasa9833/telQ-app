@@ -120,4 +120,11 @@ class UserController extends Controller
             'users' => User::where('role', '!=', 'admin')->latest()->get()
         ]);
     }
+
+    public function getUser()
+    {
+        $users = User::where('role', 'user')->select('fullname', 'email', 'deskripsi', 'asal_kota')->get();
+
+        return response()->json($users, 200);
+    }
 }
