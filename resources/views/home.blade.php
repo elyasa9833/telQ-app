@@ -4,6 +4,11 @@
 <!-- Ini apasih namanya, pokoknya dalemnya ada topik ama postingan. Start -->
 <div class="overflow-auto h-[89vh] md:h-[93vh] mx-4">
 
+    @error('content')
+        <div class="bg-red-50 text-red-500 mt-1 md:mt-2 relative rounded md:w-5/6 sm:mx-auto p-3 mb-3">
+            Alert: {{ $message }}
+        </div>
+    @enderror
     @error('image')
         <div class="bg-red-50 text-red-500 mt-1 md:mt-2 relative rounded md:w-5/6 sm:mx-auto p-3 mb-3">
             Alert: {{ $message }}
@@ -159,7 +164,7 @@
                                 <div class="ml-2 pt-3">
                                     <div class="flex">
                                     <a href="#" class="bg-bgc aspect-square h-10 overflow-hidden rounded-full">
-                                        <img class="h-full w-full object-cover" src="img/{{ $answer->user->photo_profile }}" alt="profile">
+                                        <img class="h-full w-full object-cover" src="{{ $UserImgPath }}" alt="profile">
                                     </a>
                                     <a href="#" class="text-xs md:text-sm my-auto ml-2 text-gray-900 font-bold">{{ $answer->user->fullname }}</a>
                                     </div>

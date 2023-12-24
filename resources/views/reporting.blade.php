@@ -12,12 +12,14 @@
         <div class="isi">
             <div class="komen">
                 <div class="atas">
+
+                    @php $UserImgPath = ($rep->answer->user->photo_profile) ? asset('storage/'. $rep->answer->user->photo_profile) : "../img/profile/User.svg" @endphp
                     <!-- si foto profile -->
                         <div class="flex ml-2 mt-2">
-                            <a href="{{ url('/user/' .$rep->user->username) }}" class="bg-bgc aspect-square h-9 overflow-hidden rounded-full">
-                                <img class="h-full w-full object-cover" src="../img/profile/{{ $rep->answer->user->photo_profile }}" alt="">
+                            <a href="{{ url('/user/' .$rep->answer->user->username) }}" class="bg-bgc aspect-square h-9 overflow-hidden rounded-full">
+                                <img class="h-full w-full object-cover" src="{{ $UserImgPath }}" alt="">
                             </a>
-                            <a href="{{ url('/user/' .$rep->user->username) }}" class="text-xs md:text-sm my-auto ml-2 text-gray-900 font-bold">{{ $rep->answer->user->fullname }}</a>
+                            <a href="{{ url('/user/' .$rep->answer->user->username) }}" class="text-xs md:text-sm my-auto ml-2 text-gray-900 font-bold">{{ $rep->answer->user->fullname }}</a>
                         </div>
 
                     <!-- menu -->
@@ -93,9 +95,9 @@
                         <div class="mx-7 mt-3">
                             <div class="aspect-[4/3] rounded-md bg-gray-600 relative border-2 overflow-hidden">
                                 <!-- Ini background Img nya -->
-                                <img class="h-full w-full opacity-30 blur-sm absolute" src="../img/postingan/{{ $rep->answer->image }}" alt="">
+                                <img class="h-full w-full opacity-30 blur-sm absolute" src="{{ asset('storage/'. $rep->answer->image) }}" alt="">
                                 <!-- Ini gambar depannya -->
-                                <img class="h-full w-full object-contain" src="../img/postingan/{{ $rep->answer->image }}" alt="">
+                                <img class="h-full w-full object-contain" src="{{ asset('storage/'. $rep->answer->image) }}" alt="">
                             </div>
                         </div>
                     @endif

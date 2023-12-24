@@ -4,6 +4,11 @@
         <!-- Content Start -->
         <div class="h-[89vh] md:h-[93vh] pb-20 md:pb-5 overflow-y-auto overflow-x-hidden mx-4 rounded pt-2 shadow">
             
+            @error('content')
+                <div class="bg-red-50 text-red-500 relative pb-2 pt-3 mb-3 shadow md:w-5/6 md:mx-auto p-3">
+                    Alert: {{ $message }}
+                </div>
+            @enderror
             @error('image')
                 <div class="bg-red-50 text-red-500 relative pb-2 pt-3 mb-3 shadow md:w-5/6 md:mx-auto p-3">
                     Alert: {{ $message }}
@@ -27,8 +32,9 @@
                     <!-- Profile -->
                     <div class="flex ml-3">
                         <div class="bg-bgc aspect-square h-10 overflow-hidden rounded-full">
-                            <a href="#">
-                                <img class="h-full w-full object-cover" src="{{ $UserImgPath }}" alt=""> </a>
+                            <a href="{{ url('/user/' .$que->user->username) }}">
+                                <img class="h-full w-full object-cover" src="{{ $UserImgPath }}" alt="">
+                            </a>
                         </div>
                         <a href="{{ url('/user/' .$que->user->username) }}" class="font-semibold text-sm my-auto ml-1 text-gray-800">{{ $que->user->fullname }}</a>
                     </div>
@@ -101,14 +107,14 @@
                                         </svg>
                                     </div>
 
-
+                                    @php $AuthImgPath = (auth()->user()->photo_profile) ? asset('storage/'. auth()->user()->photo_profile) : "img/profile/User.svg" @endphp
                                     <!-- NICK NAME -->
                                     <div class="ml-2 pt-3">
                                         <div class="flex">
-                                        <a href="#" class="bg-bgc aspect-square h-10 overflow-hidden rounded-full">
-                                            <img class="h-full w-full object-cover" src="img/{{ auth()->user()->photo_profile }}" alt="profile">
-                                        </a>
-                                        <a href="#" class="text-xs md:text-sm my-auto ml-2 text-gray-900 font-bold">{{ auth()->user()->fullname }}</a>
+                                        <span class="bg-bgc aspect-square h-10 overflow-hidden rounded-full">
+                                            <img class="h-full w-full object-cover" src="{{ $AuthImgPath }}" alt="profile">
+                                        </span>
+                                        <span class="text-xs md:text-sm my-auto ml-2 text-gray-900 font-bold cursor-default">{{ auth()->user()->fullname }}</span>
                                         </div>
                                     </div>
 
@@ -226,7 +232,7 @@
                                         @php $UserImgPath = ($item->user->photo_profile) ? asset('storage/'. $item->user->photo_profile) : "img/profile/User.svg" @endphp
 
                                         <!-- Foto Profile -->
-                                        <a class="flex mx-2 mt-2" href="#">
+                                        <a class="flex mx-2 mt-2" href="{{ url('/user/'. $item->user->username) }}">
                                             <div class="bg-bgc aspect-square h-9 overflow-hidden rounded-full">
                                                 <img class="h-full w-full object-cover" src="{{ $UserImgPath }}" alt="">
                                             </div>

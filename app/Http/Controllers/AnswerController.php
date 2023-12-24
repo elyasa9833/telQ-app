@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Answer;
 use App\Models\Report;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class AnswerController extends Controller
 {
@@ -101,16 +102,20 @@ class AnswerController extends Controller
      * @param  \App\Models\Answer  $answer
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Answer $answer)
     {
-        $reports = Report::where('answer_id', $id)->get();
+        $reports = Report::where('answer_id', $answer->id)->get();
 
         // hapus semua report yang terkait
         foreach ($reports as $report) {
             $report->delete();
         }
+
+        if($answer->image){
+            Storage::delete($answer->image);
+        };
         
-        Answer::destroy($id);
+        Answer::destroy($answer->id);
         return redirect()->back();
     }
 }

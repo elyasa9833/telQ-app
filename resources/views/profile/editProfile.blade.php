@@ -3,7 +3,7 @@
 <div class="h-[88vh] md:h-[93vh] bg-white pb-20 md:pb-5 overflow-y-hidden overflow-x-hidden mx-4 rounded pt-2 shadow">
     <div class="w-full bg-white pt-4 pb-2 rounded-t">
         <div class="flex mb-4">
-            <img class="ml-7 h-5 md:h-7" src="img/Icon/profile[H].svg" alt="">
+            <img class="ml-7 h-5 md:h-7" src="../img/Icon/profile[H].svg" alt="">
             <span class="ml-3 text-warna3 font-bold text-sm md:text-xl">Profile</span>
         </div>
         <hr>
@@ -12,10 +12,10 @@
     <div class="bg-white h-full overflow-y-auto flex flex-col">
         <div class="flex flex-col md:grid grid-cols-5 relative w-4/5 h-fit my-20 shadow-lg rounded-md outline outline-1 outline-gray-300/50 m-auto">
 
-            @php $UserImgPath = ($user->photo_profile) ? asset('storage/'. $user->photo_profile) : "../img/profile/User.svg" @endphp
             {{-- Foto Profile Start --}}
             <div class="bg-bgc md:col-span-1 aspect-square h-32 lg:h-48 overflow-auto rounded-full absolute -top-20 self-center lg:-top-7 lg:-left-7 shadow-lg outline outline-1 outline-gray-300/50">
-                <img class="h-full w-full object-cover" src="{{ $UserImgPath }}" alt="">
+                <img class="h-full w-full object-cover img-preview hidden" alt="">
+                <img class="h-full w-full object-cover img-profile" src="{{ $imgPath }}" alt="">
             </div>
             {{-- Foto Profile END --}}
 
@@ -48,8 +48,13 @@
                     </div>
                     <div class="mb-5">
                         <label class="block mb-2 text-sm font-medium text-gray-900" for="user_avatar">Upload Foto Profil</label>
-                        <input aria-describedby="user_avatar_help" id="user_avatar" type="file" accept="image/*" class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 focus:outline-none">
+                        <input aria-describedby="user_avatar_help" name="photo_profile" id="user_avatar" type="file" accept="image/*" onchange="previewImage()" class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 focus:outline-none">
+                        
+                        @error('photo_profile')
+                            <span class="text-red-500">{{ $message }}</span>
+                        @enderror
                     </div>
+                    <input type="hidden" name="oldImage" value="{{ $user->photo_profile }}">
                     {{-- Isi Profile END --}}
 
                     {{-- Tombol Start --}}
@@ -71,4 +76,6 @@
     </div>
 
 </div>
+
+<script src="../js/imgPreview.js"></script>
 @endsection

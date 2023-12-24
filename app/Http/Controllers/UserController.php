@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Question;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class UserController extends Controller
 {
@@ -49,7 +50,7 @@ class UserController extends Controller
     {
         return view('profile.showProfile', [
             'user' => $user,
-            'imgPath' => ($user->photo_profile) ? "asset('/storage'. $user->photo_profile)":"../img/profile/User.svg",
+            'imgPath' => ($user->photo_profile) ? asset('storage/'. $user->photo_profile) :"../img/profile/User.svg",
             'topic_count' => Question::where('user_id', $user->id)->distinct('id')->count()
         ]);
     }
@@ -68,7 +69,7 @@ class UserController extends Controller
 
         return view('profile.editProfile', [
             'user' => $user,
-            'imgPath' => ($user->photo_profile) ? "asset('/storage'. $user->photo_profile)":"../img/profile/User.svg",
+            'imgPath' => ($user->photo_profile) ? asset('storage/'. $user->photo_profile) :"../img/profile/User.svg",
             'topic_count' => Question::where('user_id', $user->id)->distinct('id')->count()
         ]);
     }
@@ -80,7 +81,7 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, User $user)
     {
         $updateProfile = $request->validate([
             'fullname' => 'required|max:255',
@@ -90,12 +91,15 @@ class UserController extends Controller
         ]);
 
         if($request->file('photo_profile')) {
+            if($request->oldImage) {
+                Storage::delete($request->oldImage);
+            }
             $updateProfile['photo_profile'] = $request->file('photo_profile')->store('profile-images');
         }
 
-        User::where('id', $id)->update($updateProfile);
+        User::where('id', $user->id)->update($updateProfile);
 
-        return redirect()->back();
+        return redirect('/user/'. $user->username);
     }
 
     /**

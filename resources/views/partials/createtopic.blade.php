@@ -7,7 +7,7 @@
     </div>
 </label>
 <!-- Buatlah sebuah Topik, End -->
-{{-- $source_pp = ($foto_profil != 0) ? "profile/" . $foto_profil:"icon/Profile.svg"; --}}
+@php $AuthImgPath = (auth()->user()->photo_profile) ? asset('storage/'. auth()->user()->photo_profile) : "img/profile/User.svg" @endphp
 
 <!-- Ini pop up "Buatlah sebuah Topik", Start -->
     <input type="checkbox" id="my-modal-3" class="modal-toggle" />
@@ -16,7 +16,7 @@
             <div class="relative bg-white pt-8 rounded-md">
                 <div class="flex ml-4 pb-5">
                     <div class="bg-bgc aspect-square h-10 overflow-hidden rounded-full">
-                        <img class="h-full w-full object-cover" src="img/User.svg{{-- $source_pp --}}" alt="">
+                        <img class="h-full w-full object-cover" src="{{ $AuthImgPath }}" alt="">
                     </div>
                     <span class="font-medium ml-2 text-lg text-gray-800">{{ auth()->user()->fullname }}</span>
                 </div>

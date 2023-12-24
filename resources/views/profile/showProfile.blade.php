@@ -12,10 +12,9 @@
     <div class="bg-white h-full overflow-y-auto flex flex-col">
         <div class="flex flex-col md:grid grid-cols-5 relative w-4/5 h-fit my-20 shadow-lg rounded-md outline outline-1 outline-gray-300/50 m-auto">
 
-            @php $UserImgPath = ($user->photo_profile) ? asset('storage/'. $user->photo_profile) : "../img/profile/User.svg" @endphp
             {{-- Foto Profile Start --}}
             <div class="bg-bgc md:col-span-1 aspect-square h-32 lg:h-48 overflow-auto rounded-full absolute -top-20 self-center lg:-top-7 lg:-left-7 shadow-lg outline outline-1 outline-gray-300/50">
-                <a href="#"><img class="h-full w-full object-cover" src="{{ $UserImgPath }}" alt=""></a>
+                <img class="h-full w-full object-cover" src="{{ $imgPath }}" alt="">
             </div>
             {{-- Foto Profile END --}}
 
