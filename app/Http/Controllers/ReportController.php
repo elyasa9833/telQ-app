@@ -18,7 +18,7 @@ class ReportController extends Controller
         
         return view('reporting', [
             'title' => 'Reporting',
-            'reports' => Report::latest()->get()
+            'reports' => Report::with('user', 'answer.user')->latest()->get()
         ]);
     }
 

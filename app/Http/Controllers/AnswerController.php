@@ -18,7 +18,7 @@ class AnswerController extends Controller
     {
         return view('home', [
             'title' => 'Home',
-            'answers' => Answer::latest()->get()
+            'answers' => Answer::with('user', 'question.user')->latest()->get()
         ]);
     }
 

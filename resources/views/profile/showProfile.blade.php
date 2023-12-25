@@ -3,7 +3,7 @@
 <div class="h-[88vh] md:h-[93vh] bg-white pb-20 md:pb-5 overflow-y-hidden overflow-x-hidden mx-4 rounded pt-2 shadow">
     <div class="w-full bg-white pt-4 pb-2 rounded-t">
         <div class="flex mb-4">
-            <img class="ml-7 h-5 md:h-7" src="img/Icon/profile[H].svg" alt="">
+            <img class="ml-7 h-5 md:h-7" src="../img/Icon/profile[H].svg" alt="">
             <span class="ml-3 text-warna3 font-bold text-sm md:text-xl">Profile</span>
         </div>
         <hr>
@@ -29,7 +29,7 @@
                         <span class="ml-3 text-warna2 font-semibold text-3xl lg:text-4xl"> Topik </span>
                     </div>
                     <div class="flex my-5 ml-10">
-                        <img class="h-10" src="img/Icon/address.svg" alt="">
+                        <img class="h-10" src="../img/Icon/address.svg" alt="">
                         <span class="ml-3 text-slate-800 font-semibold text-3xl my-auto">{{ $user->asal_kota }}</span>
                     </div>
                 </div>

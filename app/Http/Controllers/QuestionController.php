@@ -19,8 +19,8 @@ class QuestionController extends Controller
     {
         return view('questionList', [
             'title' => 'Questions',
-            'questions' => Question::latest()->get(),
-            'answers' => Answer::latest()->get(),
+            'questions' => Question::with('user')->latest()->get(),
+            'answers' => Answer::with('user')->latest()->get(),
         ]);
     }
 
