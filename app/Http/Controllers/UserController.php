@@ -64,7 +64,7 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        if($user->id != auth()->user()->id) {
+        if($user->id != auth()->user()->id && auth()->user()->role != 'admin') {
             return abort(404);
         };
 

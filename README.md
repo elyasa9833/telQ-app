@@ -1,66 +1,61 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
-
+<p align="center"><img src="https://cdn.discordapp.com/attachments/811038806194651176/1192950213191663726/small_logo.png?ex=65aaf076&is=65987b76&hm=d93f83df4e3a8dc655f9fd9e588c68802dacf96631705695c6431a53c13cf22a&" height="200" alt="TelQ! Logo"></p>
 <p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+    <a href="https://github.com/elyasa9833/telQ-app"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
+    <img alt="GitHub contributors" src="https://img.shields.io/github/contributors/elyasa9833/telQ-app">
+    <img alt="top languages" src="https://img.shields.io/github/languages/top/elyasa9833/telQ-app">
 </p>
 
-## About Laravel
+## About TelQ!
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+<p>Aplikasi TelQ! adalah sebuah platform yang dirancang untuk menyediakan berita dan 
+informasi terbaru tentang kegiatan yang terjadi di dalam dan sekitar kampus kepada mahasiswa, 
+dosen, dan karyawan universitas. Aplikasi ini dapat diakses melalui website atau aplikasi mobile 
+yang dapat diunduh melalui smartphone. </p>
+<p>Aplikasi TelQ! akan memudahkan mahasiswa, dosen, dan staf universitas untuk menemukan 
+informasi terbaru tentang kegiatan kampus. Selain itu, aplikasi ini juga dapat menjadi sarana 
+untuk mempererat hubungan antar sesama di lingkungan universitas dan meningkatkan 
+keterlibatan mahasiswa dalam kegiatan kampus.</p>
+<p>Target pengguna dari aplikasi portal berita kampus adalah seluruh anggota 
+universitas yang ingin mendapatkan akses mudah dan cepat terhadap informasi terbaru 
+mengenai kegiatan dan event yang terjadi di kampus.</p>
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## API Reference
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+#### Get all users
 
-## Learning Laravel
+```http
+  GET /api/getAllUsers
+```
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+| Parameter      | Type     | Description                |
+| :------------- | :------- | :------------------------- |
+| `bearer_token` | `string` | **Required**. Your API key |
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+#### Get all questions
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+```http
+  GET /api/getAllQuestions
+```
 
-## Laravel Sponsors
+| Parameter      | Type     | Description                |
+| :------------- | :------- | :------------------------- |
+| `bearer_token` | `string` | **Required**. Your API key |
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+#### Get all answers
 
-### Premium Partners
+```http
+  GET /api/getAllAnswers
+```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+| Parameter      | Type     | Description                |
+| :------------- | :------- | :------------------------- |
+| `bearer_token` | `string` | **Required**. Your API key |
 
-## Contributing
+## Project On-goin' members
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+| NIM        | Nama                                                   |
+| :----------| :----------------------------------------------------- |
+| 6706223068 | [Muhammad Dhafa Ramadhani](https://github.com/MDhafaR) |
+| 6706220037 | [Adrian Maulana](https://github.com/mega105)           |
+| 6706220043 | [Amri Elyasa](https://github.com/elyasa9833)           |
 
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
