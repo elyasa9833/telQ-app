@@ -50,13 +50,20 @@ php artisan key:generate
 Konfigurasikan aplikasi seperti: nama database, dll. Terletak di file `.env`. 
 Contoh: `DB_DATABASE`, `DB_USERNAME`, `DB_PASSWORD`
 
-### 6. Create Symbolic link
+### 6. Database: Migrations + Running Seeders
+```bash
+php artisan migrate --seed
+```
+
+> **Note:** You can call migrate:refresh with the --seed option to automatically seed after the migrations are complete:
+
+### 7. Create Symbolic link
 Digunakan untuk membuat tautan simbolis antara direktori publik dengan penyimpanan file pribadi.
 ```bash
 php artisan link:storage
 ```
 
-### 7. Run App
+### 8. Run App
 ```bash
 php artisan serve
 ```
