@@ -1,4 +1,4 @@
-<p align="center"><img src="https://cdn.discordapp.com/attachments/811038806194651176/1192950213191663726/small_logo.png?ex=65aaf076&is=65987b76&hm=d93f83df4e3a8dc655f9fd9e588c68802dacf96631705695c6431a53c13cf22a&" height="200" alt="TelQ! Logo"></p>
+<p align="center"><img src="https://github.com/elyasa9833/telQ-app/assets/91476344/589a1867-452a-40be-96f5-43c0ad9b9191" height="200" alt="TelQ! Logo"></p>
 <p align="center">
     <img alt="GitHub contributors" src="https://img.shields.io/github/contributors/elyasa9833/telQ-app">
     <img alt="top languages" src="https://img.shields.io/github/languages/top/elyasa9833/telQ-app">
