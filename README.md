@@ -48,19 +48,21 @@ php artisan key:generate
 
 ### 5. Konfigurasi aplikasi 
 Konfigurasikan aplikasi seperti: nama database, dll. Terletak di file `.env`. 
-Contoh: `DB_DATABASE`, `DB_USERNAME`, `DB_PASSWORD`
+Contoh: `DB_DATABASE`, `DB_USERNAME`, `DB_PASSWORD`.
+
+> **Note:** Jika tidak ada, copy file `.env.example` dan paste dengan nama `.env`.
 
 ### 6. Database: Migrations + Running Seeders
 ```bash
 php artisan migrate --seed
 ```
 
-> **Note:** You can call `migrate:refresh` with the `--seed` option to automatically seed after the migrations are complete:
+> **Note:** You can call `migrate:refresh` with the `--seed` option to automatically seed after the migrations are complete.
 
 ### 7. Create Symbolic link
 Digunakan untuk membuat tautan simbolis antara direktori publik dengan penyimpanan file pribadi.
 ```bash
-php artisan link:storage
+php artisan storage:link
 ```
 
 ### 8. Run App
@@ -70,7 +72,7 @@ php artisan serve
 
 ## API Reference
 
-#### Get all users
+### # Get all users
 
 ```bash
 GET /api/getAllUsers
@@ -80,7 +82,7 @@ GET /api/getAllUsers
 | :------------- | :------- | :------------------------- |
 | `bearer_token` | `string` | **Required**. Your API key |
 
-#### Get all questions
+### # Get all questions
 
 ```bash
 GET /api/getAllQuestions
@@ -90,7 +92,7 @@ GET /api/getAllQuestions
 | :------------- | :------- | :------------------------- |
 | `bearer_token` | `string` | **Required**. Your API key |
 
-#### Get all answers
+### # Get all answers
 
 ```bash
 GET /api/getAllAnswers
@@ -99,6 +101,16 @@ GET /api/getAllAnswers
 | Parameter      | Type     | Description                |
 | :------------- | :------- | :------------------------- |
 | `bearer_token` | `string` | **Required**. Your API key |
+
+### # How to get api token
+```bash
+POST /api/login
+```
+
+| Parameter  | Type     | Description                                   |
+| :--------- | :------- | :-------------------------------------------- |
+| `email`    | `string` | **Required**. (email with registered account) |
+| `password` | `string` | **Required**.                                 |
 
 ## Project On-goin' members
 
