@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\AnswerController;
+use App\Http\Controllers\ApiQuestionController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -29,4 +30,8 @@ Route::middleware('auth:sanctum')->group(function() {
     Route::get('/getAllQuestions', [QuestionController::class, 'getQuestion']);
     Route::get('/getAllAnswers', [AnswerController::class, 'getAnswer']);
     
+    Route::get('/listQuestions', [ApiQuestionController::class, 'listQuestion']);
+    Route::post('/addQuestion', [ApiQuestionController::class, 'addQuestion']);
+    Route::post('/editQuestion', [ApiQuestionController::class, 'editQuestion']);
+    Route::post('/deleteQuestion', [ApiQuestionController::class, 'destroyQuestion']);
 });
