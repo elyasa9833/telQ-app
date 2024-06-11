@@ -40,17 +40,17 @@ composer install
 ```
 > **Note:** The most important thing to do when cloning a laravel project is to first run `composer update` then `composer install`. The composer install command installs any required dependencies for that laravel app.
 
-### 4. Generate App Key
-```bash
-php artisan key:generate
-```
-> **Note:** If you need to generate a key manually, you can do so from any Laravel/artisan-enabled php cli using `php artisan key:generate --show` (supposedly this will not modify any of your existing settings). Then you can use that key string in your config (however you have your secrets saved). I.e. you don't need to run `php artisan key:generate` on the server you are setting up (this can be useful if you're deploying a docker image to a container host like Heroku or AWS App Runner).
-
-### 5. Konfigurasi aplikasi 
+### 4. Konfigurasi aplikasi 
 Konfigurasikan aplikasi seperti: nama database, dll. Terletak di file `.env`. 
 Contoh: `DB_DATABASE`, `DB_USERNAME`, `DB_PASSWORD`.
 
 > **Note:** Jika tidak ada, copy file `.env.example` dan paste dengan nama `.env`.
+
+### 5. Generate App Key
+```bash
+php artisan key:generate
+```
+> **Note:** If you need to generate a key manually, you can do so from any Laravel/artisan-enabled php cli using `php artisan key:generate --show` (supposedly this will not modify any of your existing settings). Then you can use that key string in your config (however you have your secrets saved). I.e. you don't need to run `php artisan key:generate` on the server you are setting up (this can be useful if you're deploying a docker image to a container host like Heroku or AWS App Runner).
 
 ### 6. Database: Migrations + Running Seeders
 ```bash
