@@ -6,14 +6,13 @@
 
 ## About TelQ!
 
-<p align=justify>Aplikasi TelQ! adalah sebuah platform yang dirancang untuk menyediakan berita dan 
-informasi terbaru tentang kegiatan yang terjadi di dalam dan sekitar kampus kepada mahasiswa, dosen, dan karyawan universitas. Aplikasi ini dapat diakses melalui website atau aplikasi mobile yang dapat diunduh melalui smartphone.</p>
-<p align=justify>Aplikasi TelQ! akan memudahkan mahasiswa, dosen, dan staf universitas untuk menemukan 
-informasi terbaru tentang kegiatan kampus. Selain itu, aplikasi ini juga dapat menjadi sarana untuk mempererat hubungan antar sesama di lingkungan universitas dan meningkatkan 
-keterlibatan mahasiswa dalam kegiatan kampus.</p>
-<p align=justify>Target pengguna dari aplikasi portal berita kampus adalah seluruh anggota 
-universitas yang ingin mendapatkan akses mudah dan cepat terhadap informasi terbaru 
-mengenai kegiatan dan event yang terjadi di kampus.</p>
+<p align=justify>TelQ adalah platform tanya jawab daring yang memungkinkan pengguna untuk berpartisipasi dalam pertukaran pengetahuan dan informasi. Target Pengguna dari TelQ ini sendiri adalah mahasiswa di Telkom University. Berikut adalah beberapa komponen utama sistemnya: </p>
+<ul>
+    <li><b>Pertanyaan dan Jawaban:</b> Pengguna dapat mengajukan pertanyaan tentang berbagai topik atau menjawab pertanyaan yang diajukan oleh orang lain. Setiap pertanyaan memiliki sejumlah jawaban yang dapat diberikan oleh pengguna.</li>
+    <li><b>Profil Pengguna:</b> Setiap pengguna memiliki profil pribadi yang mencakup informasi mereka di TelQ. Ini membantu dalam membangun reputasi dan kredibilitas pengguna. </li>
+    <li><b>Sistem Voting:</b> Pengguna dapat memberikan suara atas pertanyaan dan jawaban yang mereka anggap bermanfaat atau berkualitas. Voting ini memengaruhi peringkat pertanyaan dan jawaban, sehingga konten yang berkualitas lebih mudah</li>
+</ul>
+
 
 ## Panduan Deployment Aplikasi
 
